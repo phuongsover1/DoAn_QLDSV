@@ -5,22 +5,20 @@ using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using DoAn_QLSV.Utils;
 
 namespace DoAn_QLSV
 {
     internal static class Program
     {
-
-
-
-
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
         public static SqlConnection conn = new SqlConnection();
         public static String connstr;
         public static String database = "QLDSV_TC";
-        public static String connstr_publisher = "Data Source=DESKTOP-GUM00GB;Initial Catalog=" + database + ";Integrated Security=True";
+        public static String connstr_publisher =
+            "Data Source=DESKTOP-GUM00GB;Initial Catalog=" + database + ";Integrated Security=True";
         public static SqlDataAdapter da;
         public static SqlDataReader myReader;
         public static String servername = "";
@@ -38,29 +36,50 @@ namespace DoAn_QLSV
         public static BindingSource bds_dspm = new BindingSource(); // giu binding source phan manh khi dang nhap
         public static FormMain formMain;
 
-
         public static int KetNoi()
         {
-            if (Program.conn != null && Program.conn.State == ConnectionState.Open) Program.conn.Close();
+            if (Program.conn != null && Program.conn.State == ConnectionState.Open)
+                Program.conn.Close();
             try
             {
-                Program.connstr = "Data Source=" + Program.servername + ";Initial Catalog=" + Program.database + ";User ID=" +
-                      Program.mlogin + ";password=" + Program.password;
+                Program.connstr =
+                    "Data Source="
+                    + Program.servername
+                    + ";Initial Catalog="
+                    + Program.database
+                    + ";User ID="
+                    + Program.mlogin
+                    + ";password="
+                    + Program.password;
                 Program.conn.ConnectionString = Program.connstr;
                 Program.conn.Open();
                 return 1;
             }
-
             catch (Exception e)
             {
-                MessageBox.Show("Lỗi kết nối cơ sở dữ liệu.\nBạn xem lại user name và password.\n " + e.Message, "", MessageBoxButtons.OK);
+                MessageBox.Show(
+                    "Lỗi kết nối cơ sở dữ liệu.\nBạn xem lại user name và password.\n " + e.Message,
+                    "",
+                    MessageBoxButtons.OK
+                );
                 return 0;
             }
         }
 
-        public static String createConnectionString(String serverName, String userId, String password)
+        public static String createConnectionString(
+            String serverName,
+            String userId,
+            String password
+        )
         {
-            return "Data Source=" + serverName + ";Initial Catalog=" + Program.database + ";User ID=" + userId + ";password=" + password;
+            return "Data Source="
+                + serverName
+                + ";Initial Catalog="
+                + Program.database
+                + ";User ID="
+                + userId
+                + ";password="
+                + password;
         }
 
         public static SqlDataReader ExecSqlDataReader(String cmd, String connectionstring)
@@ -75,7 +94,8 @@ namespace DoAn_QLSV
 
             try
             {
-                if (Program.conn.State == ConnectionState.Closed) Program.conn.Open();
+                if (Program.conn.State == ConnectionState.Closed)
+                    Program.conn.Open();
                 myreader = sqlcmd.ExecuteReader();
 
                 return myreader;
@@ -99,9 +119,7 @@ namespace DoAn_QLSV
             da = new SqlDataAdapter(cmd, conn);
             da.Fill(dt1);
             return dt1;
-
         }
-
 
         public static int ExecSqlNonQuery(String cmd, String connectionstring)
         {
@@ -115,11 +133,13 @@ namespace DoAn_QLSV
             Sqlcmd.CommandText = cmd;
             Sqlcmd.CommandType = CommandType.Text;
             Sqlcmd.CommandTimeout = 300;
-            if (conn.State == ConnectionState.Closed) conn.Open();
+            if (conn.State == ConnectionState.Closed)
+                conn.Open();
             try
             {
-
-                Sqlcmd.ExecuteNonQuery(); conn.Close(); return 1;
+                Sqlcmd.ExecuteNonQuery();
+                conn.Close();
+                return 1;
             }
             catch (SqlException ex)
             {
@@ -128,6 +148,7 @@ namespace DoAn_QLSV
                 return ex.State; // trạng thái lỗi gởi về từ sql server raise error
             }
         }
+
         public static void SetEnableOfButton(Form frm, Boolean Active)
         {
             foreach (Control ctl in frm.Controls)
@@ -141,6 +162,54 @@ namespace DoAn_QLSV
             object selectedRow = gridView.GetRow(gridView.FocusedRowHandle);
             object[] result = ((System.Data.DataRowView)(selectedRow)).Row.ItemArray;
             return result;
+        }
+
+        /// <summary>
+        /// ở ngoài thì dùng như hình dưới để lấy từng giá trị
+        /// clientGuid = Convert.ToString(cmd.Parameters["@Guid"].Value);
+        /// nhớ là phải close cmd sau khi đã lấy hết
+        /// </summary>
+        public static SqlCommand GetResultFromStoredProcedured(
+            SqlCommand cmd,
+            string storedProcedureName,
+            string connectionString,
+            ParameterStoredProcedure[] parameterStoredProcedures,
+            OutputParameterStoredProcedure[] outputParameters
+        )
+        {
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                cmd = conn.CreateCommand();
+                cmd.CommandText = storedProcedureName;
+                cmd.CommandType = CommandType.StoredProcedure;
+                foreach (ParameterStoredProcedure p in parameterStoredProcedures)
+                {
+                    cmd.Parameters.AddWithValue(p.ParamName, p.ParamValue);
+                    //cmd.Parameters.AddWithValue("@ClientID", clientId);
+                }
+                //cmd.Parameters.AddWithValue("SeqName", "SeqNameValue");
+
+                foreach (OutputParameterStoredProcedure outputParam in outputParameters)
+                {
+                    //cmd.Parameters.Add("@Guid", SqlDbType.VarChar, 100);
+                    if (
+                        outputParam.Type == SqlDbType.NChar
+                        || outputParam.Type == SqlDbType.NVarChar
+                    )
+                    {
+                        cmd.Parameters.Add(outputParam.Name, outputParam.Type, outputParam.Length);
+                    }
+                    else
+                    {
+                        cmd.Parameters.Add(outputParam.Name, outputParam.Type);
+                    }
+                    cmd.Parameters[outputParam.Name].Direction = ParameterDirection.Output;
+                }
+
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                return cmd;
+            }
         }
 
         /// <summary>

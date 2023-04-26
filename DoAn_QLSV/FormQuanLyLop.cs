@@ -1,8 +1,10 @@
 ﻿using DevExpress.XtraEditors;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using DoAn_QLSV.Utils;
 
 namespace DoAn_QLSV
 {
@@ -19,6 +21,7 @@ namespace DoAn_QLSV
         private BindingSource lopBindingSource = new BindingSource();
         private SqlConnection conn_publisher = new SqlConnection();
         private bool isAddNew;
+
         public FormQuanLyLop()
         {
             InitializeComponent();
@@ -26,7 +29,8 @@ namespace DoAn_QLSV
 
         private void FormQuanLyLop_Load(object sender, EventArgs e)
         {
-            if (KetNoi_CSDLGOC() == 0) return;
+            if (KetNoi_CSDLGOC() == 0)
+                return;
             LayDSPM("SELECT * FROM dbo.Get_Subscribes");
             if (Program.mGroup != GroupEnums.Quyen.PGV.ToString())
             {
@@ -35,17 +39,18 @@ namespace DoAn_QLSV
 
             cmbKhoa.SelectedIndex = Program.mKhoa;
         }
+
         private void LayDSPM(String cmd)
         {
             DataTable dt = new DataTable();
-            if (conn_publisher.State == ConnectionState.Closed) conn_publisher.Open();
+            if (conn_publisher.State == ConnectionState.Closed)
+                conn_publisher.Open();
             SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(cmd, conn_publisher);
             sqlDataAdapter.Fill(dt);
             conn_publisher.Close();
             cmbKhoa.DataSource = dt;
             cmbKhoa.DisplayMember = "TENCN";
             cmbKhoa.ValueMember = "TENSERVER";
-
         }
 
         private int KetNoi_CSDLGOC()
@@ -62,14 +67,23 @@ namespace DoAn_QLSV
             }
             catch (Exception ex)
             {
-                XtraMessageBox.Show("Lỗi kết nối về cơ sở dữ liệu gốc.\n Bạn nên xem lại Tên Server của Publisher, và tên CSDL trong chuỗi kết nối.\n " + ex.Message, "Lỗi kết nối", MessageBoxButtons.OK);
+                XtraMessageBox.Show(
+                    "Lỗi kết nối về cơ sở dữ liệu gốc.\n Bạn nên xem lại Tên Server của Publisher, và tên CSDL trong chuỗi kết nối.\n "
+                        + ex.Message,
+                    "Lỗi kết nối",
+                    MessageBoxButtons.OK
+                );
                 return 0;
             }
         }
+
         private void Lay_Danh_Sach_Lop_Theo_Khoa()
         {
             string khoaDaChon = cmbKhoa.SelectedIndex == 0 ? "CNTT" : "VT";
-            DataTable lopDataTable = Program.ExecSqlQuery("EXEC SP_LAY_DANH_SACH_LOP_THEO_KHOA '" + khoaDaChon + "'", Program.createConnectionString(Program.servername, Program.mlogin, Program.password));
+            DataTable lopDataTable = Program.ExecSqlQuery(
+                "EXEC SP_LAY_DANH_SACH_LOP_THEO_KHOA '" + khoaDaChon + "'",
+                Program.createConnectionString(Program.servername, Program.mlogin, Program.password)
+            );
             lopBindingSource.DataSource = lopDataTable;
             gridLop.DataSource = lopBindingSource;
         }
@@ -123,12 +137,19 @@ namespace DoAn_QLSV
         private void txtMaLop_Leave(object sender, EventArgs e)
         {
             String maLopDaNhap = txtMaLop.Text.Trim().ToUpper();
-            SqlDataReader reader = Program.ExecSqlDataReader("EXEC SP_KIEM_TRA_ID_LOP '" + maLopDaNhap + "'", Program.connstr);
+            SqlDataReader reader = Program.ExecSqlDataReader(
+                "EXEC SP_KIEM_TRA_ID_LOP '" + maLopDaNhap + "'",
+                Program.connstr
+            );
             reader.Read();
             int id = reader.GetInt32(0);
             if (id == 0)
             {
-                XtraMessageBox.Show("Mã lớp đã tồn tại trong hệ thống!", "Lỗi", MessageBoxButtons.OK);
+                XtraMessageBox.Show(
+                    "Mã lớp đã tồn tại trong hệ thống!",
+                    "Lỗi",
+                    MessageBoxButtons.OK
+                );
                 txtMaLop.Focus();
             }
         }
@@ -141,7 +162,8 @@ namespace DoAn_QLSV
                 {
                     cmbKhoa.Enabled = false;
                 }
-                else cmbKhoa.Enabled = true;
+                else
+                    cmbKhoa.Enabled = true;
                 btnThem.Enabled = true;
                 btnSua.Enabled = true;
                 btnReload.Enabled = true;
@@ -153,8 +175,6 @@ namespace DoAn_QLSV
                 btnReload.Enabled = false;
                 cmbKhoa.Enabled = false;
             }
-
-
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
@@ -170,11 +190,19 @@ namespace DoAn_QLSV
 
                 if (result == 1)
                 {
-                    XtraMessageBox.Show("Đã thêm lớp thành công.", "Thông báo", MessageBoxButtons.OK);
+                    XtraMessageBox.Show(
+                        "Đã thêm lớp thành công.",
+                        "Thông báo",
+                        MessageBoxButtons.OK
+                    );
                 }
                 else
                 {
-                    XtraMessageBox.Show("Thêm lớp thất bại. Mã lỗi: " + result.ToString(), "Lỗi", MessageBoxButtons.OK);
+                    XtraMessageBox.Show(
+                        "Thêm lớp thất bại. Mã lỗi: " + result.ToString(),
+                        "Lỗi",
+                        MessageBoxButtons.OK
+                    );
                     return;
                 }
             }
@@ -184,11 +212,19 @@ namespace DoAn_QLSV
                 int result = Program.ExecSqlNonQuery(cmd, Program.connstr);
                 if (result == 1)
                 {
-                    XtraMessageBox.Show("Đã chỉnh sửa thông tin lớp thành công.", "Thông báo", MessageBoxButtons.OK);
+                    XtraMessageBox.Show(
+                        "Đã chỉnh sửa thông tin lớp thành công.",
+                        "Thông báo",
+                        MessageBoxButtons.OK
+                    );
                 }
                 else
                 {
-                    XtraMessageBox.Show("Chỉnh sửa thông tin của lớp thất bại. Mã lỗi: " + result.ToString(), "Lỗi", MessageBoxButtons.OK);
+                    XtraMessageBox.Show(
+                        "Chỉnh sửa thông tin của lớp thất bại. Mã lỗi: " + result.ToString(),
+                        "Lỗi",
+                        MessageBoxButtons.OK
+                    );
                 }
             }
             Lay_Danh_Sach_Lop_Theo_Khoa();
@@ -207,6 +243,48 @@ namespace DoAn_QLSV
         private void btnReload_Click(object sender, EventArgs e)
         {
             Lay_Danh_Sach_Lop_Theo_Khoa();
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            object[] selectedRow = Program.GetSelectedRowGridControl(gridLop);
+            string maLop = selectedRow[0].ToString();
+            SqlCommand cmd = new SqlCommand();
+            try
+            {
+                ParameterStoredProcedure[] parameters = new ParameterStoredProcedure[]
+                {
+                    new ParameterStoredProcedure() { ParamName = "@MALOP", ParamValue = maLop }
+                };
+                OutputParameterStoredProcedure[] outputParameters =
+                    new OutputParameterStoredProcedure[]
+                    {
+                        new OutputParameterStoredProcedure()
+                        {
+                            Name = "@KETQUA",
+                            Type = SqlDbType.NVarChar,
+                            Length = 100
+                        }
+                    };
+                cmd = Program.GetResultFromStoredProcedured(
+                    cmd,
+                    "SP_XOA_LOP",
+                    Program.connstr,
+                    parameters,
+                    outputParameters
+                );
+                string ketqua = Convert.ToString(cmd.Parameters[outputParameters[0].Name].Value);
+                XtraMessageBox.Show(ketqua, "Kết Quả", MessageBoxButtons.OK);
+                Lay_Danh_Sach_Lop_Theo_Khoa();
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK);
+            }
+            finally
+            {
+                cmd.Dispose();
+            }
         }
     }
 }

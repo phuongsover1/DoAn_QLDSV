@@ -8,7 +8,6 @@ namespace DoAn_QLSV.Model
 {
     public class Lop
     {
-
         public String MaLop { get; set; }
         public String TenLop { get; set; }
         public String KhoaHoc { get; set; }

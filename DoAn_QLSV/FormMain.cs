@@ -50,13 +50,19 @@ namespace DoAn_QLSV
             FormDangNhap formDangNhap = new FormDangNhap();
             formDangNhap.MdiParent = this;
             formDangNhap.Show();
-
         }
 
-        private void btnTaoTaiKhoan_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void btnTaoTaiKhoan_ItemClick(
+            object sender,
+            DevExpress.XtraBars.ItemClickEventArgs e
+        )
         {
             XtraForm form = CheckExists(typeof(FormTaoTaiKhoan));
-            if (form != null) { form.Activate(); return; }
+            if (form != null)
+            {
+                form.Activate();
+                return;
+            }
             FormTaoTaiKhoan formTaoTaiKhoan = new FormTaoTaiKhoan();
             formTaoTaiKhoan.MdiParent = this;
             formTaoTaiKhoan.Show();
@@ -65,7 +71,11 @@ namespace DoAn_QLSV
         private void btnLop_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             XtraForm form = CheckExists(typeof(FormQuanLyLop));
-            if (form != null) { form.Activate(); return; }
+            if (form != null)
+            {
+                form.Activate();
+                return;
+            }
             FormQuanLyLop formQuanLyLop = new FormQuanLyLop();
             formQuanLyLop.MdiParent = this;
             formQuanLyLop.Show();
@@ -89,9 +99,6 @@ namespace DoAn_QLSV
             }
         }
 
-        private void ribbonControl1_Click(object sender, EventArgs e)
-        {
-
-        }
+        private void ribbonControl1_Click(object sender, EventArgs e) { }
     }
 }

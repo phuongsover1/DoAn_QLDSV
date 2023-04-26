@@ -31,6 +31,7 @@
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.btnXoa = new DevExpress.XtraEditors.SimpleButton();
             this.btnSua = new DevExpress.XtraEditors.SimpleButton();
             this.cmbKhoa = new System.Windows.Forms.ComboBox();
             this.btnReload = new DevExpress.XtraEditors.SimpleButton();
@@ -50,7 +51,6 @@
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.txtMaLop = new DevExpress.XtraEditors.TextEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.btnXoa = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
@@ -98,6 +98,15 @@
             this.groupControl1.Size = new System.Drawing.Size(1134, 123);
             this.groupControl1.TabIndex = 4;
             this.groupControl1.Text = "Điều Khiển";
+            // 
+            // btnXoa
+            // 
+            this.btnXoa.Location = new System.Drawing.Point(196, 33);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(75, 23);
+            this.btnXoa.TabIndex = 7;
+            this.btnXoa.Text = "Xóa";
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnSua
             // 
@@ -268,14 +277,6 @@
             this.labelControl2.Size = new System.Drawing.Size(38, 13);
             this.labelControl2.TabIndex = 0;
             this.labelControl2.Text = "Mã Lớp:";
-            // 
-            // btnXoa
-            // 
-            this.btnXoa.Location = new System.Drawing.Point(196, 33);
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(75, 23);
-            this.btnXoa.TabIndex = 7;
-            this.btnXoa.Text = "Xóa";
             // 
             // FormQuanLyLop
             // 
