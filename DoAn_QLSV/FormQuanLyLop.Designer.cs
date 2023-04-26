@@ -35,12 +35,12 @@
             this.cmbKhoa = new System.Windows.Forms.ComboBox();
             this.btnReload = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.btnGhi = new DevExpress.XtraEditors.SimpleButton();
             this.btnThem = new DevExpress.XtraEditors.SimpleButton();
             this.gridLop = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.btnEdit = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.groupControlThongTinLop = new DevExpress.XtraEditors.GroupControl();
+            this.btnHuy = new DevExpress.XtraEditors.SimpleButton();
             this.btnLuu = new DevExpress.XtraEditors.SimpleButton();
             this.txtMaKhoa = new DevExpress.XtraEditors.TextEdit();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
@@ -50,6 +50,7 @@
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.txtMaLop = new DevExpress.XtraEditors.TextEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.btnXoa = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
@@ -84,11 +85,11 @@
             // 
             // groupControl1
             // 
+            this.groupControl1.Controls.Add(this.btnXoa);
             this.groupControl1.Controls.Add(this.btnSua);
             this.groupControl1.Controls.Add(this.cmbKhoa);
             this.groupControl1.Controls.Add(this.btnReload);
             this.groupControl1.Controls.Add(this.labelControl1);
-            this.groupControl1.Controls.Add(this.btnGhi);
             this.groupControl1.Controls.Add(this.btnThem);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
@@ -118,11 +119,12 @@
             // 
             // btnReload
             // 
-            this.btnReload.Location = new System.Drawing.Point(196, 33);
+            this.btnReload.Location = new System.Drawing.Point(286, 33);
             this.btnReload.Name = "btnReload";
             this.btnReload.Size = new System.Drawing.Size(75, 23);
             this.btnReload.TabIndex = 4;
             this.btnReload.Text = "Reload";
+            this.btnReload.Click += new System.EventHandler(this.btnReload_Click);
             // 
             // labelControl1
             // 
@@ -131,14 +133,6 @@
             this.labelControl1.Size = new System.Drawing.Size(28, 13);
             this.labelControl1.TabIndex = 3;
             this.labelControl1.Text = "Khoa:";
-            // 
-            // btnGhi
-            // 
-            this.btnGhi.Location = new System.Drawing.Point(277, 33);
-            this.btnGhi.Name = "btnGhi";
-            this.btnGhi.Size = new System.Drawing.Size(75, 23);
-            this.btnGhi.TabIndex = 1;
-            this.btnGhi.Text = "Ghi";
             // 
             // btnThem
             // 
@@ -177,6 +171,7 @@
             // 
             // groupControlThongTinLop
             // 
+            this.groupControlThongTinLop.Controls.Add(this.btnHuy);
             this.groupControlThongTinLop.Controls.Add(this.btnLuu);
             this.groupControlThongTinLop.Controls.Add(this.txtMaKhoa);
             this.groupControlThongTinLop.Controls.Add(this.labelControl5);
@@ -194,13 +189,23 @@
             this.groupControlThongTinLop.Text = "Thông Tin Của Lớp";
             this.groupControlThongTinLop.Visible = false;
             // 
+            // btnHuy
+            // 
+            this.btnHuy.Location = new System.Drawing.Point(484, 151);
+            this.btnHuy.Name = "btnHuy";
+            this.btnHuy.Size = new System.Drawing.Size(75, 23);
+            this.btnHuy.TabIndex = 8;
+            this.btnHuy.Text = "Hủy";
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
+            // 
             // btnLuu
             // 
-            this.btnLuu.Location = new System.Drawing.Point(484, 135);
+            this.btnLuu.Location = new System.Drawing.Point(391, 151);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(75, 23);
             this.btnLuu.TabIndex = 6;
             this.btnLuu.Text = "Lưu";
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // txtMaKhoa
             // 
@@ -254,6 +259,7 @@
             this.txtMaLop.Name = "txtMaLop";
             this.txtMaLop.Size = new System.Drawing.Size(179, 20);
             this.txtMaLop.TabIndex = 1;
+            this.txtMaLop.Leave += new System.EventHandler(this.txtMaLop_Leave);
             // 
             // labelControl2
             // 
@@ -262,6 +268,14 @@
             this.labelControl2.Size = new System.Drawing.Size(38, 13);
             this.labelControl2.TabIndex = 0;
             this.labelControl2.Text = "Mã Lớp:";
+            // 
+            // btnXoa
+            // 
+            this.btnXoa.Location = new System.Drawing.Point(196, 33);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(75, 23);
+            this.btnXoa.TabIndex = 7;
+            this.btnXoa.Text = "Xóa";
             // 
             // FormQuanLyLop
             // 
@@ -300,7 +314,6 @@
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
         private DevExpress.XtraLayout.LayoutControlGroup Root;
         private DevExpress.XtraEditors.GroupControl groupControl1;
-        private DevExpress.XtraEditors.SimpleButton btnGhi;
         private DevExpress.XtraEditors.SimpleButton btnThem;
         private DevExpress.XtraGrid.GridControl gridLop;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
@@ -319,5 +332,7 @@
         private DevExpress.XtraEditors.SimpleButton btnLuu;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnEdit;
         private DevExpress.XtraEditors.SimpleButton btnSua;
+        private DevExpress.XtraEditors.SimpleButton btnHuy;
+        private DevExpress.XtraEditors.SimpleButton btnXoa;
     }
 }

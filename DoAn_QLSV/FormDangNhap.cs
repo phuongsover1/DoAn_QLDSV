@@ -59,6 +59,7 @@ namespace DoAn_QLSV
             HienThiMenu();
             this.Hide();
             this.Parent.Show();
+            Program.connstr = Program.createConnectionString(Program.servername, Program.mlogin, Program.password);
         }
 
         private void FormDangNhap_Load(object sender, EventArgs e)
