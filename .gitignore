@@ -361,3 +361,17 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/DoAn_QLSV/App.config
+/DoAn_QLSV/GIANGVIEN.cs
+/DoAn_QLSV/Model1.Context.cs
+/DoAn_QLSV/Model1.Context.tt
+/DoAn_QLSV/Model1.cs
+/DoAn_QLSV/Model1.Designer.cs
+/DoAn_QLSV/Model1.edmx
+/DoAn_QLSV/Model1.edmx.diagram
+/DoAn_QLSV/Model1.tt
+/DoAn_QLSV/MONHOC.cs
+/DoAn_QLSV/Server1.Context.tt
+/DoAn_QLSV/Server1.Designer.cs
+/DoAn_QLSV/Server1.edmx
+/DoAn_QLSV/Server1.edmx.diagram
