@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
@@ -14,6 +15,7 @@ namespace DoAn_QLSV
 {
     public partial class FormDangNhap : DevExpress.XtraEditors.XtraForm
     {
+        private Configuration config;
         private SqlConnection conn_publisher = new SqlConnection();
 
         public FormDangNhap()
@@ -144,6 +146,39 @@ namespace DoAn_QLSV
             Program.formMain.ribGroupLogout.Visible = true;
             Program.formMain.ribDanhMuc.Visible = true;
             Program.formMain.ribGroupDangNhap.Visible = false;
+            ChangeUserNameAndPasswordConnectionString();
+        }
+
+        private void ChangeUserNameAndPasswordConnectionString()
+        {
+            config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+
+            if (Program.conn != null && Program.conn.State != ConnectionState.Closed)
+            {
+                Program.conn.Close();
+            }
+            using (Program.conn = new SqlConnection())
+            {
+                string connectionString = ConfigurationManager.ConnectionStrings[
+                    "QLDSV_TCEntities_SV1"
+                ].ConnectionString;
+                connectionString = connectionString.Replace("HTKN", Program.mlogin);
+                connectionString = connectionString.Replace("1234", Program.password);
+
+                /// demo
+                config.ConnectionStrings.ConnectionStrings[
+                    "QLDSV_TCEntities_SV1"
+                ].ConnectionString = connectionString;
+                config.Save(ConfigurationSaveMode.Modified);
+
+                XtraMessageBox.Show(
+                    ConfigurationManager.ConnectionStrings[
+                        "QLDSV_TCEntities_SV1"
+                    ].ConnectionString.ToString(),
+                    "Thong Bao",
+                    MessageBoxButtons.OK
+                );
+            }
         }
     }
 }

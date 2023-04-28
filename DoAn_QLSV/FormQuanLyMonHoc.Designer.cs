@@ -28,13 +28,19 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			this.components = new System.ComponentModel.Container();
 			this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
 			this.btnXoa = new DevExpress.XtraEditors.SimpleButton();
 			this.btnSua = new DevExpress.XtraEditors.SimpleButton();
 			this.btnReload = new DevExpress.XtraEditors.SimpleButton();
 			this.btnThem = new DevExpress.XtraEditors.SimpleButton();
 			this.gridMonHoc = new DevExpress.XtraGrid.GridControl();
+			this.mONHOCBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+			this.colMAMH = new DevExpress.XtraGrid.Columns.GridColumn();
+			this.colTENMH = new DevExpress.XtraGrid.Columns.GridColumn();
+			this.colSOTIET_LT = new DevExpress.XtraGrid.Columns.GridColumn();
+			this.colSOTIET_TH = new DevExpress.XtraGrid.Columns.GridColumn();
 			this.btnEdit = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
 			this.groupControlThongTinMonHoc = new DevExpress.XtraEditors.GroupControl();
 			this.btnHuy = new DevExpress.XtraEditors.SimpleButton();
@@ -50,6 +56,7 @@
 			((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
 			this.groupControl1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.gridMonHoc)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.mONHOCBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.btnEdit)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.groupControlThongTinMonHoc)).BeginInit();
@@ -108,6 +115,7 @@
 			// 
 			// gridMonHoc
 			// 
+			this.gridMonHoc.DataSource = this.mONHOCBindingSource;
 			this.gridMonHoc.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.gridMonHoc.Location = new System.Drawing.Point(0, 76);
 			this.gridMonHoc.MainView = this.gridView1;
@@ -119,11 +127,48 @@
 			this.gridMonHoc.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
 			// 
+			// mONHOCBindingSource
+			// 
+			this.mONHOCBindingSource.DataSource = typeof(DoAn_QLSV.MONHOC);
+			// 
 			// gridView1
 			// 
+			this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colMAMH,
+            this.colTENMH,
+            this.colSOTIET_LT,
+            this.colSOTIET_TH});
 			this.gridView1.GridControl = this.gridMonHoc;
 			this.gridView1.Name = "gridView1";
 			this.gridView1.OptionsBehavior.ReadOnly = true;
+			// 
+			// colMAMH
+			// 
+			this.colMAMH.FieldName = "MAMH";
+			this.colMAMH.Name = "colMAMH";
+			this.colMAMH.Visible = true;
+			this.colMAMH.VisibleIndex = 0;
+			// 
+			// colTENMH
+			// 
+			this.colTENMH.FieldName = "TENMH";
+			this.colTENMH.Name = "colTENMH";
+			this.colTENMH.Visible = true;
+			this.colTENMH.VisibleIndex = 1;
+			// 
+			// colSOTIET_LT
+			// 
+			this.colSOTIET_LT.FieldName = "SOTIET_LT";
+			this.colSOTIET_LT.Name = "colSOTIET_LT";
+			this.colSOTIET_LT.Visible = true;
+			this.colSOTIET_LT.VisibleIndex = 2;
+			// 
+			// colSOTIET_TH
+			// 
+			this.colSOTIET_TH.FieldName = "SOTIET_TH";
+			this.colSOTIET_TH.Name = "colSOTIET_TH";
+			this.colSOTIET_TH.Visible = true;
+			this.colSOTIET_TH.VisibleIndex = 3;
 			// 
 			// btnEdit
 			// 
@@ -243,9 +288,11 @@
 			this.Name = "FormQuanLyMonHoc";
 			this.Text = "Quản Lý Môn Học";
 			this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+			this.Load += new System.EventHandler(this.FormQuanLyMonHoc_Load);
 			((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
 			this.groupControl1.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.gridMonHoc)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.mONHOCBindingSource)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.btnEdit)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.groupControlThongTinMonHoc)).EndInit();
@@ -284,5 +331,10 @@
 		private DevExpress.XtraEditors.LabelControl labelControl3;
 		private DevExpress.XtraEditors.TextEdit txtMaLop;
 		private DevExpress.XtraEditors.LabelControl labelControl2;
+		private System.Windows.Forms.BindingSource mONHOCBindingSource;
+		private DevExpress.XtraGrid.Columns.GridColumn colMAMH;
+		private DevExpress.XtraGrid.Columns.GridColumn colTENMH;
+		private DevExpress.XtraGrid.Columns.GridColumn colSOTIET_LT;
+		private DevExpress.XtraGrid.Columns.GridColumn colSOTIET_TH;
 	}
 }

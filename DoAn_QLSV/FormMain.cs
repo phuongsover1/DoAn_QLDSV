@@ -100,5 +100,19 @@ namespace DoAn_QLSV
         }
 
         private void ribbonControl1_Click(object sender, EventArgs e) { }
+
+        private void btnMonHoc_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            XtraForm form = CheckExists(typeof(FormQuanLyMonHoc));
+            if (form != null)
+            {
+                form.Activate();
+                return;
+            }
+
+            form = new FormQuanLyMonHoc();
+            form.MdiParent = this;
+            form.Show();
+        }
     }
 }

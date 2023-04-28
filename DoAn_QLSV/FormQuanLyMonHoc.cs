@@ -17,5 +17,11 @@ namespace DoAn_QLSV
         {
             InitializeComponent();
         }
+
+        private void FormQuanLyMonHoc_Load(object sender, EventArgs e)
+        {
+            QLDSV_TCEntities_SV1 db = new QLDSV_TCEntities_SV1();
+            mONHOCBindingSource.DataSource = db.MONHOCs.ToList();
+        }
     }
 }

@@ -6,6 +6,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 using DoAn_QLSV.Utils;
+using System.Configuration;
 
 namespace DoAn_QLSV
 {
@@ -32,6 +33,8 @@ namespace DoAn_QLSV
         public static String mGroup;
         public static String mHoten;
         public static int mKhoa = 0;
+        public static QLDSV_TCEntities_SV1 db1;
+        public static QLDSV_TCEntities_SV2 db2;
 
         public static BindingSource bds_dspm = new BindingSource(); // giu binding source phan manh khi dang nhap
         public static FormMain formMain;
