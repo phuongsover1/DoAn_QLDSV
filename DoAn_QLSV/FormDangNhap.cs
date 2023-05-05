@@ -73,6 +73,9 @@ namespace DoAn_QLSV
             Program.myReader.Close();
             Program.conn.Close();
             HienThiMenu();
+            ChangeUserNameAndPasswordConnectionString(Program.mKhoa, Program.mGroup);
+            TaoDBEntities(Program.mKhoa, Program.mGroup);
+
             this.Hide();
             this.Parent.Show();
             Program.connstr = Program.createConnectionString(
@@ -146,38 +149,83 @@ namespace DoAn_QLSV
             Program.formMain.ribGroupLogout.Visible = true;
             Program.formMain.ribDanhMuc.Visible = true;
             Program.formMain.ribGroupDangNhap.Visible = false;
-            ChangeUserNameAndPasswordConnectionString();
         }
 
-        private void ChangeUserNameAndPasswordConnectionString()
+        private void ChangeUserNameAndPasswordConnectionString(int mKhoa, string mGroup)
         {
             config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+            string connectionString = "";
 
-            if (Program.conn != null && Program.conn.State != ConnectionState.Closed)
+            if (mKhoa == 0)
             {
-                Program.conn.Close();
-            }
-            using (Program.conn = new SqlConnection())
-            {
-                string connectionString = ConfigurationManager.ConnectionStrings[
-                    "QLDSV_TCEntities_SV1"
-                ].ConnectionString;
-                connectionString = connectionString.Replace("HTKN", Program.mlogin);
-                connectionString = connectionString.Replace("1234", Program.password);
-
-                /// demo
-                config.ConnectionStrings.ConnectionStrings[
-                    "QLDSV_TCEntities_SV1"
-                ].ConnectionString = connectionString;
-                config.Save(ConfigurationSaveMode.Modified);
-
-                XtraMessageBox.Show(
-                    ConfigurationManager.ConnectionStrings[
+                if (
+                    mGroup == GroupEnums.Quyen.KHOA.ToString()
+                    || mGroup == GroupEnums.Quyen.PGV.ToString()
+                )
+                {
+                    connectionString = ConfigurationManager.ConnectionStrings[
                         "QLDSV_TCEntities_SV1"
-                    ].ConnectionString.ToString(),
-                    "Thong Bao",
-                    MessageBoxButtons.OK
-                );
+                    ].ConnectionString;
+                    connectionString = connectionString.Replace("HTKN", Program.mlogin);
+                    connectionString = connectionString.Replace("1234", Program.password);
+                    /// thay đổi lại trong app config
+                    config.ConnectionStrings.ConnectionStrings[
+                        "QLDSV_TCEntities_SV1"
+                    ].ConnectionString = connectionString;
+                }
+            }
+            else if (mKhoa == 1)
+            {
+                if (
+                    mGroup == GroupEnums.Quyen.KHOA.ToString()
+                    || mGroup == GroupEnums.Quyen.PGV.ToString()
+                )
+                {
+                    connectionString = ConfigurationManager.ConnectionStrings[
+                        "QLDSV_TCEntities_SV2"
+                    ].ConnectionString;
+                    connectionString = connectionString.Replace("HTKN", Program.mlogin);
+                    connectionString = connectionString.Replace("1234", Program.password);
+                    /// thay đổi lại trong app config
+                    config.ConnectionStrings.ConnectionStrings[
+                        "QLDSV_TCEntities_SV2"
+                    ].ConnectionString = connectionString;
+                }
+            }
+
+            // để ở ngoài cùng
+            config.Save(ConfigurationSaveMode.Modified);
+
+            XtraMessageBox.Show(
+                ConfigurationManager.ConnectionStrings[
+                    "QLDSV_TCEntities_SV2"
+                ].ConnectionString.ToString(),
+                "Thong Bao",
+                MessageBoxButtons.OK
+            );
+        }
+
+        private void TaoDBEntities(int mKhoa, string mGroup)
+        {
+            if (mKhoa == 0)
+            {
+                if (
+                    mGroup == GroupEnums.Quyen.KHOA.ToString()
+                    || mGroup == GroupEnums.Quyen.PGV.ToString()
+                )
+                {
+                    Program.db1 = new QLDSV_TCEntities_SV1();
+                }
+            }
+            else if (mKhoa == 1)
+            {
+                if (
+                    mGroup == GroupEnums.Quyen.KHOA.ToString()
+                    || mGroup == GroupEnums.Quyen.PGV.ToString()
+                )
+                {
+                    Program.db2 = new QLDSV_TCEntities_SV2();
+                }
             }
         }
     }

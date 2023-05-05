@@ -29,8 +29,13 @@
 		private void InitializeComponent()
 		{
 			this.components = new System.ComponentModel.Container();
+			DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormQuanLyMonHoc));
+			DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+			DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+			DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+			DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
 			this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-			this.btnXoa = new DevExpress.XtraEditors.SimpleButton();
 			this.btnSua = new DevExpress.XtraEditors.SimpleButton();
 			this.btnReload = new DevExpress.XtraEditors.SimpleButton();
 			this.btnThem = new DevExpress.XtraEditors.SimpleButton();
@@ -41,35 +46,35 @@
 			this.colTENMH = new DevExpress.XtraGrid.Columns.GridColumn();
 			this.colSOTIET_LT = new DevExpress.XtraGrid.Columns.GridColumn();
 			this.colSOTIET_TH = new DevExpress.XtraGrid.Columns.GridColumn();
-			this.btnEdit = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+			this.colDelete = new DevExpress.XtraGrid.Columns.GridColumn();
+			this.btnDelete = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
 			this.groupControlThongTinMonHoc = new DevExpress.XtraEditors.GroupControl();
 			this.btnHuy = new DevExpress.XtraEditors.SimpleButton();
 			this.btnLuu = new DevExpress.XtraEditors.SimpleButton();
-			this.txtMaKhoa = new DevExpress.XtraEditors.TextEdit();
+			this.txtTietTH = new DevExpress.XtraEditors.TextEdit();
 			this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
-			this.txtKhoaHoc = new DevExpress.XtraEditors.TextEdit();
+			this.txtTietLT = new DevExpress.XtraEditors.TextEdit();
 			this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
-			this.txtTenLop = new DevExpress.XtraEditors.TextEdit();
+			this.txtTenMH = new DevExpress.XtraEditors.TextEdit();
 			this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-			this.txtMaLop = new DevExpress.XtraEditors.TextEdit();
+			this.txtMaMH = new DevExpress.XtraEditors.TextEdit();
 			this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
 			((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
 			this.groupControl1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.gridMonHoc)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.mONHOCBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.btnEdit)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.btnDelete)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.groupControlThongTinMonHoc)).BeginInit();
 			this.groupControlThongTinMonHoc.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.txtMaKhoa.Properties)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.txtKhoaHoc.Properties)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.txtTenLop.Properties)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.txtMaLop.Properties)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.txtTietTH.Properties)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.txtTietLT.Properties)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.txtTenMH.Properties)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.txtMaMH.Properties)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// groupControl1
 			// 
-			this.groupControl1.Controls.Add(this.btnXoa);
 			this.groupControl1.Controls.Add(this.btnSua);
 			this.groupControl1.Controls.Add(this.btnReload);
 			this.groupControl1.Controls.Add(this.btnThem);
@@ -81,14 +86,6 @@
 			this.groupControl1.TabIndex = 5;
 			this.groupControl1.Text = "Điều Khiển";
 			// 
-			// btnXoa
-			// 
-			this.btnXoa.Location = new System.Drawing.Point(196, 33);
-			this.btnXoa.Name = "btnXoa";
-			this.btnXoa.Size = new System.Drawing.Size(75, 23);
-			this.btnXoa.TabIndex = 7;
-			this.btnXoa.Text = "Xóa";
-			// 
 			// btnSua
 			// 
 			this.btnSua.Location = new System.Drawing.Point(103, 33);
@@ -96,10 +93,11 @@
 			this.btnSua.Size = new System.Drawing.Size(75, 23);
 			this.btnSua.TabIndex = 6;
 			this.btnSua.Text = "Sửa";
+			this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
 			// 
 			// btnReload
 			// 
-			this.btnReload.Location = new System.Drawing.Point(286, 33);
+			this.btnReload.Location = new System.Drawing.Point(198, 33);
 			this.btnReload.Name = "btnReload";
 			this.btnReload.Size = new System.Drawing.Size(75, 23);
 			this.btnReload.TabIndex = 4;
@@ -112,16 +110,16 @@
 			this.btnThem.Size = new System.Drawing.Size(75, 23);
 			this.btnThem.TabIndex = 0;
 			this.btnThem.Text = "Thêm";
+			this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
 			// 
 			// gridMonHoc
 			// 
-			this.gridMonHoc.DataSource = this.mONHOCBindingSource;
 			this.gridMonHoc.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.gridMonHoc.Location = new System.Drawing.Point(0, 76);
 			this.gridMonHoc.MainView = this.gridView1;
 			this.gridMonHoc.Name = "gridMonHoc";
 			this.gridMonHoc.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.btnEdit});
+            this.btnDelete});
 			this.gridMonHoc.Size = new System.Drawing.Size(1095, 424);
 			this.gridMonHoc.TabIndex = 6;
 			this.gridMonHoc.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -137,57 +135,79 @@
             this.colMAMH,
             this.colTENMH,
             this.colSOTIET_LT,
-            this.colSOTIET_TH});
+            this.colSOTIET_TH,
+            this.colDelete});
 			this.gridView1.GridControl = this.gridMonHoc;
 			this.gridView1.Name = "gridView1";
-			this.gridView1.OptionsBehavior.ReadOnly = true;
+			this.gridView1.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.False;
 			// 
 			// colMAMH
 			// 
 			this.colMAMH.FieldName = "MAMH";
 			this.colMAMH.Name = "colMAMH";
+			this.colMAMH.OptionsColumn.ReadOnly = true;
 			this.colMAMH.Visible = true;
 			this.colMAMH.VisibleIndex = 0;
+			this.colMAMH.Width = 214;
 			// 
 			// colTENMH
 			// 
 			this.colTENMH.FieldName = "TENMH";
 			this.colTENMH.Name = "colTENMH";
+			this.colTENMH.OptionsColumn.ReadOnly = true;
 			this.colTENMH.Visible = true;
 			this.colTENMH.VisibleIndex = 1;
+			this.colTENMH.Width = 214;
 			// 
 			// colSOTIET_LT
 			// 
 			this.colSOTIET_LT.FieldName = "SOTIET_LT";
 			this.colSOTIET_LT.Name = "colSOTIET_LT";
+			this.colSOTIET_LT.OptionsColumn.ReadOnly = true;
 			this.colSOTIET_LT.Visible = true;
 			this.colSOTIET_LT.VisibleIndex = 2;
+			this.colSOTIET_LT.Width = 214;
 			// 
 			// colSOTIET_TH
 			// 
 			this.colSOTIET_TH.FieldName = "SOTIET_TH";
 			this.colSOTIET_TH.Name = "colSOTIET_TH";
+			this.colSOTIET_TH.OptionsColumn.ReadOnly = true;
 			this.colSOTIET_TH.Visible = true;
 			this.colSOTIET_TH.VisibleIndex = 3;
+			this.colSOTIET_TH.Width = 338;
 			// 
-			// btnEdit
+			// colDelete
 			// 
-			this.btnEdit.AutoHeight = false;
-			this.btnEdit.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton()});
-			this.btnEdit.Name = "btnEdit";
+			this.colDelete.Caption = "Xóa";
+			this.colDelete.ColumnEdit = this.btnDelete;
+			this.colDelete.MinWidth = 10;
+			this.colDelete.Name = "colDelete";
+			this.colDelete.Visible = true;
+			this.colDelete.VisibleIndex = 4;
+			this.colDelete.Width = 90;
+			// 
+			// btnDelete
+			// 
+			this.btnDelete.AutoHeight = false;
+			editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+			this.btnDelete.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+			this.btnDelete.Name = "btnDelete";
+			this.btnDelete.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+			this.btnDelete.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnDelete_ButtonClick);
 			// 
 			// groupControlThongTinMonHoc
 			// 
 			this.groupControlThongTinMonHoc.Controls.Add(this.btnHuy);
 			this.groupControlThongTinMonHoc.Controls.Add(this.btnLuu);
-			this.groupControlThongTinMonHoc.Controls.Add(this.txtMaKhoa);
+			this.groupControlThongTinMonHoc.Controls.Add(this.txtTietTH);
 			this.groupControlThongTinMonHoc.Controls.Add(this.labelControl5);
-			this.groupControlThongTinMonHoc.Controls.Add(this.txtKhoaHoc);
+			this.groupControlThongTinMonHoc.Controls.Add(this.txtTietLT);
 			this.groupControlThongTinMonHoc.Controls.Add(this.labelControl4);
-			this.groupControlThongTinMonHoc.Controls.Add(this.txtTenLop);
+			this.groupControlThongTinMonHoc.Controls.Add(this.txtTenMH);
 			this.groupControlThongTinMonHoc.Controls.Add(this.labelControl3);
-			this.groupControlThongTinMonHoc.Controls.Add(this.txtMaLop);
+			this.groupControlThongTinMonHoc.Controls.Add(this.txtMaMH);
 			this.groupControlThongTinMonHoc.Controls.Add(this.labelControl2);
 			this.groupControlThongTinMonHoc.Dock = System.Windows.Forms.DockStyle.Bottom;
 			this.groupControlThongTinMonHoc.Location = new System.Drawing.Point(0, 284);
@@ -199,29 +219,31 @@
 			// 
 			// btnHuy
 			// 
-			this.btnHuy.Location = new System.Drawing.Point(484, 151);
+			this.btnHuy.Location = new System.Drawing.Point(526, 152);
 			this.btnHuy.Name = "btnHuy";
 			this.btnHuy.Size = new System.Drawing.Size(75, 23);
-			this.btnHuy.TabIndex = 8;
+			this.btnHuy.TabIndex = 6;
 			this.btnHuy.Text = "Hủy";
+			this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
 			// 
 			// btnLuu
 			// 
-			this.btnLuu.Location = new System.Drawing.Point(391, 151);
+			this.btnLuu.Location = new System.Drawing.Point(433, 152);
 			this.btnLuu.Name = "btnLuu";
 			this.btnLuu.Size = new System.Drawing.Size(75, 23);
-			this.btnLuu.TabIndex = 6;
+			this.btnLuu.TabIndex = 5;
 			this.btnLuu.Text = "Lưu";
+			this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
 			// 
-			// txtMaKhoa
+			// txtTietTH
 			// 
-			this.txtMaKhoa.Location = new System.Drawing.Point(423, 100);
-			this.txtMaKhoa.Name = "txtMaKhoa";
-			this.txtMaKhoa.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-			this.txtMaKhoa.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-			this.txtMaKhoa.Properties.ReadOnly = true;
-			this.txtMaKhoa.Size = new System.Drawing.Size(179, 20);
-			this.txtMaKhoa.TabIndex = 7;
+			this.txtTietTH.Location = new System.Drawing.Point(423, 100);
+			this.txtTietTH.Name = "txtTietTH";
+			this.txtTietTH.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+			this.txtTietTH.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+			this.txtTietTH.Size = new System.Drawing.Size(179, 20);
+			this.txtTietTH.TabIndex = 4;
+			this.txtTietTH.Leave += new System.EventHandler(this.txtTietTH_Leave);
 			// 
 			// labelControl5
 			// 
@@ -231,13 +253,14 @@
 			this.labelControl5.TabIndex = 6;
 			this.labelControl5.Text = "Số Tiết Thực Hành:";
 			// 
-			// txtKhoaHoc
+			// txtTietLT
 			// 
-			this.txtKhoaHoc.Location = new System.Drawing.Point(423, 56);
-			this.txtKhoaHoc.Name = "txtKhoaHoc";
-			this.txtKhoaHoc.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-			this.txtKhoaHoc.Size = new System.Drawing.Size(179, 20);
-			this.txtKhoaHoc.TabIndex = 5;
+			this.txtTietLT.Location = new System.Drawing.Point(423, 56);
+			this.txtTietLT.Name = "txtTietLT";
+			this.txtTietLT.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+			this.txtTietLT.Size = new System.Drawing.Size(179, 20);
+			this.txtTietLT.TabIndex = 3;
+			this.txtTietLT.Leave += new System.EventHandler(this.txtTietLT_Leave);
 			// 
 			// labelControl4
 			// 
@@ -247,12 +270,12 @@
 			this.labelControl4.TabIndex = 4;
 			this.labelControl4.Text = "Số Tiết Lý Thuyết:";
 			// 
-			// txtTenLop
+			// txtTenMH
 			// 
-			this.txtTenLop.Location = new System.Drawing.Point(116, 100);
-			this.txtTenLop.Name = "txtTenLop";
-			this.txtTenLop.Size = new System.Drawing.Size(179, 20);
-			this.txtTenLop.TabIndex = 3;
+			this.txtTenMH.Location = new System.Drawing.Point(116, 100);
+			this.txtTenMH.Name = "txtTenMH";
+			this.txtTenMH.Size = new System.Drawing.Size(179, 20);
+			this.txtTenMH.TabIndex = 2;
 			// 
 			// labelControl3
 			// 
@@ -262,12 +285,13 @@
 			this.labelControl3.TabIndex = 2;
 			this.labelControl3.Text = "Tên Môn Học:";
 			// 
-			// txtMaLop
+			// txtMaMH
 			// 
-			this.txtMaLop.Location = new System.Drawing.Point(116, 56);
-			this.txtMaLop.Name = "txtMaLop";
-			this.txtMaLop.Size = new System.Drawing.Size(179, 20);
-			this.txtMaLop.TabIndex = 1;
+			this.txtMaMH.Location = new System.Drawing.Point(116, 56);
+			this.txtMaMH.Name = "txtMaMH";
+			this.txtMaMH.Size = new System.Drawing.Size(179, 20);
+			this.txtMaMH.TabIndex = 1;
+			this.txtMaMH.Leave += new System.EventHandler(this.txtMaMH_Leave);
 			// 
 			// labelControl2
 			// 
@@ -294,14 +318,14 @@
 			((System.ComponentModel.ISupportInitialize)(this.gridMonHoc)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.mONHOCBindingSource)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.btnEdit)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.btnDelete)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.groupControlThongTinMonHoc)).EndInit();
 			this.groupControlThongTinMonHoc.ResumeLayout(false);
 			this.groupControlThongTinMonHoc.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.txtMaKhoa.Properties)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.txtKhoaHoc.Properties)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.txtTenLop.Properties)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.txtMaLop.Properties)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.txtTietTH.Properties)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.txtTietLT.Properties)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.txtTenMH.Properties)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.txtMaMH.Properties)).EndInit();
 			this.ResumeLayout(false);
 
 		}
@@ -313,28 +337,28 @@
 		private DevExpress.XtraDataLayout.DataLayoutControl dataLayoutControl1;
 		private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
 		private DevExpress.XtraEditors.GroupControl groupControl1;
-		private DevExpress.XtraEditors.SimpleButton btnXoa;
 		private DevExpress.XtraEditors.SimpleButton btnSua;
 		private DevExpress.XtraEditors.SimpleButton btnReload;
 		private DevExpress.XtraEditors.SimpleButton btnThem;
 		private DevExpress.XtraGrid.GridControl gridMonHoc;
 		private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-		private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnEdit;
+		private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnDelete;
 		private DevExpress.XtraEditors.GroupControl groupControlThongTinMonHoc;
 		private DevExpress.XtraEditors.SimpleButton btnHuy;
 		private DevExpress.XtraEditors.SimpleButton btnLuu;
-		private DevExpress.XtraEditors.TextEdit txtMaKhoa;
+		private DevExpress.XtraEditors.TextEdit txtTietTH;
 		private DevExpress.XtraEditors.LabelControl labelControl5;
-		private DevExpress.XtraEditors.TextEdit txtKhoaHoc;
+		private DevExpress.XtraEditors.TextEdit txtTietLT;
 		private DevExpress.XtraEditors.LabelControl labelControl4;
-		private DevExpress.XtraEditors.TextEdit txtTenLop;
+		private DevExpress.XtraEditors.TextEdit txtTenMH;
 		private DevExpress.XtraEditors.LabelControl labelControl3;
-		private DevExpress.XtraEditors.TextEdit txtMaLop;
+		private DevExpress.XtraEditors.TextEdit txtMaMH;
 		private DevExpress.XtraEditors.LabelControl labelControl2;
 		private System.Windows.Forms.BindingSource mONHOCBindingSource;
 		private DevExpress.XtraGrid.Columns.GridColumn colMAMH;
 		private DevExpress.XtraGrid.Columns.GridColumn colTENMH;
 		private DevExpress.XtraGrid.Columns.GridColumn colSOTIET_LT;
 		private DevExpress.XtraGrid.Columns.GridColumn colSOTIET_TH;
+		private DevExpress.XtraGrid.Columns.GridColumn colDelete;
 	}
 }
