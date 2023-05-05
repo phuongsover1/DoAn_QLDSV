@@ -53,6 +53,38 @@ namespace DoAn_QLSV
 			if (result == DialogResult.Yes)
 			{
 				// chạy sp xóa môn
+				SqlCommand cmd = new SqlCommand();
+				ParameterStoredProcedure[] parameters = new ParameterStoredProcedure[]
+				{
+					new ParameterStoredProcedure() { ParamName = "@MAMH", ParamValue= monHoc.MAMH } };
+
+				OutputParameterStoredProcedure[] outputParameters = new OutputParameterStoredProcedure[]
+				{
+					new OutputParameterStoredProcedure() { Name = "@KETQUA", Type = SqlDbType.Bit }, new OutputParameterStoredProcedure() {Name = "@LOI", Type= SqlDbType.NVarChar, Length= 100}
+				};
+
+
+				try
+				{
+					cmd = Program.GetResultFromStoredProcedured(cmd, "SP_XOA_MON_HOC", Program.connstr, parameters, outputParameters);
+					bool ketqua = Convert.ToBoolean(cmd.Parameters[outputParameters[0].Name].Value);
+					string loi = Convert.ToString(cmd.Parameters[outputParameters[1].Name].Value);
+					if (ketqua)
+					{
+						XtraMessageBox.Show("Xóa môn học thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+						Lay_Danh_Sach_Mon_Hoc();
+					}
+					else XtraMessageBox.Show(loi, "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+				}
+				catch (Exception ex)
+				{
+					XtraMessageBox.Show(ex.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				}
+				finally
+				{
+					cmd.Dispose();
+				}
 			}
 		}
 
@@ -150,23 +182,20 @@ namespace DoAn_QLSV
 				return;
 			}
 			SqlCommand cmd = new SqlCommand();
-			ParameterStoredProcedure[] parameters = null;
-			OutputParameterStoredProcedure[] outputParameters = null;
-
-			parameters = new ParameterStoredProcedure[]
-					{
+			ParameterStoredProcedure[] parameters = new ParameterStoredProcedure[]
+		{
 						new ParameterStoredProcedure() {ParamName = "@MAMH", ParamValue = maMH },
 						new ParameterStoredProcedure() {ParamName = "@TENMONHOC", ParamValue = tenMH },
 						new ParameterStoredProcedure() {ParamName = "@SOTIET_LT", ParamValue = tietLT},
 						new ParameterStoredProcedure() {ParamName = "@SOTIET_TH", ParamValue = tietTH },
 
 
-					};
-			outputParameters = new OutputParameterStoredProcedure[]
-			{
+		};
+			OutputParameterStoredProcedure[] outputParameters = new OutputParameterStoredProcedure[]
+	{
 						new OutputParameterStoredProcedure() { Name = "@KETQUA", Type = SqlDbType.Bit },
 						new OutputParameterStoredProcedure() {Name = "@LOI", Type = SqlDbType.NVarChar, Length = 100}
-			};
+	};
 			try
 			{
 				string storedProcedureName = null;
