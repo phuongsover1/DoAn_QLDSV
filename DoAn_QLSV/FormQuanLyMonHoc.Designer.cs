@@ -40,7 +40,6 @@
 			this.btnReload = new DevExpress.XtraEditors.SimpleButton();
 			this.btnThem = new DevExpress.XtraEditors.SimpleButton();
 			this.gridMonHoc = new DevExpress.XtraGrid.GridControl();
-			this.mONHOCBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
 			this.colMAMH = new DevExpress.XtraGrid.Columns.GridColumn();
 			this.colTENMH = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -48,6 +47,7 @@
 			this.colSOTIET_TH = new DevExpress.XtraGrid.Columns.GridColumn();
 			this.colDelete = new DevExpress.XtraGrid.Columns.GridColumn();
 			this.btnDelete = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+			this.mONHOCBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.groupControlThongTinMonHoc = new DevExpress.XtraEditors.GroupControl();
 			this.btnHuy = new DevExpress.XtraEditors.SimpleButton();
 			this.btnLuu = new DevExpress.XtraEditors.SimpleButton();
@@ -62,9 +62,9 @@
 			((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
 			this.groupControl1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.gridMonHoc)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.mONHOCBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.btnDelete)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.mONHOCBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.groupControlThongTinMonHoc)).BeginInit();
 			this.groupControlThongTinMonHoc.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.txtTietTH.Properties)).BeginInit();
@@ -124,10 +124,6 @@
 			this.gridMonHoc.TabIndex = 6;
 			this.gridMonHoc.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
-			// 
-			// mONHOCBindingSource
-			// 
-			this.mONHOCBindingSource.DataSource = typeof(DoAn_QLSV.MONHOC);
 			// 
 			// gridView1
 			// 
@@ -196,6 +192,10 @@
 			this.btnDelete.Name = "btnDelete";
 			this.btnDelete.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
 			this.btnDelete.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnDelete_ButtonClick);
+			// 
+			// mONHOCBindingSource
+			// 
+			this.mONHOCBindingSource.DataSource = typeof(DoAn_QLSV.MONHOC);
 			// 
 			// groupControlThongTinMonHoc
 			// 
@@ -316,9 +316,9 @@
 			((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
 			this.groupControl1.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.gridMonHoc)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.mONHOCBindingSource)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.btnDelete)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.mONHOCBindingSource)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.groupControlThongTinMonHoc)).EndInit();
 			this.groupControlThongTinMonHoc.ResumeLayout(false);
 			this.groupControlThongTinMonHoc.PerformLayout();

@@ -29,9 +29,9 @@ namespace DoAn_QLSV
 
 		private void FormQuanLyLop_Load(object sender, EventArgs e)
 		{
-			if (KetNoi_CSDLGOC() == 0)
+			if (KetNoi_CSDLGOC(conn_publisher) == 0)
 				return;
-			LayDSPM("SELECT * FROM dbo.Get_Subscribes");
+			LayDSPM("SELECT * FROM dbo.Get_Subscribes", conn_publisher, cmbKhoa);
 			if (Program.mGroup != GroupEnums.Quyen.PGV.ToString())
 			{
 				cmbKhoa.Enabled = false;
@@ -40,7 +40,7 @@ namespace DoAn_QLSV
 			cmbKhoa.SelectedIndex = Program.mKhoa;
 		}
 
-		private void LayDSPM(String cmd)
+		public static void LayDSPM(String cmd, SqlConnection conn_publisher, System.Windows.Forms.ComboBox cmbKhoa)
 		{
 			DataTable dt = new DataTable();
 			if (conn_publisher.State == ConnectionState.Closed)
@@ -53,7 +53,7 @@ namespace DoAn_QLSV
 			cmbKhoa.ValueMember = "TENSERVER";
 		}
 
-		private int KetNoi_CSDLGOC()
+		public static int KetNoi_CSDLGOC(SqlConnection conn_publisher)
 		{
 			if (conn_publisher != null && conn_publisher.State == ConnectionState.Open)
 			{

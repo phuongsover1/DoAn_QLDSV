@@ -83,6 +83,12 @@
     <Compile Include="FormQuanLyLop.Designer.cs">
       <DependentUpon>FormQuanLyLop.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormQuanLyLopTinChi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormQuanLyLopTinChi.Designer.cs">
+      <DependentUpon>FormQuanLyLopTinChi.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormQuanLyMonHoc.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +105,18 @@
       <DependentUpon>Model2.tt</DependentUpon>
     </Compile>
     <Compile Include="GroupEnums.cs" />
+    <Compile Include="ModalGridGV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModalGridGV.Designer.cs">
+      <DependentUpon>ModalGridGV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModalGridMH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModalGridMH.Designer.cs">
+      <DependentUpon>ModalGridMH.cs</DependentUpon>
+    </Compile>
     <Compile Include="Model1.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -152,11 +170,20 @@
     <EmbeddedResource Include="FormQuanLyLop.resx">
       <DependentUpon>FormQuanLyLop.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormQuanLyLopTinChi.resx">
+      <DependentUpon>FormQuanLyLopTinChi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormQuanLyMonHoc.resx">
       <DependentUpon>FormQuanLyMonHoc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormTaoTaiKhoan.resx">
       <DependentUpon>FormTaoTaiKhoan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModalGridGV.resx">
+      <DependentUpon>ModalGridGV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModalGridMH.resx">
+      <DependentUpon>ModalGridMH.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -235,6 +262,7 @@
       <DependentUpon>Model2.edmx</DependentUpon>
       <LastGenOutput>Model2.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\icons8-class-100.png" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
