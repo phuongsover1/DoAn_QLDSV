@@ -176,6 +176,7 @@
 			this.gridView1.GridControl = this.gridLTC;
 			this.gridView1.Name = "gridView1";
 			this.gridView1.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.False;
+			this.gridView1.OptionsBehavior.ReadOnly = true;
 			// 
 			// colMALTC
 			// 

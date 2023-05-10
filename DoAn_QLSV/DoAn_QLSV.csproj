@@ -77,6 +77,12 @@
     <Compile Include="FormDangNhap.Designer.cs">
       <DependentUpon>FormDangNhap.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormNhapDiem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormNhapDiem.Designer.cs">
+      <DependentUpon>FormNhapDiem.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormQuanLyLop.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,6 +172,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormDangNhap.resx">
       <DependentUpon>FormDangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormNhapDiem.resx">
+      <DependentUpon>FormNhapDiem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormQuanLyLop.resx">
       <DependentUpon>FormQuanLyLop.cs</DependentUpon>
@@ -262,6 +271,9 @@
       <DependentUpon>Model2.edmx</DependentUpon>
       <LastGenOutput>Model2.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\grades.png" />
+    <None Include="Resources\grade.png" />
+    <None Include="Resources\classroom.png" />
     <None Include="Resources\icons8-class-100.png" />
   </ItemGroup>
   <ItemGroup>

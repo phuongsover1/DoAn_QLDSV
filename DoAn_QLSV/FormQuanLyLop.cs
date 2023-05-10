@@ -45,12 +45,15 @@ namespace DoAn_QLSV
 			DataTable dt = new DataTable();
 			if (conn_publisher.State == ConnectionState.Closed)
 				conn_publisher.Open();
-			SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(cmd, conn_publisher);
-			sqlDataAdapter.Fill(dt);
-			conn_publisher.Close();
-			cmbKhoa.DataSource = dt;
-			cmbKhoa.DisplayMember = "TENCN";
-			cmbKhoa.ValueMember = "TENSERVER";
+			using (SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(cmd, conn_publisher))
+			{
+				sqlDataAdapter.Fill(dt);
+				conn_publisher.Close();
+				cmbKhoa.DataSource = dt;
+				cmbKhoa.DisplayMember = "TENCN";
+				cmbKhoa.ValueMember = "TENSERVER";
+			}
+
 		}
 
 		public static int KetNoi_CSDLGOC(SqlConnection conn_publisher)

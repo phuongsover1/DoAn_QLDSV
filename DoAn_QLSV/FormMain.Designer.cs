@@ -39,6 +39,7 @@
 			this.btnMonHoc = new DevExpress.XtraBars.BarButtonItem();
 			this.btnDangXuat = new DevExpress.XtraBars.BarButtonItem();
 			this.btnLTC = new DevExpress.XtraBars.BarButtonItem();
+			this.btnNhapDiem = new DevExpress.XtraBars.BarButtonItem();
 			this.ribTaiKhoan = new DevExpress.XtraBars.Ribbon.RibbonPage();
 			this.ribGroupDangNhap = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
 			this.ribGroupTaoTaiKhoan = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -47,7 +48,9 @@
 			this.ribGroupLop = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
 			this.ribLop = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
 			this.ribMonHoc = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+			this.ribPageLopTinChi = new DevExpress.XtraBars.Ribbon.RibbonPage();
 			this.ribLTC = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+			this.ribNhapDiem = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
 			this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
 			this.documentManager1 = new DevExpress.XtraBars.Docking2010.DocumentManager(this.components);
 			this.tabbedView1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView(this.components);
@@ -80,13 +83,15 @@
             this.btnSinhVien,
             this.btnMonHoc,
             this.btnDangXuat,
-            this.btnLTC});
+            this.btnLTC,
+            this.btnNhapDiem});
 			this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-			this.ribbonControl1.MaxItemId = 16;
+			this.ribbonControl1.MaxItemId = 17;
 			this.ribbonControl1.Name = "ribbonControl1";
 			this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribTaiKhoan,
-            this.ribDanhMuc});
+            this.ribDanhMuc,
+            this.ribPageLopTinChi});
 			this.ribbonControl1.Size = new System.Drawing.Size(758, 158);
 			this.ribbonControl1.Click += new System.EventHandler(this.ribbonControl1_Click);
 			// 
@@ -113,8 +118,8 @@
 			// 
 			this.btnLop.Caption = "Lớp";
 			this.btnLop.Id = 11;
-			this.btnLop.ImageOptions.Image = global::DoAn_QLSV.Properties.Resources.icons8_class_100;
-			this.btnLop.ImageOptions.LargeImage = global::DoAn_QLSV.Properties.Resources.icons8_class_100;
+			this.btnLop.ImageOptions.Image = global::DoAn_QLSV.Properties.Resources.classroom;
+			this.btnLop.ImageOptions.LargeImage = global::DoAn_QLSV.Properties.Resources.classroom;
 			this.btnLop.LargeWidth = 70;
 			this.btnLop.Name = "btnLop";
 			this.btnLop.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnLop_ItemClick);
@@ -158,6 +163,16 @@
 			this.btnLTC.Name = "btnLTC";
 			this.btnLTC.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnLTC_ItemClick);
 			// 
+			// btnNhapDiem
+			// 
+			this.btnNhapDiem.Caption = "Nhập Điểm";
+			this.btnNhapDiem.Id = 16;
+			this.btnNhapDiem.ImageOptions.Image = global::DoAn_QLSV.Properties.Resources.grades;
+			this.btnNhapDiem.ImageOptions.LargeImage = global::DoAn_QLSV.Properties.Resources.grades;
+			this.btnNhapDiem.LargeWidth = 75;
+			this.btnNhapDiem.Name = "btnNhapDiem";
+			this.btnNhapDiem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnNhapDiem_ItemClick);
+			// 
 			// ribTaiKhoan
 			// 
 			this.ribTaiKhoan.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -190,8 +205,7 @@
 			this.ribDanhMuc.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribGroupLop,
             this.ribLop,
-            this.ribMonHoc,
-            this.ribLTC});
+            this.ribMonHoc});
 			this.ribDanhMuc.Name = "ribDanhMuc";
 			this.ribDanhMuc.Text = "Danh Mục";
 			// 
@@ -213,12 +227,26 @@
 			this.ribMonHoc.Name = "ribMonHoc";
 			this.ribMonHoc.Text = "Môn Học";
 			// 
+			// ribPageLopTinChi
+			// 
+			this.ribPageLopTinChi.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribLTC,
+            this.ribNhapDiem});
+			this.ribPageLopTinChi.Name = "ribPageLopTinChi";
+			this.ribPageLopTinChi.Text = "Lớp Tín Chỉ";
+			// 
 			// ribLTC
 			// 
 			this.ribLTC.ImageOptions.Image = global::DoAn_QLSV.Properties.Resources._class;
 			this.ribLTC.ItemLinks.Add(this.btnLTC);
 			this.ribLTC.Name = "ribLTC";
 			this.ribLTC.Text = "Lớp Tín Chỉ";
+			// 
+			// ribNhapDiem
+			// 
+			this.ribNhapDiem.ItemLinks.Add(this.btnNhapDiem);
+			this.ribNhapDiem.Name = "ribNhapDiem";
+			this.ribNhapDiem.Text = "Nhập Điểm";
 			// 
 			// defaultLookAndFeel1
 			// 
@@ -281,7 +309,7 @@
 			this.IsMdiContainer = true;
 			this.Name = "FormMain";
 			this.Ribbon = this.ribbonControl1;
-			this.Text = "Main";
+			this.Text = "Phân Mềm Quản Lí Điểm Sinh Viên Hệ Tín Chỉ";
 			this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
 			this.Load += new System.EventHandler(this.FormMain_Load);
 			((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
@@ -323,6 +351,9 @@
         public DevExpress.XtraBars.Ribbon.RibbonPageGroup ribGroupLogout;
 		private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribLTC;
 		private DevExpress.XtraBars.BarButtonItem btnLTC;
+		private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribNhapDiem;
+		private DevExpress.XtraBars.BarButtonItem btnNhapDiem;
+		public DevExpress.XtraBars.Ribbon.RibbonPage ribPageLopTinChi;
 	}
 }
 

@@ -23,6 +23,7 @@ namespace DoAn_QLSV
 		private bool isUpdate;
 		private SqlConnection conn_publisher = new SqlConnection();
 		private BindingSource ltcBindingSource = new BindingSource();
+
 		public FormQuanLyLopTinChi()
 		{
 			InitializeComponent();
@@ -109,7 +110,6 @@ namespace DoAn_QLSV
 			txtGiangVien.Text = "";
 			Hien_Control_Nhap_Thong_Tin(true);
 
-
 		}
 
 		private void Hien_Control_Nhap_Thong_Tin(bool enable)
@@ -122,7 +122,6 @@ namespace DoAn_QLSV
 
 		private void FormQuanLyLopTinChi_Load(object sender, EventArgs e)
 		{
-
 			if (FormQuanLyLop.KetNoi_CSDLGOC(conn_publisher) == 0)
 				return;
 			FormQuanLyLop.LayDSPM("SELECT * FROM dbo.Get_Subscribes", conn_publisher, cmbKhoa);
@@ -164,7 +163,84 @@ namespace DoAn_QLSV
 
 		private void btnDelete_Click(object sender, EventArgs e)
 		{
-			XtraMessageBox.Show("Hello World!", "", MessageBoxButtons.OK);
+			object[] selectedRow = Program.GetSelectedRowGridControl(gridLTC);
+
+			// Kiểm tra xem lớp tín chỉ đã có sinh viên ? 
+			DialogResult result = DialogResult.None;
+			ParameterStoredProcedure[] parameters = new ParameterStoredProcedure[] { new ParameterStoredProcedure() { ParamName = "@MALTC", ParamValue = selectedRow[0]?.ToString() } };
+			OutputParameterStoredProcedure[] outputParameters = new OutputParameterStoredProcedure[]
+			{
+				new OutputParameterStoredProcedure() { Name = "@TONTAI", Type= SqlDbType.Bit }
+			};
+			string storedProcedureName = "SP_KIEM_TRA_LTC_CO_SINH_VIEN";
+			SqlCommand cmd = new SqlCommand();
+			try
+			{
+				cmd = Program.GetResultFromStoredProcedured(cmd, storedProcedureName, Program.connstr, parameters, outputParameters);
+				bool tontai = Convert.ToBoolean(cmd.Parameters[outputParameters[0].Name].Value);
+
+
+				if (tontai)
+
+					result = XtraMessageBox.Show("Đã có sinh viên đăng kí lớp tín chỉ này. Bạn có thực sự muốn xóa lớp tín chỉ có mã lớp: " + selectedRow[0]?.ToString() + "? Sau khi hủy lớp tín chỉ thì sẽ hủy đăng ký của tất cả sinh viên mà đăng kí lớp tín chỉ này.", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+				else
+					result = XtraMessageBox.Show("Bạn có thực sự muốn xóa lớp tín chỉ có mã lớp: " + selectedRow[0]?.ToString(), "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+			}
+			catch (Exception ex)
+			{
+				XtraMessageBox.Show(ex.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
+			finally
+			{
+				cmd.Dispose();
+			}
+
+			if (result == DialogResult.Yes)
+			{
+				// gọi sp xóa
+				cmd = new SqlCommand();
+
+				storedProcedureName = "SP_XOA_LOP_TIN_CHI";
+				parameters = new ParameterStoredProcedure[]
+				{
+						new ParameterStoredProcedure() { ParamName = "@MALTC", ParamValue = selectedRow[0]?.ToString()},
+
+				};
+				outputParameters = new OutputParameterStoredProcedure[]
+				{
+						new OutputParameterStoredProcedure() { Name= "@THANHCONG" , Type = SqlDbType.Bit},
+						new OutputParameterStoredProcedure() {Name = "@LOI", Type = SqlDbType.NVarChar, Length = 200}
+				};
+
+				try
+				{
+					cmd = Program.GetResultFromStoredProcedured(cmd, storedProcedureName, Program.connstr, parameters, outputParameters);
+					bool thanhcong = Convert.ToBoolean(cmd.Parameters[outputParameters[0].Name].Value);
+
+					if (thanhcong)
+					{
+						XtraMessageBox.Show("Xóa lớp tín chỉ thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+						Lay_Danh_Sach_LTC_Theo_Khoa();
+					}
+					else
+					{
+						string loi = Convert.ToString(cmd.Parameters[outputParameters[1].Name].Value);
+						XtraMessageBox.Show(loi, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+					}
+
+				}
+				catch (Exception ex)
+				{
+					XtraMessageBox.Show(ex.Message, "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+				}
+				finally
+				{
+					cmd.Dispose();
+				}
+			}
 		}
 
 		private void btnHuy_Click(object sender, EventArgs e)
@@ -343,6 +419,7 @@ namespace DoAn_QLSV
 				else
 					return;
 				Hien_Control_Nhap_Thong_Tin(true);
+
 			}
 			catch (Exception ex)
 			{

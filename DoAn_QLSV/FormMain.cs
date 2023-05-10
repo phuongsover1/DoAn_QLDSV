@@ -25,6 +25,7 @@ namespace DoAn_QLSV
 			ribGroupLogout.Visible = false;
 			lbHoTen.Text = lbMaNV.Text = lbNhom.Text = "";
 			ribDanhMuc.Visible = false;
+			ribPageLopTinChi.Visible = false;
 			ribGroupDangNhap.Visible = true;
 			Program.servername = "";
 			Program.username = "";
@@ -127,6 +128,19 @@ namespace DoAn_QLSV
 			form.MdiParent = this;
 			form.Show();
 
+		}
+
+		private void btnNhapDiem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+		{
+			XtraForm form = CheckExists(typeof(FormNhapDiem));
+			if (form != null)
+			{
+				form.Activate();
+				return;
+			}
+			form = new FormNhapDiem();
+			form.MdiParent = this;
+			form.Show();
 		}
 	}
 }
