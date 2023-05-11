@@ -96,6 +96,7 @@
 			// 
 			// cmbHocKy
 			// 
+			this.cmbHocKy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.cmbHocKy.FormattingEnabled = true;
 			this.cmbHocKy.Location = new System.Drawing.Point(510, 23);
 			this.cmbHocKy.Name = "cmbHocKy";
@@ -112,6 +113,7 @@
 			// 
 			// cmbNienKhoa
 			// 
+			this.cmbNienKhoa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.cmbNienKhoa.FormattingEnabled = true;
 			this.cmbNienKhoa.Location = new System.Drawing.Point(330, 23);
 			this.cmbNienKhoa.Name = "cmbNienKhoa";
@@ -129,6 +131,7 @@
 			// 
 			// cmbKhoa
 			// 
+			this.cmbKhoa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.cmbKhoa.FormattingEnabled = true;
 			this.cmbKhoa.Location = new System.Drawing.Point(42, 23);
 			this.cmbKhoa.Name = "cmbKhoa";

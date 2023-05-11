@@ -107,6 +107,7 @@
 			// 
 			// cmbKhoa
 			// 
+			this.cmbKhoa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.cmbKhoa.FormattingEnabled = true;
 			this.cmbKhoa.Location = new System.Drawing.Point(46, 76);
 			this.cmbKhoa.Name = "cmbKhoa";

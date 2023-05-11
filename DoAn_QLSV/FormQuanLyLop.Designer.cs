@@ -120,6 +120,7 @@
 			// cmbKhoa
 			// 
 			this.cmbKhoa.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.cmbKhoa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.cmbKhoa.FormattingEnabled = true;
 			this.cmbKhoa.Location = new System.Drawing.Point(47, 82);
 			this.cmbKhoa.Name = "cmbKhoa";
