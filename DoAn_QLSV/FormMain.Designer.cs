@@ -1,35 +1,34 @@
 ﻿namespace DoAn_QLSV
 {
-    partial class FormMain
-    {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
-        private System.ComponentModel.IContainer components = null;
+	partial class FormMain
+	{
+		/// <summary>
+		/// Required designer variable.
+		/// </summary>
+		private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
-        }
+		/// <summary>
+		/// Clean up any resources being used.
+		/// </summary>
+		/// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+		protected override void Dispose(bool disposing)
+		{
+			if (disposing && (components != null))
+			{
+				components.Dispose();
+			}
+			base.Dispose(disposing);
+		}
 
-        #region Windows Form Designer generated code
+		#region Windows Form Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
-        private void InitializeComponent()
-        {
+		/// <summary>
+		/// Required method for Designer support - do not modify
+		/// the contents of this method with the code editor.
+		/// </summary>
+		private void InitializeComponent()
+		{
 			this.components = new System.ComponentModel.Container();
-			DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::DoAn_QLSV.SplashScreen1), true, true, true);
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
 			this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
 			this.btnDangNhap = new DevExpress.XtraBars.BarButtonItem();
@@ -40,6 +39,7 @@
 			this.btnDangXuat = new DevExpress.XtraBars.BarButtonItem();
 			this.btnLTC = new DevExpress.XtraBars.BarButtonItem();
 			this.btnNhapDiem = new DevExpress.XtraBars.BarButtonItem();
+			this.btnInDSLTC = new DevExpress.XtraBars.BarButtonItem();
 			this.ribTaiKhoan = new DevExpress.XtraBars.Ribbon.RibbonPage();
 			this.ribGroupDangNhap = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
 			this.ribGroupTaoTaiKhoan = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -51,6 +51,8 @@
 			this.ribPageLopTinChi = new DevExpress.XtraBars.Ribbon.RibbonPage();
 			this.ribLTC = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
 			this.ribNhapDiem = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+			this.ribbonPageBaoCao = new DevExpress.XtraBars.Ribbon.RibbonPage();
+			this.ribPageGroupInDSLTC = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
 			this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
 			this.documentManager1 = new DevExpress.XtraBars.Docking2010.DocumentManager(this.components);
 			this.tabbedView1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView(this.components);
@@ -59,6 +61,8 @@
 			this.lbHoTen = new DevExpress.XtraEditors.LabelControl();
 			this.lbMaNV = new DevExpress.XtraEditors.LabelControl();
 			this.defaultBarAndDockingController1 = new DevExpress.XtraBars.DefaultBarAndDockingController(this.components);
+			this.ribPageInDSDiemLTC = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+			this.btnInDSDiemLTC = new DevExpress.XtraBars.BarButtonItem();
 			((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.documentManager1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.tabbedView1)).BeginInit();
@@ -66,10 +70,6 @@
 			this.panelControl1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.defaultBarAndDockingController1.Controller)).BeginInit();
 			this.SuspendLayout();
-			// 
-			// splashScreenManager1
-			// 
-			splashScreenManager1.ClosingDelay = 500;
 			// 
 			// ribbonControl1
 			// 
@@ -84,14 +84,17 @@
             this.btnMonHoc,
             this.btnDangXuat,
             this.btnLTC,
-            this.btnNhapDiem});
+            this.btnNhapDiem,
+            this.btnInDSLTC,
+            this.btnInDSDiemLTC});
 			this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-			this.ribbonControl1.MaxItemId = 17;
+			this.ribbonControl1.MaxItemId = 19;
 			this.ribbonControl1.Name = "ribbonControl1";
 			this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribTaiKhoan,
             this.ribDanhMuc,
-            this.ribPageLopTinChi});
+            this.ribPageLopTinChi,
+            this.ribbonPageBaoCao});
 			this.ribbonControl1.Size = new System.Drawing.Size(758, 158);
 			this.ribbonControl1.Click += new System.EventHandler(this.ribbonControl1_Click);
 			// 
@@ -132,6 +135,7 @@
 			this.btnSinhVien.ImageOptions.LargeImage = global::DoAn_QLSV.Properties.Resources.students;
 			this.btnSinhVien.LargeWidth = 70;
 			this.btnSinhVien.Name = "btnSinhVien";
+			this.btnSinhVien.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSinhVien_ItemClick);
 			// 
 			// btnMonHoc
 			// 
@@ -172,6 +176,15 @@
 			this.btnNhapDiem.LargeWidth = 75;
 			this.btnNhapDiem.Name = "btnNhapDiem";
 			this.btnNhapDiem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnNhapDiem_ItemClick);
+			// 
+			// btnInDSLTC
+			// 
+			this.btnInDSLTC.Caption = "In Danh Sách Lớp Tín Chỉ";
+			this.btnInDSLTC.Id = 17;
+			this.btnInDSLTC.ImageOptions.Image = global::DoAn_QLSV.Properties.Resources.class1;
+			this.btnInDSLTC.ImageOptions.LargeImage = global::DoAn_QLSV.Properties.Resources.class1;
+			this.btnInDSLTC.Name = "btnInDSLTC";
+			this.btnInDSLTC.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnInDSLTC_ItemClick);
 			// 
 			// ribTaiKhoan
 			// 
@@ -248,6 +261,20 @@
 			this.ribNhapDiem.Name = "ribNhapDiem";
 			this.ribNhapDiem.Text = "Nhập Điểm";
 			// 
+			// ribbonPageBaoCao
+			// 
+			this.ribbonPageBaoCao.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribPageGroupInDSLTC,
+            this.ribPageInDSDiemLTC});
+			this.ribbonPageBaoCao.Name = "ribbonPageBaoCao";
+			this.ribbonPageBaoCao.Text = "Báo Cáo";
+			// 
+			// ribPageGroupInDSLTC
+			// 
+			this.ribPageGroupInDSLTC.ItemLinks.Add(this.btnInDSLTC);
+			this.ribPageGroupInDSLTC.Name = "ribPageGroupInDSLTC";
+			this.ribPageGroupInDSLTC.Text = "In Danh Sách Lớp Tín Chỉ";
+			// 
 			// defaultLookAndFeel1
 			// 
 			this.defaultLookAndFeel1.LookAndFeel.SkinName = "Office 2019 Colorful";
@@ -299,6 +326,21 @@
 			// defaultBarAndDockingController1
 			// 
 			// 
+			// ribPageInDSDiemLTC
+			// 
+			this.ribPageInDSDiemLTC.ItemLinks.Add(this.btnInDSDiemLTC);
+			this.ribPageInDSDiemLTC.Name = "ribPageInDSDiemLTC";
+			this.ribPageInDSDiemLTC.Text = "In Danh Sách Điểm Của Lớp Tín Chỉ";
+			// 
+			// btnInDSDiemLTC
+			// 
+			this.btnInDSDiemLTC.Caption = "In Danh Sách Điểm Của Lớp Tín Chỉ";
+			this.btnInDSDiemLTC.Id = 18;
+			this.btnInDSDiemLTC.ImageOptions.Image = global::DoAn_QLSV.Properties.Resources.grades;
+			this.btnInDSDiemLTC.ImageOptions.LargeImage = global::DoAn_QLSV.Properties.Resources.grades;
+			this.btnInDSDiemLTC.Name = "btnInDSDiemLTC";
+			this.btnInDSDiemLTC.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnInDSDiemLTC_ItemClick);
+			// 
 			// FormMain
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -322,38 +364,43 @@
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
-        }
+		}
 
-        #endregion
+		#endregion
 
-        private DevExpress.XtraBars.Ribbon.RibbonControl ribbonControl1;
-        private DevExpress.XtraBars.Ribbon.RibbonPage ribTaiKhoan;
-        public DevExpress.XtraBars.Ribbon.RibbonPageGroup ribGroupDangNhap;
-        private DevExpress.XtraBars.BarButtonItem btnDangNhap;
-        private DevExpress.LookAndFeel.DefaultLookAndFeel defaultLookAndFeel1;
-        private DevExpress.XtraBars.Docking2010.DocumentManager documentManager1;
-        private DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView tabbedView1;
-        private DevExpress.XtraBars.BarButtonItem btnTaoTaiKhoan;
-        private DevExpress.XtraEditors.PanelControl panelControl1;
-        private DevExpress.XtraBars.DefaultBarAndDockingController defaultBarAndDockingController1;
-        public DevExpress.XtraEditors.LabelControl lbNhom;
-        public DevExpress.XtraEditors.LabelControl lbMaNV;
-        public DevExpress.XtraEditors.LabelControl lbHoTen;
-        public DevExpress.XtraBars.Ribbon.RibbonPageGroup ribGroupTaoTaiKhoan;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribGroupLop;
-        private DevExpress.XtraBars.BarButtonItem btnLop;
-        private DevExpress.XtraBars.BarButtonItem btnSinhVien;
-        private DevExpress.XtraBars.BarButtonItem btnMonHoc;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribLop;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribMonHoc;
-        private DevExpress.XtraBars.BarButtonItem btnDangXuat;
-        public DevExpress.XtraBars.Ribbon.RibbonPage ribDanhMuc;
-        public DevExpress.XtraBars.Ribbon.RibbonPageGroup ribGroupLogout;
+		private DevExpress.XtraBars.Ribbon.RibbonControl ribbonControl1;
+		private DevExpress.XtraBars.Ribbon.RibbonPage ribTaiKhoan;
+		public DevExpress.XtraBars.Ribbon.RibbonPageGroup ribGroupDangNhap;
+		private DevExpress.XtraBars.BarButtonItem btnDangNhap;
+		private DevExpress.LookAndFeel.DefaultLookAndFeel defaultLookAndFeel1;
+		private DevExpress.XtraBars.Docking2010.DocumentManager documentManager1;
+		private DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView tabbedView1;
+		private DevExpress.XtraBars.BarButtonItem btnTaoTaiKhoan;
+		private DevExpress.XtraEditors.PanelControl panelControl1;
+		private DevExpress.XtraBars.DefaultBarAndDockingController defaultBarAndDockingController1;
+		public DevExpress.XtraEditors.LabelControl lbNhom;
+		public DevExpress.XtraEditors.LabelControl lbMaNV;
+		public DevExpress.XtraEditors.LabelControl lbHoTen;
+		public DevExpress.XtraBars.Ribbon.RibbonPageGroup ribGroupTaoTaiKhoan;
+		private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribGroupLop;
+		private DevExpress.XtraBars.BarButtonItem btnLop;
+		private DevExpress.XtraBars.BarButtonItem btnSinhVien;
+		private DevExpress.XtraBars.BarButtonItem btnMonHoc;
+		private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribLop;
+		private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribMonHoc;
+		private DevExpress.XtraBars.BarButtonItem btnDangXuat;
+		public DevExpress.XtraBars.Ribbon.RibbonPage ribDanhMuc;
+		public DevExpress.XtraBars.Ribbon.RibbonPageGroup ribGroupLogout;
 		private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribLTC;
 		private DevExpress.XtraBars.BarButtonItem btnLTC;
 		private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribNhapDiem;
 		private DevExpress.XtraBars.BarButtonItem btnNhapDiem;
 		public DevExpress.XtraBars.Ribbon.RibbonPage ribPageLopTinChi;
+		private DevExpress.XtraBars.BarButtonItem btnInDSLTC;
+		private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribPageGroupInDSLTC;
+		public DevExpress.XtraBars.Ribbon.RibbonPage ribbonPageBaoCao;
+		private DevExpress.XtraBars.BarButtonItem btnInDSDiemLTC;
+		private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribPageInDSDiemLTC;
 	}
 }
 

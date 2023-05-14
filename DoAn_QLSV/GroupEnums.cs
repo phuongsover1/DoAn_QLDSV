@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace DoAn_QLSV
 {
-    internal class GroupEnums
-    {
-        public enum Quyen
-        {
-            PGV,
-            KHOA,
-            SV,
-            PKT
-        }
-    }
+	internal class GroupEnums
+	{
+		public enum Quyen
+		{
+			PGV,
+			KHOA,
+			SV,
+			PKT
+		}
+	}
 }

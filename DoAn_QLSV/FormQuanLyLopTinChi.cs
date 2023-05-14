@@ -18,7 +18,7 @@ namespace DoAn_QLSV
 	public partial class FormQuanLyLopTinChi : DevExpress.XtraEditors.XtraForm
 	{
 		public static object[] selectedRowGV = null;
-		public static object[] selectedRowMH = null;
+
 		public static int parentX, parentY;
 		private bool isUpdate;
 		private SqlConnection conn_publisher = new SqlConnection();
@@ -32,10 +32,9 @@ namespace DoAn_QLSV
 		private void btnChonMonHoc_Click(object sender, EventArgs e)
 		{
 			Mo_Modal_MH();
-
-			if (selectedRowMH != null)
+			if (ModalGridMH.selectedRowMH != null)
 			{
-				txtMaMH.Text = selectedRowMH[0].ToString();
+				txtMaMH.Text = ModalGridMH.selectedRowMH[0].ToString();
 			}
 		}
 
@@ -75,7 +74,7 @@ namespace DoAn_QLSV
 		private void Mo_Modal_MH()
 		{
 			XtraForm modalMHBackground = new XtraForm();
-			using (ModalGridMH modalGridMH = new ModalGridMH())
+			using (ModalGridMH modalGridMH = new ModalGridMH("SP_LAY_DANH_SACH_MON_HOC_MODAL"))
 			{
 				modalMHBackground.StartPosition = FormStartPosition.Manual;
 				modalMHBackground.FormBorderStyle = FormBorderStyle.None;

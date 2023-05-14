@@ -17,8 +17,8 @@ namespace DoAn_QLSV
 	public partial class FormNhapDiem : DevExpress.XtraEditors.XtraForm
 	{
 		private SqlConnection conn_publisher = new SqlConnection();
-		BindingSource lopTCBindingSource = new BindingSource();
-		BindingSource sinhvienBindingSource = new BindingSource();
+		private readonly BindingSource lopTCBindingSource = new BindingSource();
+		private readonly BindingSource sinhvienBindingSource = new BindingSource();
 		private string maKhoa;
 		public FormNhapDiem()
 		{

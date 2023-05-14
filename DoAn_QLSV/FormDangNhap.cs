@@ -149,7 +149,9 @@ namespace DoAn_QLSV
 			Program.formMain.ribGroupLogout.Visible = true;
 			Program.formMain.ribDanhMuc.Visible = true;
 			Program.formMain.ribPageLopTinChi.Visible = true;
+			Program.formMain.ribbonPageBaoCao.Visible = true;
 			Program.formMain.ribGroupDangNhap.Visible = false;
+
 		}
 
 		private void ChangeUserNameAndPasswordConnectionString(int mKhoa, string mGroup)
@@ -197,13 +199,7 @@ namespace DoAn_QLSV
 			// để ở ngoài cùng
 			config.Save(ConfigurationSaveMode.Modified);
 
-			XtraMessageBox.Show(
-					ConfigurationManager.ConnectionStrings[
-							"QLDSV_TCEntities_SV2"
-					].ConnectionString.ToString(),
-					"Thong Bao",
-					MessageBoxButtons.OK
-			);
+
 		}
 
 		private void TaoDBEntities(int mKhoa, string mGroup)

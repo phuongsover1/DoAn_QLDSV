@@ -1,33 +1,33 @@
 ﻿namespace DoAn_QLSV
 {
-    partial class FormDangNhap
-    {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
-        private System.ComponentModel.IContainer components = null;
+	partial class FormDangNhap
+	{
+		/// <summary>
+		/// Required designer variable.
+		/// </summary>
+		private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
-        }
+		/// <summary>
+		/// Clean up any resources being used.
+		/// </summary>
+		/// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+		protected override void Dispose(bool disposing)
+		{
+			if (disposing && (components != null))
+			{
+				components.Dispose();
+			}
+			base.Dispose(disposing);
+		}
 
-        #region Windows Form Designer generated code
+		#region Windows Form Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
-        private void InitializeComponent()
-        {
+		/// <summary>
+		/// Required method for Designer support - do not modify
+		/// the contents of this method with the code editor.
+		/// </summary>
+		private void InitializeComponent()
+		{
 			this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
 			this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
 			this.btnDangNhap = new DevExpress.XtraEditors.SimpleButton();
@@ -151,18 +151,18 @@
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
-        }
+		}
 
-        #endregion
+		#endregion
 
-        private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraEditors.TextEdit txtTaiKhoan;
-        private DevExpress.XtraEditors.TextEdit txtMatKhau;
-        private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraEditors.SimpleButton btnDangNhap;
-        private DevExpress.XtraEditors.SimpleButton btnThoat;
-        private DevExpress.XtraEditors.LabelControl labelControl3;
-        public System.Windows.Forms.ComboBox cmbKhoa;
-        public DevExpress.XtraEditors.GroupControl groupControl1;
-    }
+		private DevExpress.XtraEditors.LabelControl labelControl1;
+		private DevExpress.XtraEditors.TextEdit txtTaiKhoan;
+		private DevExpress.XtraEditors.TextEdit txtMatKhau;
+		private DevExpress.XtraEditors.LabelControl labelControl2;
+		private DevExpress.XtraEditors.SimpleButton btnDangNhap;
+		private DevExpress.XtraEditors.SimpleButton btnThoat;
+		private DevExpress.XtraEditors.LabelControl labelControl3;
+		public System.Windows.Forms.ComboBox cmbKhoa;
+		public DevExpress.XtraEditors.GroupControl groupControl1;
+	}
 }

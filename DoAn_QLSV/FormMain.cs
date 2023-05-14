@@ -1,5 +1,6 @@
 ﻿using DevExpress.Utils.Taskbar.Core;
 using DevExpress.XtraEditors;
+using QLDSV_TC;
 using System;
 using System.Runtime.CompilerServices;
 using System.Windows.Forms;
@@ -26,6 +27,7 @@ namespace DoAn_QLSV
 			lbHoTen.Text = lbMaNV.Text = lbNhom.Text = "";
 			ribDanhMuc.Visible = false;
 			ribPageLopTinChi.Visible = false;
+			ribbonPageBaoCao.Visible = false; ;
 			ribGroupDangNhap.Visible = true;
 			Program.servername = "";
 			Program.username = "";
@@ -139,6 +141,47 @@ namespace DoAn_QLSV
 				return;
 			}
 			form = new FormNhapDiem();
+			form.MdiParent = this;
+			form.Show();
+		}
+
+		private void btnSinhVien_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+		{
+			XtraForm form = CheckExists(typeof(frmDangKiLTC));
+			if (form != null)
+			{
+				form.Activate();
+				return;
+			}
+			form = new frmDangKiLTC();
+			form.MdiParent = this;
+			form.Show();
+		}
+
+
+
+		private void btnInDSLTC_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+		{
+			XtraForm form = CheckExists(typeof(Frpt_DanhSachLopTinChi));
+			if (form != null)
+			{
+				form.Activate();
+				return;
+			}
+			form = new Frpt_DanhSachLopTinChi();
+			form.MdiParent = this;
+			form.Show();
+		}
+
+		private void btnInDSDiemLTC_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+		{
+			XtraForm form = CheckExists(typeof(Frpt_BangDiemMonHocCuaLTC));
+			if (form != null)
+			{
+				form.Activate();
+				return;
+			}
+			form = new Frpt_BangDiemMonHocCuaLTC();
 			form.MdiParent = this;
 			form.Show();
 		}

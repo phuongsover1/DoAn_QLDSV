@@ -8,10 +8,17 @@ namespace DoAn_QLSV
 {
 	public partial class ModalGridMH : DevExpress.XtraEditors.XtraForm
 	{
+		private string storedProcedureName;
 		private BindingSource mhBindingSource = new BindingSource();
+		public static object[] selectedRowMH;
 		public ModalGridMH()
 		{
 			InitializeComponent();
+		}
+		public ModalGridMH(string storedProcedureName)
+		{
+			InitializeComponent();
+			this.storedProcedureName = storedProcedureName;
 		}
 
 		private void modalEffect_Timer_Tick(object sender, EventArgs e)
@@ -39,7 +46,19 @@ namespace DoAn_QLSV
 		{
 			try
 			{
-				DataTable MHDataTable = Program.ExecSqlQuery("EXEC SP_LAY_DANH_SACH_MON_HOC_MODAL", Program.connstr);
+				DataTable MHDataTable = new DataTable();
+				if (storedProcedureName == "SP_LAY_DANH_SACH_MON_HOC_MODAL")
+				{
+					MHDataTable = Program.ExecSqlQuery("EXEC " + storedProcedureName, Program.connstr);
+
+				}
+				else if (storedProcedureName == "SP_LAY_MON_HOC_LTC_THUOC_NIENKHOA_HOCKY_NHOM")
+				{
+					string cmd = $"EXEC {storedProcedureName} '{Frpt_BangDiemMonHocCuaLTC.nienkhoa}', {Frpt_BangDiemMonHocCuaLTC.hocky}, {Frpt_BangDiemMonHocCuaLTC.nhom},'{Frpt_BangDiemMonHocCuaLTC.maKhoa}'";
+
+
+					MHDataTable = Program.ExecSqlQuery(cmd, Program.connstr);
+				}
 
 				mhBindingSource.DataSource = MHDataTable;
 				gridMH.DataSource = mhBindingSource;
@@ -54,7 +73,7 @@ namespace DoAn_QLSV
 
 		private void btnOK_Click(object sender, EventArgs e)
 		{
-			FormQuanLyLopTinChi.selectedRowMH = Program.GetSelectedRowGridControl(gridMH);
+			selectedRowMH = Program.GetSelectedRowGridControl(gridMH);
 			this.Hide();
 		}
 	}
