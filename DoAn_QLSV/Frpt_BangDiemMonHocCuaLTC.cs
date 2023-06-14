@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraEditors;
+using DevExpress.XtraReports.UI;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -165,7 +166,13 @@ namespace DoAn_QLSV
 
 		private void btnInBangDiemLTC_Click(object sender, EventArgs e)
 		{
-			Frpt_DanhSachLopTinChi.ChangeUserNameAndPasswordConnectionString(Program.mKhoa, Program.mGroup, config);
+			Frpt_DanhSachLopTinChi.ChangeUserNameAndPasswordConnectionString(cmbKhoa.SelectedIndex, Program.mGroup, config);
+			Xrpt_BangDiemMonHocLTC rpt = new Xrpt_BangDiemMonHocLTC(cmbKhoa.SelectedIndex, cmbNienKhoa.SelectedValue.ToString(), cmbHocKy.SelectedValue.ToString(), cmbNhom.SelectedValue.ToString(), ModalGridMH.selectedRowMH[0].ToString(), ModalGridMH.selectedRowMH[1].ToString());
+
+			ReportPrintTool printTool = new ReportPrintTool(rpt);
+			printTool.ShowPreviewDialog();
+
+
 		}
 
 		private void Mo_Modal_MH()
