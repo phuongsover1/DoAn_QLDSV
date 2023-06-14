@@ -140,6 +140,12 @@
     <Compile Include="Frpt_DanhSachLopTinChi.Designer.cs">
       <DependentUpon>Frpt_DanhSachLopTinChi.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frpt_PhieuDiem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frpt_PhieuDiem.Designer.cs">
+      <DependentUpon>Frpt_PhieuDiem.cs</DependentUpon>
+    </Compile>
     <Compile Include="GIANGVIEN.cs">
       <DependentUpon>Model2.tt</DependentUpon>
     </Compile>
@@ -149,6 +155,12 @@
     </Compile>
     <Compile Include="ModalGridGV.Designer.cs">
       <DependentUpon>ModalGridGV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModalGridLop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModalGridLop.Designer.cs">
+      <DependentUpon>ModalGridLop.cs</DependentUpon>
     </Compile>
     <Compile Include="ModalGridMH.cs">
       <SubType>Form</SubType>
@@ -223,6 +235,12 @@
     <Compile Include="Xrpt_DanhSachLopTinChi.Designer.cs">
       <DependentUpon>Xrpt_DanhSachLopTinChi.cs</DependentUpon>
     </Compile>
+    <Compile Include="Xrpt_PhieuDiem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Xrpt_PhieuDiem.Designer.cs">
+      <DependentUpon>Xrpt_PhieuDiem.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -253,8 +271,14 @@
     <EmbeddedResource Include="Frpt_DanhSachLopTinChi.resx">
       <DependentUpon>Frpt_DanhSachLopTinChi.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Frpt_PhieuDiem.resx">
+      <DependentUpon>Frpt_PhieuDiem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ModalGridGV.resx">
       <DependentUpon>ModalGridGV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModalGridLop.resx">
+      <DependentUpon>ModalGridLop.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ModalGridMH.resx">
       <DependentUpon>ModalGridMH.cs</DependentUpon>
@@ -281,6 +305,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Xrpt_DanhSachLopTinChi.resx">
       <DependentUpon>Xrpt_DanhSachLopTinChi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Xrpt_PhieuDiem.resx">
+      <DependentUpon>Xrpt_PhieuDiem.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
     <EntityDeploy Include="Model1.edmx">

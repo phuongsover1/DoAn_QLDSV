@@ -185,5 +185,18 @@ namespace DoAn_QLSV
 			form.MdiParent = this;
 			form.Show();
 		}
+
+		private void btnInBangDiem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+		{
+			XtraForm form = CheckExists(typeof(Frpt_PhieuDiem));
+			if (form != null)
+			{
+				form.Activate();
+				return;
+			}
+			form = new Frpt_PhieuDiem();
+			form.MdiParent = this;
+			form.Show();
+		}
 	}
 }
