@@ -26,11 +26,31 @@ namespace DoAn_QLSV.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-GUM00GB\\MSSQLSERVER1;Initial Catalog=QLDSV_TC;User ID=HTKN;Pa" +
-            "ssword=1234;MultipleActiveResultSets=True;Application Name=EntityFramework")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-GUM00GB;Initial Catalog=QLDSV_TC;User ID=sa;Password=1234")]
         public string QLDSV_TCConnectionString1 {
             get {
                 return ((string)(this["QLDSV_TCConnectionString1"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-GUM00GB\\MSSQLSERVER1;Initial Catalog=QLDSV_TC;User ID=sa;Pass" +
+            "word=1234")]
+        public string QLDSV_TCConnectionString7 {
+            get {
+                return ((string)(this["QLDSV_TCConnectionString7"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-GUM00GB;Initial Catalog=QLDSV_TC;User ID=sa;Password=1234")]
+        public string QLDSV_TCConnectionString99 {
+            get {
+                return ((string)(this["QLDSV_TCConnectionString99"]));
             }
         }
     }

@@ -1,9 +1,6 @@
-﻿using DevExpress.Utils.Taskbar.Core;
-using DevExpress.XtraEditors;
-using QLDSV_TC;
+﻿using DevExpress.XtraEditors;
+using DoAn_QLSV.report;
 using System;
-using System.Runtime.CompilerServices;
-using System.Windows.Forms;
 
 namespace DoAn_QLSV
 {
@@ -147,13 +144,13 @@ namespace DoAn_QLSV
 
 		private void btnSinhVien_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
 		{
-			XtraForm form = CheckExists(typeof(frmDangKiLTC));
+			XtraForm form = CheckExists(typeof(FromQuanLiSV));
 			if (form != null)
 			{
 				form.Activate();
 				return;
 			}
-			form = new frmDangKiLTC();
+			form = new FromQuanLiSV();
 			form.MdiParent = this;
 			form.Show();
 		}
@@ -209,6 +206,66 @@ namespace DoAn_QLSV
 			}
 
 			form = new Frpt_DiemTongKetCuoiKhoa();
+			form.MdiParent = this;
+
+			form.Show();
+		}
+
+		private void btnDKLTC_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+		{
+			XtraForm form = CheckExists(typeof(FormDangKyLTC));
+			if (form != null)
+			{
+				form.Activate();
+				return;
+			}
+
+			form = new FormDangKyLTC();
+			form.MdiParent = this;
+
+			form.Show();
+		}
+
+		private void btnInDSSVDK_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+		{
+			XtraForm form = CheckExists(typeof(RP_Form_DS_DL_LTC));
+			if (form != null)
+			{
+				form.Activate();
+				return;
+			}
+
+			form = new RP_Form_DS_DL_LTC();
+			form.MdiParent = this;
+
+			form.Show();
+		}
+
+		private void btnInDSHP_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+		{
+			XtraForm form = CheckExists(typeof(RP_Form_Hoc_Phi));
+			if (form != null)
+			{
+				form.Activate();
+				return;
+			}
+
+			form = new RP_Form_Hoc_Phi();
+			form.MdiParent = this;
+
+			form.Show();
+		}
+
+		private void btnDongHocPhi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+		{
+			XtraForm form = CheckExists(typeof(FormHocPhi));
+			if (form != null)
+			{
+				form.Activate();
+				return;
+			}
+
+			form = new FormHocPhi();
 			form.MdiParent = this;
 
 			form.Show();

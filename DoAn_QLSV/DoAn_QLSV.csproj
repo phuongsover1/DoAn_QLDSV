@@ -80,6 +80,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormChonGV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormChonGV.Designer.cs">
+      <DependentUpon>FormChonGV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDangKyLTC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDangKyLTC.Designer.cs">
+      <DependentUpon>FormDangKyLTC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormHocPhi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormHocPhi.designer.cs">
+      <DependentUpon>FormHocPhi.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,11 +140,11 @@
     <Compile Include="FormTaoTaiKhoan.Designer.cs">
       <DependentUpon>FormTaoTaiKhoan.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmDangKiLTC.cs">
+    <Compile Include="FromQuanLiSV.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmDangKiLTC.designer.cs">
-      <DependentUpon>frmDangKiLTC.cs</DependentUpon>
+    <Compile Include="FromQuanLiSV.Designer.cs">
+      <DependentUpon>FromQuanLiSV.cs</DependentUpon>
     </Compile>
     <Compile Include="Frpt_BangDiemMonHocCuaLTC.cs">
       <SubType>Form</SubType>
@@ -215,17 +233,38 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QLDSV_TCDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="QLDSV_TCDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLDSV_TCDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QLDSV_TCDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLDSV_TCDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QLDSV_TCDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLDSV_TCDataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RP_Form_DS_DL_LTC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RP_Form_DS_DL_LTC.designer.cs">
+      <DependentUpon>RP_Form_DS_DL_LTC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RP_Form_Hoc_Phi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RP_Form_Hoc_Phi.designer.cs">
+      <DependentUpon>RP_Form_Hoc_Phi.cs</DependentUpon>
+    </Compile>
     <Compile Include="SplashScreen1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="SplashScreen1.Designer.cs">
       <DependentUpon>SplashScreen1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="test.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="test.Designer.cs">
-      <DependentUpon>test.cs</DependentUpon>
     </Compile>
     <Compile Include="Utils\OutputParameterStoredProcedure.cs" />
     <Compile Include="Utils\ParameterStoredProcedure.cs" />
@@ -259,6 +298,27 @@
     <Compile Include="Xrpt_PhieuDiem.Designer.cs">
       <DependentUpon>Xrpt_PhieuDiem.cs</DependentUpon>
     </Compile>
+    <Compile Include="Xtr_DS_DK_LTC.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Xtr_DS_DK_LTC.designer.cs">
+      <DependentUpon>Xtr_DS_DK_LTC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Xtr_Hoc_Phi.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Xtr_Hoc_Phi.designer.cs">
+      <DependentUpon>Xtr_Hoc_Phi.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="FormChonGV.resx">
+      <DependentUpon>FormChonGV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDangKyLTC.resx">
+      <DependentUpon>FormDangKyLTC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormHocPhi.resx">
+      <DependentUpon>FormHocPhi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -280,8 +340,8 @@
     <EmbeddedResource Include="FormTaoTaiKhoan.resx">
       <DependentUpon>FormTaoTaiKhoan.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmDangKiLTC.resx">
-      <DependentUpon>frmDangKiLTC.cs</DependentUpon>
+    <EmbeddedResource Include="FromQuanLiSV.resx">
+      <DependentUpon>FromQuanLiSV.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frpt_BangDiemMonHocCuaLTC.resx">
       <DependentUpon>Frpt_BangDiemMonHocCuaLTC.cs</DependentUpon>
@@ -315,11 +375,14 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="RP_Form_DS_DL_LTC.resx">
+      <DependentUpon>RP_Form_DS_DL_LTC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RP_Form_Hoc_Phi.resx">
+      <DependentUpon>RP_Form_Hoc_Phi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SplashScreen1.resx">
       <DependentUpon>SplashScreen1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="test.resx">
-      <DependentUpon>test.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Xrpt_BangDiemMonHocLTC.resx">
       <DependentUpon>Xrpt_BangDiemMonHocLTC.cs</DependentUpon>
@@ -335,6 +398,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Xrpt_PhieuDiem.resx">
       <DependentUpon>Xrpt_PhieuDiem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Xtr_DS_DK_LTC.resx">
+      <DependentUpon>Xtr_DS_DK_LTC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Xtr_Hoc_Phi.resx">
+      <DependentUpon>Xtr_Hoc_Phi.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
     <EntityDeploy Include="Model1.edmx">
@@ -373,6 +442,39 @@
     </None>
     <None Include="QLDSV_TCDataSet.xss">
       <DependentUpon>QLDSV_TCDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="QLDSV_TCDataSet1.xsc">
+      <DependentUpon>QLDSV_TCDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="QLDSV_TCDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QLDSV_TCDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QLDSV_TCDataSet1.xss">
+      <DependentUpon>QLDSV_TCDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="QLDSV_TCDataSet2.xsc">
+      <DependentUpon>QLDSV_TCDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="QLDSV_TCDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QLDSV_TCDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QLDSV_TCDataSet2.xss">
+      <DependentUpon>QLDSV_TCDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="QLDSV_TCDataSet3.xsc">
+      <DependentUpon>QLDSV_TCDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="QLDSV_TCDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QLDSV_TCDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QLDSV_TCDataSet3.xss">
+      <DependentUpon>QLDSV_TCDataSet3.xsd</DependentUpon>
     </None>
     <None Include="Resources\class.png" />
   </ItemGroup>
