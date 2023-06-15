@@ -198,5 +198,20 @@ namespace DoAn_QLSV
 			form.MdiParent = this;
 			form.Show();
 		}
+
+		private void btnInDiemTKCK_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+		{
+			XtraForm form = CheckExists(typeof(Frpt_DiemTongKetCuoiKhoa));
+			if (form != null)
+			{
+				form.Activate();
+				return;
+			}
+
+			form = new Frpt_DiemTongKetCuoiKhoa();
+			form.MdiParent = this;
+
+			form.Show();
+		}
 	}
 }

@@ -60,7 +60,7 @@ namespace DoAn_QLSV
 		private void btnOK_Click(object sender, EventArgs e)
 		{
 			FormQuanLyLopTinChi.selectedRowGV = Program.GetSelectedRowGridControl(gridGV);
-			this.Hide();
+			this.Close();
 		}
 	}
 }

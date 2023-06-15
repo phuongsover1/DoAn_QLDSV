@@ -140,6 +140,12 @@
     <Compile Include="Frpt_DanhSachLopTinChi.Designer.cs">
       <DependentUpon>Frpt_DanhSachLopTinChi.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frpt_DiemTongKetCuoiKhoa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frpt_DiemTongKetCuoiKhoa.Designer.cs">
+      <DependentUpon>Frpt_DiemTongKetCuoiKhoa.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frpt_PhieuDiem.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -235,6 +241,18 @@
     <Compile Include="Xrpt_DanhSachLopTinChi.Designer.cs">
       <DependentUpon>Xrpt_DanhSachLopTinChi.cs</DependentUpon>
     </Compile>
+    <Compile Include="Xrpt_DiemTongKetCuoiKhoa.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Xrpt_DiemTongKetCuoiKhoa.Designer.cs">
+      <DependentUpon>Xrpt_DiemTongKetCuoiKhoa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Xrpt_DiemTongKetCuoiKhoa1.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Xrpt_DiemTongKetCuoiKhoa1.Designer.cs">
+      <DependentUpon>Xrpt_DiemTongKetCuoiKhoa1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Xrpt_PhieuDiem.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -271,6 +289,9 @@
     <EmbeddedResource Include="Frpt_DanhSachLopTinChi.resx">
       <DependentUpon>Frpt_DanhSachLopTinChi.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Frpt_DiemTongKetCuoiKhoa.resx">
+      <DependentUpon>Frpt_DiemTongKetCuoiKhoa.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frpt_PhieuDiem.resx">
       <DependentUpon>Frpt_PhieuDiem.cs</DependentUpon>
     </EmbeddedResource>
@@ -305,6 +326,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Xrpt_DanhSachLopTinChi.resx">
       <DependentUpon>Xrpt_DanhSachLopTinChi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Xrpt_DiemTongKetCuoiKhoa.resx">
+      <DependentUpon>Xrpt_DiemTongKetCuoiKhoa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Xrpt_DiemTongKetCuoiKhoa1.resx">
+      <DependentUpon>Xrpt_DiemTongKetCuoiKhoa1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Xrpt_PhieuDiem.resx">
       <DependentUpon>Xrpt_PhieuDiem.cs</DependentUpon>

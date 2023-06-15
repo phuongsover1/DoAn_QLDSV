@@ -41,6 +41,7 @@
 			this.btnInDiemThiTKCK = new DevExpress.XtraBars.BarButtonItem();
 			this.btnInDSLTC = new DevExpress.XtraBars.BarButtonItem();
 			this.btnInDSDiemLTC = new DevExpress.XtraBars.BarButtonItem();
+			this.btnInBangDiem = new DevExpress.XtraBars.BarButtonItem();
 			this.ribTaiKhoan = new DevExpress.XtraBars.Ribbon.RibbonPage();
 			this.ribGroupDangNhap = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
 			this.ribGroupTaoTaiKhoan = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -55,6 +56,8 @@
 			this.ribbonPageBaoCao = new DevExpress.XtraBars.Ribbon.RibbonPage();
 			this.ribPageGroupInDSLTC = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
 			this.ribPageInDSDiemLTC = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+			this.ribPageDiemThi = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+			this.ribPageInDiemTKCK = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
 			this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
 			this.documentManager1 = new DevExpress.XtraBars.Docking2010.DocumentManager(this.components);
 			this.tabbedView1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView(this.components);
@@ -63,9 +66,7 @@
 			this.lbHoTen = new DevExpress.XtraEditors.LabelControl();
 			this.lbMaNV = new DevExpress.XtraEditors.LabelControl();
 			this.defaultBarAndDockingController1 = new DevExpress.XtraBars.DefaultBarAndDockingController(this.components);
-			this.ribPageDiemThi = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-			this.ribPageInDiemTKCK = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-			this.btnInBangDiem = new DevExpress.XtraBars.BarButtonItem();
+			this.btnInDiemTKCK = new DevExpress.XtraBars.BarButtonItem();
 			((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.documentManager1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.tabbedView1)).BeginInit();
@@ -90,9 +91,10 @@
             this.btnInDiemThiTKCK,
             this.btnInDSLTC,
             this.btnInDSDiemLTC,
-            this.btnInBangDiem});
+            this.btnInBangDiem,
+            this.btnInDiemTKCK});
 			this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-			this.ribbonControl1.MaxItemId = 20;
+			this.ribbonControl1.MaxItemId = 21;
 			this.ribbonControl1.Name = "ribbonControl1";
 			this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribTaiKhoan,
@@ -199,6 +201,16 @@
 			this.btnInDSDiemLTC.Name = "btnInDSDiemLTC";
 			this.btnInDSDiemLTC.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnInDSDiemLTC_ItemClick);
 			// 
+			// btnInBangDiem
+			// 
+			this.btnInBangDiem.Caption = "In Bảng Điểm";
+			this.btnInBangDiem.Id = 19;
+			this.btnInBangDiem.ImageOptions.Image = global::DoAn_QLSV.Properties.Resources.grades;
+			this.btnInBangDiem.ImageOptions.LargeImage = global::DoAn_QLSV.Properties.Resources.grades;
+			this.btnInBangDiem.LargeWidth = 75;
+			this.btnInBangDiem.Name = "btnInBangDiem";
+			this.btnInBangDiem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnInBangDiem_ItemClick);
+			// 
 			// ribTaiKhoan
 			// 
 			this.ribTaiKhoan.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -296,6 +308,18 @@
 			this.ribPageInDSDiemLTC.Name = "ribPageInDSDiemLTC";
 			this.ribPageInDSDiemLTC.Text = "In Danh Sách Điểm Của Lớp Tín Chỉ";
 			// 
+			// ribPageDiemThi
+			// 
+			this.ribPageDiemThi.ItemLinks.Add(this.btnInBangDiem);
+			this.ribPageDiemThi.Name = "ribPageDiemThi";
+			this.ribPageDiemThi.Text = "In Điểm Thi";
+			// 
+			// ribPageInDiemTKCK
+			// 
+			this.ribPageInDiemTKCK.ItemLinks.Add(this.btnInDiemTKCK);
+			this.ribPageInDiemTKCK.Name = "ribPageInDiemTKCK";
+			this.ribPageInDiemTKCK.Text = "In Điểm Tổng Kết Cuối Khóa";
+			// 
 			// defaultLookAndFeel1
 			// 
 			this.defaultLookAndFeel1.LookAndFeel.SkinName = "Office 2019 Colorful";
@@ -347,27 +371,14 @@
 			// defaultBarAndDockingController1
 			// 
 			// 
-			// ribPageDiemThi
+			// btnInDiemTKCK
 			// 
-			this.ribPageDiemThi.ItemLinks.Add(this.btnInBangDiem);
-			this.ribPageDiemThi.Name = "ribPageDiemThi";
-			this.ribPageDiemThi.Text = "In Điểm Thi";
-			// 
-			// ribPageInDiemTKCK
-			// 
-			this.ribPageInDiemTKCK.ItemLinks.Add(this.btnInDiemThiTKCK);
-			this.ribPageInDiemTKCK.Name = "ribPageInDiemTKCK";
-			this.ribPageInDiemTKCK.Text = "In Điểm Tổng Kết Cuối Khóa";
-			// 
-			// btnInBangDiem
-			// 
-			this.btnInBangDiem.Caption = "In Bảng Điểm";
-			this.btnInBangDiem.Id = 19;
-			this.btnInBangDiem.ImageOptions.Image = global::DoAn_QLSV.Properties.Resources.grades;
-			this.btnInBangDiem.ImageOptions.LargeImage = global::DoAn_QLSV.Properties.Resources.grades;
-			this.btnInBangDiem.LargeWidth = 75;
-			this.btnInBangDiem.Name = "btnInBangDiem";
-			this.btnInBangDiem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnInBangDiem_ItemClick);
+			this.btnInDiemTKCK.Caption = "In Điểm Tổng Kết Cuối Khóa";
+			this.btnInDiemTKCK.Id = 20;
+			this.btnInDiemTKCK.ImageOptions.Image = global::DoAn_QLSV.Properties.Resources.grade;
+			this.btnInDiemTKCK.ImageOptions.LargeImage = global::DoAn_QLSV.Properties.Resources.grade;
+			this.btnInDiemTKCK.Name = "btnInDiemTKCK";
+			this.btnInDiemTKCK.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnInDiemTKCK_ItemClick);
 			// 
 			// FormMain
 			// 
@@ -432,6 +443,7 @@
 		private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribPageDiemThi;
 		private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribPageInDiemTKCK;
 		private DevExpress.XtraBars.BarButtonItem btnInBangDiem;
+		private DevExpress.XtraBars.BarButtonItem btnInDiemTKCK;
 	}
 }
 
