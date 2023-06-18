@@ -18,6 +18,11 @@ namespace DoAn_QLSV.report
 		private BindingSource lopBindingSource = new BindingSource();
 		private SqlConnection conn_publisher = new SqlConnection();
 		private string khoa = "";
+		String connstr = Program.createConnectionString(
+					Program.servername3,
+					Program.remoteLogin,
+					Program.remotePassword
+			);
 		public RP_Form_Hoc_Phi()
 		{
 			InitializeComponent();
@@ -124,7 +129,7 @@ namespace DoAn_QLSV.report
 			string khoaDaChon = cmbKhoa.SelectedIndex == 0 ? "CNTT" : "VT";
 			DataTable lopDataTable = Program.ExecSqlQuery(
 							"EXEC SP_LAY_DANH_SACH_LOP_THEO_KHOA '" + khoaDaChon + "'",
-							Program.createConnectionString(Program.servername, Program.mlogin, Program.password)
+							connstr
 			);
 			cbLop.Enabled = true;
 			cbHK.Enabled = true;

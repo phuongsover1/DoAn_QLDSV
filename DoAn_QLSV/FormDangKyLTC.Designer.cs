@@ -33,6 +33,8 @@ namespace DoAn_QLSV
 			System.Windows.Forms.Label label4;
 			System.Windows.Forms.Label label5;
 			System.Windows.Forms.Label label6;
+			System.Windows.Forms.Label label2;
+			System.Windows.Forms.Label label3;
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDangKyLTC));
 			this.qLDSV_TCDataSet = new DoAn_QLSV.QLDSV_TCDataSet();
 			this.sp_DSLTCCoTheDangKiBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -52,10 +54,6 @@ namespace DoAn_QLSV
 			this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
 			this.sp_DSLTCCoTheDangKiBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
 			this.fillToolStrip = new System.Windows.Forms.ToolStrip();
-			this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-			this.TSMaSV = new System.Windows.Forms.ToolStripTextBox();
-			this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
-			this.TSMatKhau = new System.Windows.Forms.ToolStripTextBox();
 			this.nKToolStripLabel = new System.Windows.Forms.ToolStripLabel();
 			this.nKToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
 			this.hKToolStripLabel = new System.Windows.Forms.ToolStripLabel();
@@ -73,9 +71,15 @@ namespace DoAn_QLSV
 			this.txtMaLTC = new DevExpress.XtraEditors.TextEdit();
 			this.txtNhom = new DevExpress.XtraEditors.TextEdit();
 			this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.button1 = new System.Windows.Forms.Button();
+			this.TSMatKhau = new DevExpress.XtraEditors.TextEdit();
+			this.TSMaSV = new DevExpress.XtraEditors.TextEdit();
 			label4 = new System.Windows.Forms.Label();
 			label5 = new System.Windows.Forms.Label();
 			label6 = new System.Windows.Forms.Label();
+			label2 = new System.Windows.Forms.Label();
+			label3 = new System.Windows.Forms.Label();
 			((System.ComponentModel.ISupportInitialize)(this.qLDSV_TCDataSet)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.sp_DSLTCCoTheDangKiBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.sp_DSLTCCoTheDangKiBindingNavigator)).BeginInit();
@@ -90,6 +94,9 @@ namespace DoAn_QLSV
 			((System.ComponentModel.ISupportInitialize)(this.txtTenMH.Properties)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.txtMaLTC.Properties)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.txtNhom.Properties)).BeginInit();
+			this.groupBox1.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.TSMatKhau.Properties)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.TSMaSV.Properties)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// label4
@@ -118,6 +125,24 @@ namespace DoAn_QLSV
 			label6.Size = new System.Drawing.Size(49, 13);
 			label6.TabIndex = 19;
 			label6.Text = "Mã LTC: ";
+			// 
+			// label2
+			// 
+			label2.AutoSize = true;
+			label2.Location = new System.Drawing.Point(21, 70);
+			label2.Name = "label2";
+			label2.Size = new System.Drawing.Size(51, 13);
+			label2.TabIndex = 20;
+			label2.Text = "Mật khẩu";
+			// 
+			// label3
+			// 
+			label3.AutoSize = true;
+			label3.Location = new System.Drawing.Point(21, 37);
+			label3.Name = "label3";
+			label3.Size = new System.Drawing.Size(40, 13);
+			label3.TabIndex = 19;
+			label3.Text = "Mã SV:";
 			// 
 			// qLDSV_TCDataSet
 			// 
@@ -278,10 +303,6 @@ namespace DoAn_QLSV
 			// 
 			this.fillToolStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
 			this.fillToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripLabel1,
-            this.TSMaSV,
-            this.toolStripLabel2,
-            this.TSMatKhau,
             this.nKToolStripLabel,
             this.nKToolStripTextBox,
             this.hKToolStripLabel,
@@ -292,31 +313,6 @@ namespace DoAn_QLSV
 			this.fillToolStrip.Size = new System.Drawing.Size(815, 25);
 			this.fillToolStrip.TabIndex = 1;
 			this.fillToolStrip.Text = "fillToolStrip";
-			// 
-			// toolStripLabel1
-			// 
-			this.toolStripLabel1.Name = "toolStripLabel1";
-			this.toolStripLabel1.Size = new System.Drawing.Size(43, 22);
-			this.toolStripLabel1.Text = "Mã SV:";
-			this.toolStripLabel1.Click += new System.EventHandler(this.toolStripLabel1_Click);
-			// 
-			// TSMaSV
-			// 
-			this.TSMaSV.Font = new System.Drawing.Font("Segoe UI", 9F);
-			this.TSMaSV.Name = "TSMaSV";
-			this.TSMaSV.Size = new System.Drawing.Size(86, 25);
-			// 
-			// toolStripLabel2
-			// 
-			this.toolStripLabel2.Name = "toolStripLabel2";
-			this.toolStripLabel2.Size = new System.Drawing.Size(28, 22);
-			this.toolStripLabel2.Text = "MK:";
-			// 
-			// TSMatKhau
-			// 
-			this.TSMatKhau.Font = new System.Drawing.Font("Segoe UI", 9F);
-			this.TSMatKhau.Name = "TSMatKhau";
-			this.TSMatKhau.Size = new System.Drawing.Size(86, 25);
 			// 
 			// nKToolStripLabel
 			// 
@@ -347,8 +343,8 @@ namespace DoAn_QLSV
 			// 
 			this.fillToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
 			this.fillToolStripButton.Name = "fillToolStripButton";
-			this.fillToolStripButton.Size = new System.Drawing.Size(26, 22);
-			this.fillToolStripButton.Text = "Fill";
+			this.fillToolStripButton.Size = new System.Drawing.Size(31, 22);
+			this.fillToolStripButton.Text = "Tìm";
 			this.fillToolStripButton.Click += new System.EventHandler(this.fillToolStripButton_Click);
 			// 
 			// sp_DSLTCCoTheDangKiGridControl
@@ -410,11 +406,11 @@ namespace DoAn_QLSV
 			this.Hoc.Controls.Add(label4);
 			this.Hoc.Controls.Add(label5);
 			this.Hoc.Controls.Add(label6);
-			this.Hoc.Location = new System.Drawing.Point(10, 289);
+			this.Hoc.Location = new System.Drawing.Point(12, 402);
 			this.Hoc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.Hoc.Name = "Hoc";
 			this.Hoc.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-			this.Hoc.Size = new System.Drawing.Size(368, 179);
+			this.Hoc.Size = new System.Drawing.Size(368, 123);
 			this.Hoc.TabIndex = 8;
 			this.Hoc.TabStop = false;
 			this.Hoc.Text = "Hủy đăng kí";
@@ -460,7 +456,8 @@ namespace DoAn_QLSV
 			// 
 			// simpleButton1
 			// 
-			this.simpleButton1.Location = new System.Drawing.Point(625, 22);
+			this.simpleButton1.Enabled = false;
+			this.simpleButton1.Location = new System.Drawing.Point(378, 29);
 			this.simpleButton1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.simpleButton1.Name = "simpleButton1";
 			this.simpleButton1.Size = new System.Drawing.Size(81, 24);
@@ -468,11 +465,57 @@ namespace DoAn_QLSV
 			this.simpleButton1.Text = "Đăng ký";
 			this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
 			// 
+			// groupBox1
+			// 
+			this.groupBox1.Controls.Add(this.button1);
+			this.groupBox1.Controls.Add(this.TSMatKhau);
+			this.groupBox1.Controls.Add(this.TSMaSV);
+			this.groupBox1.Controls.Add(label2);
+			this.groupBox1.Controls.Add(label3);
+			this.groupBox1.Enabled = false;
+			this.groupBox1.Location = new System.Drawing.Point(12, 282);
+			this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+			this.groupBox1.Name = "groupBox1";
+			this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+			this.groupBox1.Size = new System.Drawing.Size(368, 116);
+			this.groupBox1.TabIndex = 10;
+			this.groupBox1.TabStop = false;
+			this.groupBox1.Text = "Đăng nhập";
+			this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+			// 
+			// button1
+			// 
+			this.button1.Location = new System.Drawing.Point(253, 63);
+			this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+			this.button1.Name = "button1";
+			this.button1.Size = new System.Drawing.Size(93, 31);
+			this.button1.TabIndex = 33;
+			this.button1.Text = "Đăng nhập";
+			this.button1.UseVisualStyleBackColor = true;
+			this.button1.Click += new System.EventHandler(this.button1_Click);
+			// 
+			// TSMatKhau
+			// 
+			this.TSMatKhau.Location = new System.Drawing.Point(116, 67);
+			this.TSMatKhau.Margin = new System.Windows.Forms.Padding(4);
+			this.TSMatKhau.Name = "TSMatKhau";
+			this.TSMatKhau.Size = new System.Drawing.Size(112, 20);
+			this.TSMatKhau.TabIndex = 32;
+			// 
+			// TSMaSV
+			// 
+			this.TSMaSV.Location = new System.Drawing.Point(116, 35);
+			this.TSMaSV.Margin = new System.Windows.Forms.Padding(4);
+			this.TSMaSV.Name = "TSMaSV";
+			this.TSMaSV.Size = new System.Drawing.Size(111, 20);
+			this.TSMaSV.TabIndex = 31;
+			// 
 			// FormDangKyLTC
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(815, 502);
+			this.ClientSize = new System.Drawing.Size(815, 536);
+			this.Controls.Add(this.groupBox1);
 			this.Controls.Add(this.simpleButton1);
 			this.Controls.Add(this.Hoc);
 			this.Controls.Add(this.sp_ltc_sv_dangki_trong_ki_nayGridControl);
@@ -499,6 +542,10 @@ namespace DoAn_QLSV
 			((System.ComponentModel.ISupportInitialize)(this.txtTenMH.Properties)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.txtMaLTC.Properties)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.txtNhom.Properties)).EndInit();
+			this.groupBox1.ResumeLayout(false);
+			this.groupBox1.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.TSMatKhau.Properties)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.TSMaSV.Properties)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -535,15 +582,15 @@ namespace DoAn_QLSV
         private QLDSV_TCDataSetTableAdapters.sp_ltc_sv_dangki_trong_ki_nayTableAdapter sp_ltc_sv_dangki_trong_ki_nayTableAdapter;
         private DevExpress.XtraGrid.GridControl sp_ltc_sv_dangki_trong_ki_nayGridControl;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
-        private System.Windows.Forms.ToolStripTextBox TSMaSV;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel2;
-        private System.Windows.Forms.ToolStripTextBox TSMatKhau;
         private System.Windows.Forms.GroupBox Hoc;
         private System.Windows.Forms.Button btnHuy;
         private DevExpress.XtraEditors.TextEdit txtTenMH;
         private DevExpress.XtraEditors.TextEdit txtMaLTC;
         private DevExpress.XtraEditors.TextEdit txtNhom;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
-    }
+		private System.Windows.Forms.GroupBox groupBox1;
+		private System.Windows.Forms.Button button1;
+		private DevExpress.XtraEditors.TextEdit TSMatKhau;
+		private DevExpress.XtraEditors.TextEdit TSMaSV;
+	}
 }

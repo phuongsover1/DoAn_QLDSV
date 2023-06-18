@@ -136,6 +136,7 @@ namespace DoAn_QLSV
 			try
 			{
 				Program.servername = cmbKhoa.SelectedValue.ToString();
+
 			}
 			catch (Exception ex) { }
 		}

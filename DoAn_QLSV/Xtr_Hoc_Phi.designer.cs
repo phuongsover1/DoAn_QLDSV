@@ -155,8 +155,8 @@ namespace DoAn_QLSV.report
 			this.xrTableCell2.Name = "xrTableCell2";
 			this.xrTableCell2.StyleName = "DetailCaption1";
 			this.xrTableCell2.StylePriority.UseBorders = false;
-			this.xrTableCell2.Text = "xrTableCell2";
-			this.xrTableCell2.Weight = 0.2818206552358774D;
+			this.xrTableCell2.Text = "STT";
+			this.xrTableCell2.Weight = 0.07229224880842669D;
 			// 
 			// tableCell1
 			// 
@@ -165,7 +165,7 @@ namespace DoAn_QLSV.report
 			this.tableCell1.StyleName = "DetailCaption1";
 			this.tableCell1.StylePriority.UseBorders = false;
 			this.tableCell1.Text = "hovaten";
-			this.tableCell1.Weight = 0.2818206552358774D;
+			this.tableCell1.Weight = 0.49134906166332815D;
 			// 
 			// tableCell2
 			// 
@@ -223,7 +223,7 @@ namespace DoAn_QLSV.report
 			xrSummary1.Running = DevExpress.XtraReports.UI.SummaryRunning.Page;
 			this.xrTableCell1.Summary = xrSummary1;
 			this.xrTableCell1.Text = "xrTableCell1";
-			this.xrTableCell1.Weight = 0.2818206552358774D;
+			this.xrTableCell1.Weight = 0.0722922187176098D;
 			// 
 			// tableCell4
 			// 
@@ -233,7 +233,7 @@ namespace DoAn_QLSV.report
 			this.tableCell4.Name = "tableCell4";
 			this.tableCell4.StyleName = "DetailData1";
 			this.tableCell4.StylePriority.UseBorders = false;
-			this.tableCell4.Weight = 0.2818206552358774D;
+			this.tableCell4.Weight = 0.491349091754145D;
 			// 
 			// tableCell5
 			// 
@@ -248,7 +248,7 @@ namespace DoAn_QLSV.report
 			// tableCell6
 			// 
 			this.tableCell6.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-						new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[sotiendadong]")});
+						new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[SOTIENDONG]")});
 			this.tableCell6.Name = "tableCell6";
 			this.tableCell6.StyleName = "DetailData1";
 			this.tableCell6.StylePriority.UseTextAlignment = false;
@@ -341,7 +341,7 @@ namespace DoAn_QLSV.report
 			// xrLabel3
 			// 
 			this.xrLabel3.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-						new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sumSum([sotiendadong])")});
+						new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sumSum([SOTIENDONG])")});
 			this.xrLabel3.LocationFloat = new DevExpress.Utils.PointFloat(142.9088F, 48.50006F);
 			this.xrLabel3.Multiline = true;
 			this.xrLabel3.Name = "xrLabel3";

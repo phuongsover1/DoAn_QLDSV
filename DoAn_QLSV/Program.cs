@@ -26,7 +26,7 @@ namespace DoAn_QLSV
 		public static String servername1 = "DESKTOP-GUM00GB\\MSSQLSERVER1";
 		public static String servername2 = "DESKTOP-GUM00GB\\MSSQLSERVER2";
 		public static String servername3 = "DESKTOP-GUM00GB\\MSSQLSERVER3";
-
+		public static String servernameA = "";
 		public static String username;
 		public static String password = "1234";
 		public static String remoteLogin = "HTKN";

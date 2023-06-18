@@ -30,7 +30,7 @@ namespace DoAn_QLSV
 			bool ketQua = kiemTraDuLieuDauVao();
 			if (ketQua == false) return;
 
-			taiKhoan = Program.maGVDuocChon;
+			taiKhoan = teTK.Text;
 			matKhau = txtMatKhau.Text;
 			maGV = Program.maGVDuocChon;
 			if (rdKhoa.Checked == true)
@@ -46,8 +46,8 @@ namespace DoAn_QLSV
 			Console.WriteLine(vaiTro);
 
 			/*declare @returnedResult int
-			 exec @returnedResult = sp_TraCuu_KiemTraMaNhanVien '20'
-			 select @returnedResult*/
+       exec @returnedResult = sp_TraCuu_KiemTraMaNhanVien '20'
+       select @returnedResult*/
 			String cauTruyVan =
 							"EXEC sp_TaoTaiKhoan '" + taiKhoan + "' , '" + matKhau + "', '"
 							+ maGV + "', '" + vaiTro + "'";

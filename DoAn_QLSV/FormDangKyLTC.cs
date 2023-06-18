@@ -1,4 +1,5 @@
-﻿using DevExpress.XtraEditors;
+﻿using DevExpress.Office.Utils;
+using DevExpress.XtraEditors;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,18 +23,12 @@ namespace DoAn_QLSV
 
 		private void fillToolStripButton_Click(object sender, EventArgs e)
 		{
+			groupBox1.Enabled = true;
 			try
 			{
-				String statement = "EXEC sp_sv_dang_nhap @MSV =" + TSMaSV.Text + ", @MK= '" + TSMatKhau.Text + "'";
-				if (Program.ExecSqlQuery(statement, Program.connstr).Rows.Count == 0)
-				{
-					System.Windows.Forms.MessageBox.Show("Sai mật khẩu hoặc tài khoản");
 
-				}
-				else
-				{
-					lamMoi();
-				}
+				lamMoi();
+
 
 				//this.sp_DSLTCCoTheDangKiTableAdapter.Fill(this.qLDSV_TCDataSet.sp_DSLTCCoTheDangKi, nKToolStripTextBox.Text, new System.Nullable<int>(((int)(System.Convert.ChangeType(hKToolStripTextBox.Text, typeof(int))))));
 			}
@@ -193,6 +188,7 @@ namespace DoAn_QLSV
 				{
 					String statement = "EXEC sp_huy_dkltc @MALTC =" + drv_Huy_DK["MALTC"] + ", @MASV = '" + TSMaSV.Text + "'";
 					Program.ExecSqlNonQuery(statement, Program.connstr);
+
 					this.sp_ltc_sv_dangki_trong_ki_nayTableAdapter.Fill(this.qLDSV_TCDataSet.sp_ltc_sv_dangki_trong_ki_nay, nKToolStripTextBox.Text, new System.Nullable<int>(((int)(System.Convert.ChangeType(hKToolStripTextBox.Text, typeof(int))))), Program.username);
 					this.sp_DSLTCCoTheDangKiBindingSource.ResetCurrentItem();// tự động render để hiển thị dữ liệu mới
 					this.sp_ltc_sv_dangki_trong_ki_nayBindingSource.ResetCurrentItem();
@@ -217,6 +213,42 @@ namespace DoAn_QLSV
 			this.txtMaLTC.Text = drv_Huy_DK["MALTC"].ToString();
 			this.txtTenMH.Text = drv_Huy_DK["TENMH"].ToString();
 			this.txtNhom.Text = drv_Huy_DK["NHOM"].ToString();
+		}
+
+		private void groupBox1_Enter(object sender, EventArgs e)
+		{
+
+		}
+
+		private void button1_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				String statement = "EXEC sp_sv_dang_nhap @MSV =" + TSMaSV.Text + ", @MK= '" + TSMatKhau.Text + "'";
+				SqlDataReader temp = Program.ExecSqlDataReader(statement, Program.connstr);
+				if (!temp.HasRows)
+				{
+					System.Windows.Forms.MessageBox.Show("Sai mật khẩu hoặc tài khoản");
+
+				}
+				else
+				{
+					simpleButton1.Enabled = true;
+					temp.Read();
+					FormMain main = (FormMain)this.MdiParent;
+					main.lbMaNV.Text = "Mã SV: " + temp.GetString(0);
+					main.lbHoTen.Text = "Họ Tên: " + temp.GetString(1) + " " + temp.GetString(2);
+					main.lblMaLop.Visible = true;
+					main.lblMaLop.Text = "Mã Lớp: " + temp.GetString(3);
+					lamMoi();
+				}
+
+				//this.sp_DSLTCCoTheDangKiTableAdapter.Fill(this.qLDSV_TCDataSet.sp_DSLTCCoTheDangKi, nKToolStripTextBox.Text, new System.Nullable<int>(((int)(System.Convert.ChangeType(hKToolStripTextBox.Text, typeof(int))))));
+			}
+			catch (System.Exception ex)
+			{
+				System.Windows.Forms.MessageBox.Show(ex.Message);
+			}
 		}
 	}
 

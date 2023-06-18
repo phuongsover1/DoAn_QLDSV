@@ -46,6 +46,7 @@
 			this.btnDKLTC = new DevExpress.XtraBars.BarButtonItem();
 			this.btnInDSSVDK = new DevExpress.XtraBars.BarButtonItem();
 			this.btnInDSHP = new DevExpress.XtraBars.BarButtonItem();
+			this.btnDongHocPhi = new DevExpress.XtraBars.BarButtonItem();
 			this.ribTaiKhoan = new DevExpress.XtraBars.Ribbon.RibbonPage();
 			this.ribGroupDangNhap = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
 			this.ribGroupTaoTaiKhoan = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -58,6 +59,8 @@
 			this.ribLTC = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
 			this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
 			this.ribNhapDiem = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+			this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+			this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
 			this.ribbonPageBaoCao = new DevExpress.XtraBars.Ribbon.RibbonPage();
 			this.ribPageGroupInDSLTC = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
 			this.ribPageInDSDiemLTC = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -73,9 +76,7 @@
 			this.lbHoTen = new DevExpress.XtraEditors.LabelControl();
 			this.lbMaNV = new DevExpress.XtraEditors.LabelControl();
 			this.defaultBarAndDockingController1 = new DevExpress.XtraBars.DefaultBarAndDockingController(this.components);
-			this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-			this.btnDongHocPhi = new DevExpress.XtraBars.BarButtonItem();
-			this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+			this.lblMaLop = new DevExpress.XtraEditors.LabelControl();
 			((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.documentManager1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.tabbedView1)).BeginInit();
@@ -255,6 +256,13 @@
 			this.btnInDSHP.Name = "btnInDSHP";
 			this.btnInDSHP.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnInDSHP_ItemClick);
 			// 
+			// btnDongHocPhi
+			// 
+			this.btnDongHocPhi.Caption = "Đóng Học Phí";
+			this.btnDongHocPhi.Id = 24;
+			this.btnDongHocPhi.Name = "btnDongHocPhi";
+			this.btnDongHocPhi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDongHocPhi_ItemClick);
+			// 
 			// ribTaiKhoan
 			// 
 			this.ribTaiKhoan.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -337,6 +345,19 @@
 			this.ribNhapDiem.Name = "ribNhapDiem";
 			this.ribNhapDiem.Text = "Nhập Điểm";
 			// 
+			// ribbonPage1
+			// 
+			this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup4});
+			this.ribbonPage1.Name = "ribbonPage1";
+			this.ribbonPage1.Text = "Học Phí";
+			// 
+			// ribbonPageGroup4
+			// 
+			this.ribbonPageGroup4.ItemLinks.Add(this.btnDongHocPhi);
+			this.ribbonPageGroup4.Name = "ribbonPageGroup4";
+			this.ribbonPageGroup4.Text = "Đóng Học Phí";
+			// 
 			// ribbonPageBaoCao
 			// 
 			this.ribbonPageBaoCao.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -401,6 +422,7 @@
 			// 
 			this.panelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+			this.panelControl1.Controls.Add(this.lblMaLop);
 			this.panelControl1.Controls.Add(this.lbNhom);
 			this.panelControl1.Controls.Add(this.lbHoTen);
 			this.panelControl1.Controls.Add(this.lbMaNV);
@@ -411,7 +433,7 @@
 			// 
 			// lbNhom
 			// 
-			this.lbNhom.Location = new System.Drawing.Point(315, 10);
+			this.lbNhom.Location = new System.Drawing.Point(316, 10);
 			this.lbNhom.Name = "lbNhom";
 			this.lbNhom.Size = new System.Drawing.Size(53, 13);
 			this.lbNhom.TabIndex = 2;
@@ -436,25 +458,14 @@
 			// defaultBarAndDockingController1
 			// 
 			// 
-			// ribbonPage1
+			// lblMaLop
 			// 
-			this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup4});
-			this.ribbonPage1.Name = "ribbonPage1";
-			this.ribbonPage1.Text = "Học Phí";
-			// 
-			// btnDongHocPhi
-			// 
-			this.btnDongHocPhi.Caption = "Đóng Học Phí";
-			this.btnDongHocPhi.Id = 24;
-			this.btnDongHocPhi.Name = "btnDongHocPhi";
-			this.btnDongHocPhi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDongHocPhi_ItemClick);
-			// 
-			// ribbonPageGroup4
-			// 
-			this.ribbonPageGroup4.ItemLinks.Add(this.btnDongHocPhi);
-			this.ribbonPageGroup4.Name = "ribbonPageGroup4";
-			this.ribbonPageGroup4.Text = "Đóng Học Phí";
+			this.lblMaLop.Location = new System.Drawing.Point(386, 10);
+			this.lblMaLop.Name = "lblMaLop";
+			this.lblMaLop.Size = new System.Drawing.Size(53, 13);
+			this.lblMaLop.TabIndex = 3;
+			this.lblMaLop.Text = "Nhóm: PGV";
+			this.lblMaLop.Visible = false;
 			// 
 			// FormMain
 			// 
@@ -529,6 +540,7 @@
 		private DevExpress.XtraBars.BarButtonItem btnDongHocPhi;
 		private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage1;
 		private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup4;
+		public DevExpress.XtraEditors.LabelControl lblMaLop;
 	}
 }
 
