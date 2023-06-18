@@ -40,7 +40,7 @@ namespace DoAn_QLSV
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormHocPhi));
 			this.qLDSV_TCDataSet = new DoAn_QLSV.QLDSV_TCDataSet();
 			this.sp_ds_hoc_phiBindingSource = new System.Windows.Forms.BindingSource(this.components);
-			this.sp_ds_hoc_phiTableAdapter = new DoAn_QLSV.QLDSV_TCDataSetTableAdapters.sp_ds_hoc_phiTableAdapter(); //DoAn_QLSV.QLDSV_TCDataSetTableAdapters.sp_ds_hoc_phiTableAdapter();
+			this.sp_ds_hoc_phiTableAdapter = new DoAn_QLSV.QLDSV_TCDataSetTableAdapters.sp_ds_hoc_phiTableAdapter();
 			this.tableAdapterManager = new DoAn_QLSV.QLDSV_TCDataSetTableAdapters.TableAdapterManager();
 			this.sp_ds_hoc_phiBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
 			this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
@@ -101,78 +101,71 @@ namespace DoAn_QLSV
 			this.groupBox1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.txtHocKy.Properties)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.txtNienKhoa.Properties)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.dteNgay.Properties.CalendarTimeProperties)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.dteNgay.Properties)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.dteNgay.Properties.CalendarTimeProperties)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.txtSTD.Properties)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// label4
 			// 
 			label4.AutoSize = true;
-			label4.Location = new System.Drawing.Point(24, 136);
-			label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+			label4.Location = new System.Drawing.Point(21, 110);
 			label4.Name = "label4";
-			label4.Size = new System.Drawing.Size(54, 17);
+			label4.Size = new System.Drawing.Size(42, 13);
 			label4.TabIndex = 21;
 			label4.Text = "Hoc phi";
 			// 
 			// label5
 			// 
 			label5.AutoSize = true;
-			label5.Location = new System.Drawing.Point(278, 46);
-			label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+			label5.Location = new System.Drawing.Point(238, 37);
 			label5.Name = "label5";
-			label5.Size = new System.Drawing.Size(51, 17);
+			label5.Size = new System.Drawing.Size(39, 13);
 			label5.TabIndex = 20;
 			label5.Text = "Học kỳ";
 			// 
 			// label6
 			// 
 			label6.AutoSize = true;
-			label6.Location = new System.Drawing.Point(24, 46);
-			label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+			label6.Location = new System.Drawing.Point(21, 37);
 			label6.Name = "label6";
-			label6.Size = new System.Drawing.Size(68, 17);
+			label6.Size = new System.Drawing.Size(54, 13);
 			label6.TabIndex = 19;
 			label6.Text = "Niên khóa";
 			// 
 			// nGAYLabel
 			// 
 			nGAYLabel.AutoSize = true;
-			nGAYLabel.Location = new System.Drawing.Point(24, 94);
-			nGAYLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+			nGAYLabel.Location = new System.Drawing.Point(21, 76);
 			nGAYLabel.Name = "nGAYLabel";
-			nGAYLabel.Size = new System.Drawing.Size(40, 17);
+			nGAYLabel.Size = new System.Drawing.Size(32, 13);
 			nGAYLabel.TabIndex = 30;
 			nGAYLabel.Text = "Ngày";
 			// 
 			// label2
 			// 
 			label2.AutoSize = true;
-			label2.Location = new System.Drawing.Point(24, 136);
-			label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+			label2.Location = new System.Drawing.Point(21, 110);
 			label2.Name = "label2";
-			label2.Size = new System.Drawing.Size(86, 17);
+			label2.Size = new System.Drawing.Size(67, 13);
 			label2.TabIndex = 21;
 			label2.Text = "Số tiền đóng";
 			// 
 			// label1
 			// 
 			label1.AutoSize = true;
-			label1.Location = new System.Drawing.Point(278, 46);
-			label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+			label1.Location = new System.Drawing.Point(238, 37);
 			label1.Name = "label1";
-			label1.Size = new System.Drawing.Size(51, 17);
+			label1.Size = new System.Drawing.Size(39, 13);
 			label1.TabIndex = 20;
 			label1.Text = "Học kỳ";
 			// 
 			// mAPNLabel
 			// 
 			mAPNLabel.AutoSize = true;
-			mAPNLabel.Location = new System.Drawing.Point(24, 46);
-			mAPNLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+			mAPNLabel.Location = new System.Drawing.Point(21, 37);
 			mAPNLabel.Name = "mAPNLabel";
-			mAPNLabel.Size = new System.Drawing.Size(68, 17);
+			mAPNLabel.Size = new System.Drawing.Size(54, 13);
 			mAPNLabel.TabIndex = 19;
 			mAPNLabel.Text = "Niên khóa";
 			// 
@@ -194,7 +187,15 @@ namespace DoAn_QLSV
 			// 
 			this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
 			this.tableAdapterManager.Connection = null;
+			this.tableAdapterManager.CT_DONGHOCPHITableAdapter = null;
+			this.tableAdapterManager.DANGKYTableAdapter = null;
 			this.tableAdapterManager.GIANGVIENTableAdapter = null;
+			this.tableAdapterManager.HOCPHITableAdapter = null;
+			this.tableAdapterManager.KHOATableAdapter = null;
+			this.tableAdapterManager.LOPTableAdapter = null;
+			this.tableAdapterManager.LOPTINCHITableAdapter = null;
+			this.tableAdapterManager.MONHOCTableAdapter = null;
+			this.tableAdapterManager.SINHVIENTableAdapter = null;
 			this.tableAdapterManager.UpdateOrder = DoAn_QLSV.QLDSV_TCDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
 			// 
 			// sp_ds_hoc_phiBindingNavigator
@@ -205,18 +206,18 @@ namespace DoAn_QLSV
 			this.sp_ds_hoc_phiBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
 			this.sp_ds_hoc_phiBindingNavigator.ImageScalingSize = new System.Drawing.Size(20, 20);
 			this.sp_ds_hoc_phiBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-						this.bindingNavigatorMoveFirstItem,
-						this.bindingNavigatorMovePreviousItem,
-						this.bindingNavigatorSeparator,
-						this.bindingNavigatorPositionItem,
-						this.bindingNavigatorCountItem,
-						this.bindingNavigatorSeparator1,
-						this.bindingNavigatorMoveNextItem,
-						this.bindingNavigatorMoveLastItem,
-						this.bindingNavigatorSeparator2,
-						this.bindingNavigatorAddNewItem,
-						this.bindingNavigatorDeleteItem,
-						this.sp_ds_hoc_phiBindingNavigatorSaveItem});
+            this.bindingNavigatorMoveFirstItem,
+            this.bindingNavigatorMovePreviousItem,
+            this.bindingNavigatorSeparator,
+            this.bindingNavigatorPositionItem,
+            this.bindingNavigatorCountItem,
+            this.bindingNavigatorSeparator1,
+            this.bindingNavigatorMoveNextItem,
+            this.bindingNavigatorMoveLastItem,
+            this.bindingNavigatorSeparator2,
+            this.bindingNavigatorAddNewItem,
+            this.bindingNavigatorDeleteItem,
+            this.sp_ds_hoc_phiBindingNavigatorSaveItem});
 			this.sp_ds_hoc_phiBindingNavigator.Location = new System.Drawing.Point(0, 0);
 			this.sp_ds_hoc_phiBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
 			this.sp_ds_hoc_phiBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
@@ -224,7 +225,7 @@ namespace DoAn_QLSV
 			this.sp_ds_hoc_phiBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
 			this.sp_ds_hoc_phiBindingNavigator.Name = "sp_ds_hoc_phiBindingNavigator";
 			this.sp_ds_hoc_phiBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-			this.sp_ds_hoc_phiBindingNavigator.Size = new System.Drawing.Size(1105, 27);
+			this.sp_ds_hoc_phiBindingNavigator.Size = new System.Drawing.Size(947, 27);
 			this.sp_ds_hoc_phiBindingNavigator.TabIndex = 0;
 			this.sp_ds_hoc_phiBindingNavigator.Text = "bindingNavigator1";
 			// 
@@ -234,13 +235,13 @@ namespace DoAn_QLSV
 			this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
 			this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
 			this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-			this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(29, 24);
+			this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(24, 24);
 			this.bindingNavigatorAddNewItem.Text = "Add new";
 			// 
 			// bindingNavigatorCountItem
 			// 
 			this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-			this.bindingNavigatorCountItem.Size = new System.Drawing.Size(45, 24);
+			this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 24);
 			this.bindingNavigatorCountItem.Text = "of {0}";
 			this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
 			// 
@@ -250,7 +251,7 @@ namespace DoAn_QLSV
 			this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
 			this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
 			this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-			this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(29, 24);
+			this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(24, 24);
 			this.bindingNavigatorDeleteItem.Text = "Delete";
 			// 
 			// bindingNavigatorMoveFirstItem
@@ -259,7 +260,7 @@ namespace DoAn_QLSV
 			this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
 			this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
 			this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-			this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(29, 24);
+			this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(24, 24);
 			this.bindingNavigatorMoveFirstItem.Text = "Move first";
 			// 
 			// bindingNavigatorMovePreviousItem
@@ -268,7 +269,7 @@ namespace DoAn_QLSV
 			this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
 			this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
 			this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-			this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(29, 24);
+			this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(24, 24);
 			this.bindingNavigatorMovePreviousItem.Text = "Move previous";
 			// 
 			// bindingNavigatorSeparator
@@ -282,7 +283,7 @@ namespace DoAn_QLSV
 			this.bindingNavigatorPositionItem.AutoSize = false;
 			this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
 			this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-			this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 27);
+			this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(43, 23);
 			this.bindingNavigatorPositionItem.Text = "0";
 			this.bindingNavigatorPositionItem.ToolTipText = "Current position";
 			// 
@@ -297,7 +298,7 @@ namespace DoAn_QLSV
 			this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
 			this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
 			this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-			this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(29, 24);
+			this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(24, 24);
 			this.bindingNavigatorMoveNextItem.Text = "Move next";
 			// 
 			// bindingNavigatorMoveLastItem
@@ -306,7 +307,7 @@ namespace DoAn_QLSV
 			this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
 			this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
 			this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-			this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(29, 24);
+			this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(24, 24);
 			this.bindingNavigatorMoveLastItem.Text = "Move last";
 			// 
 			// bindingNavigatorSeparator2
@@ -320,56 +321,59 @@ namespace DoAn_QLSV
 			this.sp_ds_hoc_phiBindingNavigatorSaveItem.Enabled = false;
 			this.sp_ds_hoc_phiBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("sp_ds_hoc_phiBindingNavigatorSaveItem.Image")));
 			this.sp_ds_hoc_phiBindingNavigatorSaveItem.Name = "sp_ds_hoc_phiBindingNavigatorSaveItem";
-			this.sp_ds_hoc_phiBindingNavigatorSaveItem.Size = new System.Drawing.Size(29, 24);
+			this.sp_ds_hoc_phiBindingNavigatorSaveItem.Size = new System.Drawing.Size(24, 24);
 			this.sp_ds_hoc_phiBindingNavigatorSaveItem.Text = "Save Data";
 			// 
 			// fillToolStrip
 			// 
 			this.fillToolStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
 			this.fillToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-						this.masvToolStripLabel,
-						this.masvToolStripTextBox,
-						this.fillToolStripButton});
+            this.masvToolStripLabel,
+            this.masvToolStripTextBox,
+            this.fillToolStripButton});
 			this.fillToolStrip.Location = new System.Drawing.Point(0, 27);
 			this.fillToolStrip.Name = "fillToolStrip";
-			this.fillToolStrip.Size = new System.Drawing.Size(1105, 27);
+			this.fillToolStrip.Size = new System.Drawing.Size(947, 25);
 			this.fillToolStrip.TabIndex = 1;
 			this.fillToolStrip.Text = "fillToolStrip";
 			// 
 			// masvToolStripLabel
 			// 
 			this.masvToolStripLabel.Name = "masvToolStripLabel";
-			this.masvToolStripLabel.Size = new System.Drawing.Size(46, 24);
-			this.masvToolStripLabel.Text = "masv:";
+			this.masvToolStripLabel.Size = new System.Drawing.Size(43, 22);
+			this.masvToolStripLabel.Text = "Mã SV:";
 			// 
 			// masvToolStripTextBox
 			// 
 			this.masvToolStripTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
 			this.masvToolStripTextBox.Name = "masvToolStripTextBox";
-			this.masvToolStripTextBox.Size = new System.Drawing.Size(100, 27);
+			this.masvToolStripTextBox.Size = new System.Drawing.Size(86, 25);
 			// 
 			// fillToolStripButton
 			// 
 			this.fillToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
 			this.fillToolStripButton.Name = "fillToolStripButton";
-			this.fillToolStripButton.Size = new System.Drawing.Size(32, 24);
-			this.fillToolStripButton.Text = "Fill";
+			this.fillToolStripButton.Size = new System.Drawing.Size(60, 22);
+			this.fillToolStripButton.Text = "Tìm kiếm";
 			this.fillToolStripButton.Click += new System.EventHandler(this.fillToolStripButton_Click);
 			// 
 			// sp_ds_hoc_phiGridControl
 			// 
 			this.sp_ds_hoc_phiGridControl.DataSource = this.sp_ds_hoc_phiBindingSource;
-			this.sp_ds_hoc_phiGridControl.Location = new System.Drawing.Point(559, 102);
+			this.sp_ds_hoc_phiGridControl.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+			this.sp_ds_hoc_phiGridControl.Location = new System.Drawing.Point(479, 83);
 			this.sp_ds_hoc_phiGridControl.MainView = this.gridView1;
+			this.sp_ds_hoc_phiGridControl.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.sp_ds_hoc_phiGridControl.Name = "sp_ds_hoc_phiGridControl";
-			this.sp_ds_hoc_phiGridControl.Size = new System.Drawing.Size(534, 276);
+			this.sp_ds_hoc_phiGridControl.Size = new System.Drawing.Size(458, 224);
 			this.sp_ds_hoc_phiGridControl.TabIndex = 2;
 			this.sp_ds_hoc_phiGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-						this.gridView1});
+            this.gridView1});
 			this.sp_ds_hoc_phiGridControl.Click += new System.EventHandler(this.sp_ds_hoc_phiGridControl_Click_1);
 			// 
 			// gridView1
 			// 
+			this.gridView1.DetailHeight = 284;
 			this.gridView1.GridControl = this.sp_ds_hoc_phiGridControl;
 			this.gridView1.Name = "gridView1";
 			// 
@@ -385,16 +389,19 @@ namespace DoAn_QLSV
 			// sp_ds_ct_hoc_phiGridControl
 			// 
 			this.sp_ds_ct_hoc_phiGridControl.DataSource = this.sp_ds_ct_hoc_phiBindingSource;
-			this.sp_ds_ct_hoc_phiGridControl.Location = new System.Drawing.Point(572, 395);
+			this.sp_ds_ct_hoc_phiGridControl.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+			this.sp_ds_ct_hoc_phiGridControl.Location = new System.Drawing.Point(490, 321);
 			this.sp_ds_ct_hoc_phiGridControl.MainView = this.gridView2;
+			this.sp_ds_ct_hoc_phiGridControl.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.sp_ds_ct_hoc_phiGridControl.Name = "sp_ds_ct_hoc_phiGridControl";
-			this.sp_ds_ct_hoc_phiGridControl.Size = new System.Drawing.Size(521, 228);
+			this.sp_ds_ct_hoc_phiGridControl.Size = new System.Drawing.Size(447, 185);
 			this.sp_ds_ct_hoc_phiGridControl.TabIndex = 4;
 			this.sp_ds_ct_hoc_phiGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-						this.gridView2});
+            this.gridView2});
 			// 
 			// gridView2
 			// 
+			this.gridView2.DetailHeight = 284;
 			this.gridView2.GridControl = this.sp_ds_ct_hoc_phiGridControl;
 			this.gridView2.Name = "gridView2";
 			// 
@@ -407,48 +414,52 @@ namespace DoAn_QLSV
 			this.Hoc.Controls.Add(label4);
 			this.Hoc.Controls.Add(label5);
 			this.Hoc.Controls.Add(label6);
-			this.Hoc.Location = new System.Drawing.Point(38, 141);
+			this.Hoc.Location = new System.Drawing.Point(33, 115);
+			this.Hoc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.Hoc.Name = "Hoc";
-			this.Hoc.Size = new System.Drawing.Size(482, 220);
+			this.Hoc.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+			this.Hoc.Size = new System.Drawing.Size(413, 179);
 			this.Hoc.TabIndex = 7;
 			this.Hoc.TabStop = false;
-			this.Hoc.Text = "Them hoc phi";
+			this.Hoc.Text = "Thêm học phí";
 			// 
 			// btnThem
 			// 
 			this.btnThem.Enabled = false;
-			this.btnThem.Location = new System.Drawing.Point(327, 132);
+			this.btnThem.Location = new System.Drawing.Point(280, 107);
+			this.btnThem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.btnThem.Name = "btnThem";
-			this.btnThem.Size = new System.Drawing.Size(75, 23);
+			this.btnThem.Size = new System.Drawing.Size(64, 19);
 			this.btnThem.TabIndex = 33;
-			this.btnThem.Text = "Them";
+			this.btnThem.Text = "Thêm";
 			this.btnThem.UseVisualStyleBackColor = true;
 			this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
 			// 
 			// txtHocKy1
 			// 
 			this.txtHocKy1.Enabled = false;
-			this.txtHocKy1.Location = new System.Drawing.Point(338, 43);
-			this.txtHocKy1.Margin = new System.Windows.Forms.Padding(5);
+			this.txtHocKy1.Location = new System.Drawing.Point(290, 35);
+			this.txtHocKy1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
 			this.txtHocKy1.Name = "txtHocKy1";
-			this.txtHocKy1.Size = new System.Drawing.Size(51, 22);
+			this.txtHocKy1.Size = new System.Drawing.Size(44, 20);
 			this.txtHocKy1.TabIndex = 32;
 			// 
 			// txtNienKhoa1
 			// 
 			this.txtNienKhoa1.Enabled = false;
-			this.txtNienKhoa1.Location = new System.Drawing.Point(135, 43);
-			this.txtNienKhoa1.Margin = new System.Windows.Forms.Padding(5);
+			this.txtNienKhoa1.Location = new System.Drawing.Point(116, 35);
+			this.txtNienKhoa1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
 			this.txtNienKhoa1.Name = "txtNienKhoa1";
-			this.txtNienKhoa1.Size = new System.Drawing.Size(129, 22);
+			this.txtNienKhoa1.Size = new System.Drawing.Size(111, 20);
 			this.txtNienKhoa1.TabIndex = 31;
 			// 
 			// txtHocPhi
 			// 
 			this.txtHocPhi.Enabled = false;
-			this.txtHocPhi.Location = new System.Drawing.Point(135, 133);
+			this.txtHocPhi.Location = new System.Drawing.Point(116, 108);
+			this.txtHocPhi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.txtHocPhi.Name = "txtHocPhi";
-			this.txtHocPhi.Size = new System.Drawing.Size(131, 22);
+			this.txtHocPhi.Size = new System.Drawing.Size(112, 20);
 			this.txtHocPhi.TabIndex = 28;
 			// 
 			// groupBox1
@@ -462,40 +473,43 @@ namespace DoAn_QLSV
 			this.groupBox1.Controls.Add(label2);
 			this.groupBox1.Controls.Add(label1);
 			this.groupBox1.Controls.Add(mAPNLabel);
-			this.groupBox1.Location = new System.Drawing.Point(38, 403);
+			this.groupBox1.Location = new System.Drawing.Point(33, 327);
+			this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.groupBox1.Name = "groupBox1";
-			this.groupBox1.Size = new System.Drawing.Size(482, 220);
+			this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+			this.groupBox1.Size = new System.Drawing.Size(413, 179);
 			this.groupBox1.TabIndex = 8;
 			this.groupBox1.TabStop = false;
-			this.groupBox1.Text = "Dong hoc phi";
+			this.groupBox1.Text = "Đóng học phí";
 			// 
 			// btnDong
 			// 
 			this.btnDong.Enabled = false;
-			this.btnDong.Location = new System.Drawing.Point(327, 133);
+			this.btnDong.Location = new System.Drawing.Point(280, 108);
+			this.btnDong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.btnDong.Name = "btnDong";
-			this.btnDong.Size = new System.Drawing.Size(75, 23);
+			this.btnDong.Size = new System.Drawing.Size(64, 19);
 			this.btnDong.TabIndex = 34;
-			this.btnDong.Text = "Dong";
+			this.btnDong.Text = "Đóng";
 			this.btnDong.UseVisualStyleBackColor = true;
 			this.btnDong.Click += new System.EventHandler(this.btnDong_Click_1);
 			// 
 			// txtHocKy
 			// 
 			this.txtHocKy.Enabled = false;
-			this.txtHocKy.Location = new System.Drawing.Point(338, 43);
-			this.txtHocKy.Margin = new System.Windows.Forms.Padding(5);
+			this.txtHocKy.Location = new System.Drawing.Point(290, 35);
+			this.txtHocKy.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
 			this.txtHocKy.Name = "txtHocKy";
-			this.txtHocKy.Size = new System.Drawing.Size(51, 22);
+			this.txtHocKy.Size = new System.Drawing.Size(44, 20);
 			this.txtHocKy.TabIndex = 32;
 			// 
 			// txtNienKhoa
 			// 
 			this.txtNienKhoa.Enabled = false;
-			this.txtNienKhoa.Location = new System.Drawing.Point(135, 43);
-			this.txtNienKhoa.Margin = new System.Windows.Forms.Padding(5);
+			this.txtNienKhoa.Location = new System.Drawing.Point(116, 35);
+			this.txtNienKhoa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
 			this.txtNienKhoa.Name = "txtNienKhoa";
-			this.txtNienKhoa.Size = new System.Drawing.Size(129, 22);
+			this.txtNienKhoa.Size = new System.Drawing.Size(111, 20);
 			this.txtNienKhoa.TabIndex = 31;
 			this.txtNienKhoa.EditValueChanged += new System.EventHandler(this.txtNienKhoa_EditValueChanged);
 			// 
@@ -503,29 +517,31 @@ namespace DoAn_QLSV
 			// 
 			this.dteNgay.EditValue = null;
 			this.dteNgay.Enabled = false;
-			this.dteNgay.Location = new System.Drawing.Point(135, 89);
-			this.dteNgay.Margin = new System.Windows.Forms.Padding(5);
+			this.dteNgay.Location = new System.Drawing.Point(116, 72);
+			this.dteNgay.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
 			this.dteNgay.Name = "dteNgay";
 			this.dteNgay.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-						new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
 			this.dteNgay.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-						new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-			this.dteNgay.Size = new System.Drawing.Size(131, 22);
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+			this.dteNgay.Size = new System.Drawing.Size(112, 20);
 			this.dteNgay.TabIndex = 29;
 			// 
 			// txtSTD
 			// 
 			this.txtSTD.Enabled = false;
-			this.txtSTD.Location = new System.Drawing.Point(135, 133);
+			this.txtSTD.Location = new System.Drawing.Point(116, 108);
+			this.txtSTD.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.txtSTD.Name = "txtSTD";
-			this.txtSTD.Size = new System.Drawing.Size(131, 22);
+			this.txtSTD.Size = new System.Drawing.Size(112, 20);
 			this.txtSTD.TabIndex = 28;
 			// 
 			// button1
 			// 
-			this.button1.Location = new System.Drawing.Point(394, 30);
+			this.button1.Location = new System.Drawing.Point(338, 24);
+			this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(75, 23);
+			this.button1.Size = new System.Drawing.Size(64, 19);
 			this.button1.TabIndex = 9;
 			this.button1.Text = "Lam Moi";
 			this.button1.UseVisualStyleBackColor = true;
@@ -533,9 +549,9 @@ namespace DoAn_QLSV
 			// 
 			// FormHocPhi
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(1105, 635);
+			this.ClientSize = new System.Drawing.Size(947, 516);
 			this.Controls.Add(this.button1);
 			this.Controls.Add(this.groupBox1);
 			this.Controls.Add(this.Hoc);
@@ -543,6 +559,7 @@ namespace DoAn_QLSV
 			this.Controls.Add(this.sp_ds_hoc_phiGridControl);
 			this.Controls.Add(this.fillToolStrip);
 			this.Controls.Add(this.sp_ds_hoc_phiBindingNavigator);
+			this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.Name = "FormHocPhi";
 			this.Text = "XtraForm1";
 			((System.ComponentModel.ISupportInitialize)(this.qLDSV_TCDataSet)).EndInit();

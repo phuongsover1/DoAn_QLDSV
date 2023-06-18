@@ -499,6 +499,7 @@ namespace DoAn_QLSV
 			this.TSMatKhau.Location = new System.Drawing.Point(116, 67);
 			this.TSMatKhau.Margin = new System.Windows.Forms.Padding(4);
 			this.TSMatKhau.Name = "TSMatKhau";
+			this.TSMatKhau.Properties.UseSystemPasswordChar = true;
 			this.TSMatKhau.Size = new System.Drawing.Size(112, 20);
 			this.TSMatKhau.TabIndex = 32;
 			// 

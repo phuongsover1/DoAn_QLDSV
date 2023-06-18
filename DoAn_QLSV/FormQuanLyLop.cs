@@ -31,7 +31,7 @@ namespace DoAn_QLSV
 		{
 			if (KetNoi_CSDLGOC(conn_publisher) == 0)
 				return;
-			LayDSPM("SELECT * FROM dbo.Get_Subscribes", conn_publisher, cmbKhoa);
+			LayDSPM("SELECT * FROM dbo.Get_Subscribes_Not_HP", conn_publisher, cmbKhoa);
 			if (Program.mGroup != GroupEnums.Quyen.PGV.ToString())
 			{
 				cmbKhoa.Enabled = false;

@@ -26,6 +26,7 @@ namespace DoAn_QLSV
 			ribPageLopTinChi.Visible = false;
 			ribbonPageBaoCao.Visible = false; ;
 			ribGroupDangNhap.Visible = true;
+			ribbonPageHocPhi.Visible = false;
 			Program.servername = "";
 			Program.username = "";
 			Program.password = "";

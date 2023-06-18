@@ -57,9 +57,9 @@
 			this.ribMonHoc = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
 			this.ribPageLopTinChi = new DevExpress.XtraBars.Ribbon.RibbonPage();
 			this.ribLTC = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-			this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+			this.ribbonPageGroupDKLTC = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
 			this.ribNhapDiem = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-			this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+			this.ribbonPageHocPhi = new DevExpress.XtraBars.Ribbon.RibbonPage();
 			this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
 			this.ribbonPageBaoCao = new DevExpress.XtraBars.Ribbon.RibbonPage();
 			this.ribPageGroupInDSLTC = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -72,11 +72,11 @@
 			this.documentManager1 = new DevExpress.XtraBars.Docking2010.DocumentManager(this.components);
 			this.tabbedView1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView(this.components);
 			this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+			this.lblMaLop = new DevExpress.XtraEditors.LabelControl();
 			this.lbNhom = new DevExpress.XtraEditors.LabelControl();
 			this.lbHoTen = new DevExpress.XtraEditors.LabelControl();
 			this.lbMaNV = new DevExpress.XtraEditors.LabelControl();
 			this.defaultBarAndDockingController1 = new DevExpress.XtraBars.DefaultBarAndDockingController(this.components);
-			this.lblMaLop = new DevExpress.XtraEditors.LabelControl();
 			((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.documentManager1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.tabbedView1)).BeginInit();
@@ -114,7 +114,7 @@
             this.ribTaiKhoan,
             this.ribDanhMuc,
             this.ribPageLopTinChi,
-            this.ribbonPage1,
+            this.ribbonPageHocPhi,
             this.ribbonPageBaoCao});
 			this.ribbonControl1.Size = new System.Drawing.Size(758, 158);
 			this.ribbonControl1.Click += new System.EventHandler(this.ribbonControl1_Click);
@@ -321,7 +321,7 @@
 			// 
 			this.ribPageLopTinChi.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribLTC,
-            this.ribbonPageGroup1,
+            this.ribbonPageGroupDKLTC,
             this.ribNhapDiem});
 			this.ribPageLopTinChi.Name = "ribPageLopTinChi";
 			this.ribPageLopTinChi.Text = "Lớp Tín Chỉ";
@@ -333,11 +333,11 @@
 			this.ribLTC.Name = "ribLTC";
 			this.ribLTC.Text = "Lớp Tín Chỉ";
 			// 
-			// ribbonPageGroup1
+			// ribbonPageGroupDKLTC
 			// 
-			this.ribbonPageGroup1.ItemLinks.Add(this.btnDKLTC);
-			this.ribbonPageGroup1.Name = "ribbonPageGroup1";
-			this.ribbonPageGroup1.Text = "ribbonPageGroup1";
+			this.ribbonPageGroupDKLTC.ItemLinks.Add(this.btnDKLTC);
+			this.ribbonPageGroupDKLTC.Name = "ribbonPageGroupDKLTC";
+			this.ribbonPageGroupDKLTC.Text = "ribbonPageGroup1";
 			// 
 			// ribNhapDiem
 			// 
@@ -345,12 +345,12 @@
 			this.ribNhapDiem.Name = "ribNhapDiem";
 			this.ribNhapDiem.Text = "Nhập Điểm";
 			// 
-			// ribbonPage1
+			// ribbonPageHocPhi
 			// 
-			this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+			this.ribbonPageHocPhi.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup4});
-			this.ribbonPage1.Name = "ribbonPage1";
-			this.ribbonPage1.Text = "Học Phí";
+			this.ribbonPageHocPhi.Name = "ribbonPageHocPhi";
+			this.ribbonPageHocPhi.Text = "Học Phí";
 			// 
 			// ribbonPageGroup4
 			// 
@@ -431,6 +431,15 @@
 			this.panelControl1.Size = new System.Drawing.Size(758, 35);
 			this.panelControl1.TabIndex = 4;
 			// 
+			// lblMaLop
+			// 
+			this.lblMaLop.Location = new System.Drawing.Point(386, 10);
+			this.lblMaLop.Name = "lblMaLop";
+			this.lblMaLop.Size = new System.Drawing.Size(53, 13);
+			this.lblMaLop.TabIndex = 3;
+			this.lblMaLop.Text = "Nhóm: PGV";
+			this.lblMaLop.Visible = false;
+			// 
 			// lbNhom
 			// 
 			this.lbNhom.Location = new System.Drawing.Point(316, 10);
@@ -457,15 +466,6 @@
 			// 
 			// defaultBarAndDockingController1
 			// 
-			// 
-			// lblMaLop
-			// 
-			this.lblMaLop.Location = new System.Drawing.Point(386, 10);
-			this.lblMaLop.Name = "lblMaLop";
-			this.lblMaLop.Size = new System.Drawing.Size(53, 13);
-			this.lblMaLop.TabIndex = 3;
-			this.lblMaLop.Text = "Nhóm: PGV";
-			this.lblMaLop.Visible = false;
 			// 
 			// FormMain
 			// 
@@ -495,7 +495,6 @@
 		#endregion
 
 		private DevExpress.XtraBars.Ribbon.RibbonControl ribbonControl1;
-		private DevExpress.XtraBars.Ribbon.RibbonPage ribTaiKhoan;
 		public DevExpress.XtraBars.Ribbon.RibbonPageGroup ribGroupDangNhap;
 		private DevExpress.XtraBars.BarButtonItem btnDangNhap;
 		private DevExpress.LookAndFeel.DefaultLookAndFeel defaultLookAndFeel1;
@@ -508,39 +507,40 @@
 		public DevExpress.XtraEditors.LabelControl lbMaNV;
 		public DevExpress.XtraEditors.LabelControl lbHoTen;
 		public DevExpress.XtraBars.Ribbon.RibbonPageGroup ribGroupTaoTaiKhoan;
-		private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribGroupLop;
 		private DevExpress.XtraBars.BarButtonItem btnLop;
 		private DevExpress.XtraBars.BarButtonItem btnSinhVien;
 		private DevExpress.XtraBars.BarButtonItem btnMonHoc;
-		private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribLop;
-		private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribMonHoc;
 		private DevExpress.XtraBars.BarButtonItem btnDangXuat;
 		public DevExpress.XtraBars.Ribbon.RibbonPage ribDanhMuc;
 		public DevExpress.XtraBars.Ribbon.RibbonPageGroup ribGroupLogout;
-		private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribLTC;
 		private DevExpress.XtraBars.BarButtonItem btnLTC;
-		private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribNhapDiem;
 		private DevExpress.XtraBars.BarButtonItem btnInDiemThiTKCK;
 		public DevExpress.XtraBars.Ribbon.RibbonPage ribPageLopTinChi;
 		private DevExpress.XtraBars.BarButtonItem btnInDSLTC;
-		private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribPageGroupInDSLTC;
 		public DevExpress.XtraBars.Ribbon.RibbonPage ribbonPageBaoCao;
 		private DevExpress.XtraBars.BarButtonItem btnInDSDiemLTC;
-		private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribPageInDSDiemLTC;
-		private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribPageDiemThi;
-		private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribPageInDiemTKCK;
 		private DevExpress.XtraBars.BarButtonItem btnInBangDiem;
 		private DevExpress.XtraBars.BarButtonItem btnInDiemTKCK;
 		private DevExpress.XtraBars.BarButtonItem btnDKLTC;
-		private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
 		private DevExpress.XtraBars.BarButtonItem btnInDSSVDK;
 		private DevExpress.XtraBars.BarButtonItem btnInDSHP;
-		private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
-		private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
 		private DevExpress.XtraBars.BarButtonItem btnDongHocPhi;
-		private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage1;
-		private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup4;
 		public DevExpress.XtraEditors.LabelControl lblMaLop;
+		public DevExpress.XtraBars.Ribbon.RibbonPage ribbonPageHocPhi;
+		public DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroupDKLTC;
+		public DevExpress.XtraBars.Ribbon.RibbonPage ribTaiKhoan;
+		public DevExpress.XtraBars.Ribbon.RibbonPageGroup ribGroupLop;
+		public DevExpress.XtraBars.Ribbon.RibbonPageGroup ribLop;
+		public DevExpress.XtraBars.Ribbon.RibbonPageGroup ribMonHoc;
+		public DevExpress.XtraBars.Ribbon.RibbonPageGroup ribLTC;
+		public DevExpress.XtraBars.Ribbon.RibbonPageGroup ribNhapDiem;
+		public DevExpress.XtraBars.Ribbon.RibbonPageGroup ribPageGroupInDSLTC;
+		public DevExpress.XtraBars.Ribbon.RibbonPageGroup ribPageInDSDiemLTC;
+		public DevExpress.XtraBars.Ribbon.RibbonPageGroup ribPageDiemThi;
+		public DevExpress.XtraBars.Ribbon.RibbonPageGroup ribPageInDiemTKCK;
+		public DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
+		public DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
+		public DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup4;
 	}
 }
 

@@ -39,7 +39,7 @@ namespace DoAn_QLSV
 		{
 			if (FormQuanLyLop.KetNoi_CSDLGOC(conn_publisher) == 0)
 				return;
-			FormQuanLyLop.LayDSPM("SELECT * FROM dbo.Get_Subscribes", conn_publisher, cmbKhoa);
+			FormQuanLyLop.LayDSPM("SELECT * FROM dbo.Get_Subscribes_Not_HP", conn_publisher, cmbKhoa);
 			if (Program.mGroup != GroupEnums.Quyen.PGV.ToString())
 			{
 				cmbKhoa.Enabled = false;
@@ -47,6 +47,27 @@ namespace DoAn_QLSV
 
 			cmbKhoa.SelectedIndex = Program.mKhoa;
 			cmbKhoaIndex = cmbKhoa.SelectedIndex;
+
+			if (Program.mGroup.Equals("SV"))
+			{
+				txtMaSV.Visible = true;
+				lblMaSV.Visible = true;
+				lblMatKhau.Visible = true;
+				txtMatKhau.Visible = true;
+				txtMaLop.Visible = false;
+				lblMaLop.Visible = false;
+				btnChonLop.Visible = false;
+			}
+			else
+			{
+				txtMaSV.Visible = false;
+				lblMaSV.Visible = false;
+				txtMaLop.Visible = true;
+				lblMaLop.Visible = true;
+				lblMatKhau.Visible = false;
+				txtMatKhau.Visible = false;
+				btnChonLop.Visible = true;
+			}
 		}
 
 
@@ -86,19 +107,42 @@ namespace DoAn_QLSV
 
 		private void btnInPhieuDiem_Click(object sender, EventArgs e)
 		{
-			selectedSV = Program.GetSelectedRowGridControl(gridSV);
-			if (selectedSV == null)
+			if (!Program.mGroup.Equals("SV"))
 			{
-				XtraMessageBox.Show("Bạn chưa chọn sinh viên để in điểm!!", "Lỗi", MessageBoxButtons.OK);
-				return;
+				selectedSV = Program.GetSelectedRowGridControl(gridSV);
+				if (selectedSV == null)
+				{
+					XtraMessageBox.Show("Bạn chưa chọn sinh viên để in điểm!!", "Lỗi", MessageBoxButtons.OK);
+					return;
+				}
+
+				Frpt_DanhSachLopTinChi.ChangeUserNameAndPasswordConnectionString(cmbKhoa.SelectedIndex, Program.mGroup, config);
+
+				Xrpt_PhieuDiem rpt = new Xrpt_PhieuDiem(cmbKhoaIndex, selectedLop[0].ToString(), selectedSV[0].ToString(), selectedSV[1].ToString());
+
+				ReportPrintTool print = new ReportPrintTool(rpt);
+				print.ShowPreviewDialog();
+			}
+			else
+			{
+
+				String statement = "EXEC sp_sv_dang_nhap @MSV =" + txtMaSV.Text + ", @MK= '" + txtMatKhau.Text + "'";
+				SqlDataReader temp = Program.ExecSqlDataReader(statement, Program.connstr);
+				if (!temp.HasRows)
+				{
+					System.Windows.Forms.MessageBox.Show("Sai mật khẩu hoặc tài khoản");
+					return;
+				}
+				temp.Read();
+
+				Frpt_DanhSachLopTinChi.ChangeUserNameAndPasswordConnectionString(cmbKhoa.SelectedIndex, Program.mGroup, config);
+
+				Xrpt_PhieuDiem rpt = new Xrpt_PhieuDiem(cmbKhoaIndex, temp.GetString(3), temp.GetString(0), temp.GetString(1) + " " + temp.GetString(2));
+
+				ReportPrintTool print = new ReportPrintTool(rpt);
+				print.ShowPreviewDialog();
 			}
 
-			Frpt_DanhSachLopTinChi.ChangeUserNameAndPasswordConnectionString(cmbKhoa.SelectedIndex, Program.mGroup, config);
-
-			Xrpt_PhieuDiem rpt = new Xrpt_PhieuDiem(cmbKhoaIndex, selectedLop[0].ToString(), selectedSV[0].ToString(), selectedSV[1].ToString());
-
-			ReportPrintTool print = new ReportPrintTool(rpt);
-			print.ShowPreviewDialog();
 
 
 		}

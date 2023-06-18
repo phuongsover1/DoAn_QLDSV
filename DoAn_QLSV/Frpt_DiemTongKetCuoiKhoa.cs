@@ -32,7 +32,7 @@ namespace DoAn_QLSV
 
 			if (FormQuanLyLop.KetNoi_CSDLGOC(conn_publisher) == 0)
 				return;
-			FormQuanLyLop.LayDSPM("SELECT * FROM dbo.Get_Subscribes", conn_publisher, cmbKhoa);
+			FormQuanLyLop.LayDSPM("SELECT * FROM dbo.Get_Subscribes_Not_HP", conn_publisher, cmbKhoa);
 			if (Program.mGroup != GroupEnums.Quyen.PGV.ToString())
 			{
 				cmbKhoa.Enabled = false;

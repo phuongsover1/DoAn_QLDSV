@@ -127,7 +127,7 @@ namespace DoAn_QLSV.report
 			this.label3.Name = "label3";
 			this.label3.Size = new System.Drawing.Size(34, 17);
 			this.label3.TabIndex = 36;
-			this.label3.Text = "Lop";
+			this.label3.Text = "Lớp";
 			// 
 			// label4
 			// 
@@ -138,7 +138,7 @@ namespace DoAn_QLSV.report
 			this.label4.Name = "label4";
 			this.label4.Size = new System.Drawing.Size(79, 17);
 			this.label4.TabIndex = 37;
-			this.label4.Text = "Nien Khoa";
+			this.label4.Text = "Niên Khóa";
 			// 
 			// label5
 			// 
@@ -147,9 +147,9 @@ namespace DoAn_QLSV.report
 			this.label5.Location = new System.Drawing.Point(62, 220);
 			this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.label5.Name = "label5";
-			this.label5.Size = new System.Drawing.Size(57, 17);
+			this.label5.Size = new System.Drawing.Size(55, 17);
 			this.label5.TabIndex = 39;
-			this.label5.Text = "Hoc Ky";
+			this.label5.Text = "Học kỳ";
 			// 
 			// cbHK
 			// 

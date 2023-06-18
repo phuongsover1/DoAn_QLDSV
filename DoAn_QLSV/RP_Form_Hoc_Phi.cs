@@ -46,16 +46,18 @@ namespace DoAn_QLSV.report
 
 		private void button1_Click(object sender, EventArgs e)
 		{
-			//string chiNhanh = cmbKhoa.SelectedValue.ToString().Contains("1") ? "Helsinki" : "Lisbon";
-			//Program.servername = Program.servername3;
+
 
 
 
 			Xtr_Hoc_Phi report = new Xtr_Hoc_Phi(cbLop.Text, txtNK.Text, Int32.Parse(cbHK.Text));
-			//Xtr_Hoc_Phi report = new Xtr_Hoc_Phi("D15CQCP01", "2021-2022", 1);
-			//report.txtTuNgay.Text = dteTuNgay.EditValue.ToString();
-			//report.txtToiNgay.Text = dteToiNgay.EditValue.ToString();
-			//report.txtChiNhanh.Text = chiNhanh;
+
+
+			report.lbMaLop.Text = cbLop.Text;
+			if (cmbKhoa.Text.Equals("CNTT"))
+				report.lbKhoa.Text = "Công nghệ thông tin";
+			if (cmbKhoa.Text.Equals("VT"))
+				report.lbKhoa.Text = "Viễn Thông";
 
 			ReportPrintTool printTool = new ReportPrintTool(report);
 			printTool.ShowPreviewDialog();

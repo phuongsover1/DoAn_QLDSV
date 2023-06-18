@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraEditors;
+using DevExpress.XtraRichEdit.Model.History;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -72,7 +73,15 @@ namespace DoAn_QLSV
 			Program.mGroup = Program.myReader.GetString(2);
 			Program.myReader.Close();
 			Program.conn.Close();
-			HienThiMenu();
+
+			if (Program.mGroup.Equals("SV"))
+			{
+				HienThiMenuSV();
+			}
+			else if (Program.mGroup.Equals("PKT"))
+				HienThiMenuPKT();
+			else
+				HienThiMenu();
 			ChangeUserNameAndPasswordConnectionString(Program.mKhoa, Program.mGroup);
 			TaoDBEntities(Program.mKhoa, Program.mGroup);
 
@@ -152,6 +161,54 @@ namespace DoAn_QLSV
 			Program.formMain.ribPageLopTinChi.Visible = true;
 			Program.formMain.ribbonPageBaoCao.Visible = true;
 			Program.formMain.ribGroupDangNhap.Visible = false;
+
+		}
+
+
+		public void HienThiMenuSV()
+		{
+			Program.formMain.lbHoTen.Text = Program.mHoten;
+			Program.formMain.lbMaNV.Text = Program.username;
+			Program.formMain.lbNhom.Text = "NHOM: " + Program.mGroup;
+			Program.formMain.ribPageLopTinChi.Visible = true;
+			Program.formMain.ribbonPageGroupDKLTC.Visible = true;
+			Program.formMain.ribLTC.Visible = false;
+			Program.formMain.ribNhapDiem.Visible = false;
+			Program.formMain.ribbonPageBaoCao.Visible = true;
+			Program.formMain.ribPageDiemThi.Visible = true;
+			Program.formMain.ribPageGroupInDSLTC.Visible = false;
+			Program.formMain.ribPageInDiemTKCK.Visible = false;
+			Program.formMain.ribPageInDSDiemLTC.Visible = false;
+
+			Program.formMain.ribPageInDiemTKCK.Visible = false;
+			Program.formMain.ribbonPageGroup2.Visible = false;
+			Program.formMain.ribbonPageGroup3.Visible = false;
+			Program.formMain.ribTaiKhoan.Visible = true;
+			Program.formMain.ribGroupLogout.Visible = true;
+			Program.formMain.ribGroupTaoTaiKhoan.Visible = false;
+			Program.formMain.ribGroupDangNhap.Visible = false;
+		}
+
+		private void HienThiMenuPKT()
+		{
+			Program.formMain.lbHoTen.Text = "HOTEN: " + Program.mHoten;
+			Program.formMain.lbMaNV.Text = "MAGV: " + Program.username;
+			Program.formMain.lbNhom.Text = "NHOM: " + Program.mGroup;
+			Program.formMain.ribbonPageHocPhi.Visible = true;
+			Program.formMain.ribbonPageBaoCao.Visible = true;
+			Program.formMain.ribbonPageGroup3.Visible = true;
+			Program.formMain.ribTaiKhoan.Visible = true;
+			Program.formMain.ribGroupLogout.Visible = true;
+			Program.formMain.ribGroupTaoTaiKhoan.Visible = true;
+			Program.formMain.ribGroupDangNhap.Visible = false;
+			Program.formMain.ribbonPageGroup2.Visible = false;
+			Program.formMain.ribPageInDiemTKCK.Visible = false;
+			Program.formMain.ribPageInDiemTKCK.Visible = false;
+			Program.formMain.ribPageInDSDiemLTC.Visible = false;
+			Program.formMain.ribPageGroupInDSLTC.Visible = false;
+			Program.formMain.ribLTC.Visible = false;
+			Program.formMain.ribDanhMuc.Visible = false;
+			Program.formMain.ribPageDiemThi.Visible = false;
 
 		}
 

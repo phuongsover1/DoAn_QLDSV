@@ -47,7 +47,6 @@ namespace DoAn_QLSV.report
 			this.pageInfo1 = new DevExpress.XtraReports.UI.XRPageInfo();
 			this.pageInfo2 = new DevExpress.XtraReports.UI.XRPageInfo();
 			this.ReportHeader = new DevExpress.XtraReports.UI.ReportHeaderBand();
-			this.label1 = new DevExpress.XtraReports.UI.XRLabel();
 			this.GroupHeader1 = new DevExpress.XtraReports.UI.GroupHeaderBand();
 			this.table1 = new DevExpress.XtraReports.UI.XRTable();
 			this.tableRow1 = new DevExpress.XtraReports.UI.XRTableRow();
@@ -74,6 +73,11 @@ namespace DoAn_QLSV.report
 			this.xrLabel13 = new DevExpress.XtraReports.UI.XRLabel();
 			this.xrLabel1 = new DevExpress.XtraReports.UI.XRLabel();
 			this.sqlDataSource2 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
+			this.lbMaLop = new DevExpress.XtraReports.UI.XRLabel();
+			this.xrLabel5 = new DevExpress.XtraReports.UI.XRLabel();
+			this.xrLabel4 = new DevExpress.XtraReports.UI.XRLabel();
+			this.xrLabel6 = new DevExpress.XtraReports.UI.XRLabel();
+			this.lbKhoa = new DevExpress.XtraReports.UI.XRLabel();
 			((System.ComponentModel.ISupportInitialize)(this.table1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.table2)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
@@ -85,8 +89,8 @@ namespace DoAn_QLSV.report
 			// BottomMargin
 			// 
 			this.BottomMargin.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
-						this.pageInfo1,
-						this.pageInfo2});
+            this.pageInfo1,
+            this.pageInfo2});
 			this.BottomMargin.HeightF = 122.8333F;
 			this.BottomMargin.Name = "BottomMargin";
 			// 
@@ -110,22 +114,18 @@ namespace DoAn_QLSV.report
 			// ReportHeader
 			// 
 			this.ReportHeader.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
-						this.label1});
-			this.ReportHeader.HeightF = 60F;
+            this.lbMaLop,
+            this.xrLabel5,
+            this.xrLabel4,
+            this.xrLabel6,
+            this.lbKhoa});
+			this.ReportHeader.HeightF = 130.5F;
 			this.ReportHeader.Name = "ReportHeader";
-			// 
-			// label1
-			// 
-			this.label1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
-			this.label1.Name = "label1";
-			this.label1.SizeF = new System.Drawing.SizeF(650F, 24.19433F);
-			this.label1.StyleName = "Title";
-			this.label1.Text = "Report Title";
 			// 
 			// GroupHeader1
 			// 
 			this.GroupHeader1.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
-						this.table1});
+            this.table1});
 			this.GroupHeader1.GroupUnion = DevExpress.XtraReports.UI.GroupUnion.WithFirstDetail;
 			this.GroupHeader1.HeightF = 28F;
 			this.GroupHeader1.Name = "GroupHeader1";
@@ -135,16 +135,16 @@ namespace DoAn_QLSV.report
 			this.table1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
 			this.table1.Name = "table1";
 			this.table1.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
-						this.tableRow1});
+            this.tableRow1});
 			this.table1.SizeF = new System.Drawing.SizeF(650F, 28F);
 			// 
 			// tableRow1
 			// 
 			this.tableRow1.Cells.AddRange(new DevExpress.XtraReports.UI.XRTableCell[] {
-						this.xrTableCell2,
-						this.tableCell1,
-						this.tableCell2,
-						this.tableCell3});
+            this.xrTableCell2,
+            this.tableCell1,
+            this.tableCell2,
+            this.tableCell3});
 			this.tableRow1.Name = "tableRow1";
 			this.tableRow1.Weight = 1D;
 			// 
@@ -188,7 +188,7 @@ namespace DoAn_QLSV.report
 			// Detail
 			// 
 			this.Detail.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
-						this.table2});
+            this.table2});
 			this.Detail.HeightF = 25F;
 			this.Detail.Name = "Detail";
 			// 
@@ -198,16 +198,16 @@ namespace DoAn_QLSV.report
 			this.table2.Name = "table2";
 			this.table2.OddStyleName = "DetailData3_Odd";
 			this.table2.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
-						this.tableRow2});
+            this.tableRow2});
 			this.table2.SizeF = new System.Drawing.SizeF(650F, 25F);
 			// 
 			// tableRow2
 			// 
 			this.tableRow2.Cells.AddRange(new DevExpress.XtraReports.UI.XRTableCell[] {
-						this.xrTableCell1,
-						this.tableCell4,
-						this.tableCell5,
-						this.tableCell6});
+            this.xrTableCell1,
+            this.tableCell4,
+            this.tableCell5,
+            this.tableCell6});
 			this.tableRow2.Name = "tableRow2";
 			this.tableRow2.Weight = 11.5D;
 			// 
@@ -215,7 +215,7 @@ namespace DoAn_QLSV.report
 			// 
 			this.xrTableCell1.Borders = DevExpress.XtraPrinting.BorderSide.None;
 			this.xrTableCell1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-						new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sumRecordNumber()")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sumRecordNumber()")});
 			this.xrTableCell1.Multiline = true;
 			this.xrTableCell1.Name = "xrTableCell1";
 			this.xrTableCell1.StyleName = "DetailData1";
@@ -229,7 +229,7 @@ namespace DoAn_QLSV.report
 			// 
 			this.tableCell4.Borders = DevExpress.XtraPrinting.BorderSide.None;
 			this.tableCell4.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-						new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[hovaten]")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[hovaten]")});
 			this.tableCell4.Name = "tableCell4";
 			this.tableCell4.StyleName = "DetailData1";
 			this.tableCell4.StylePriority.UseBorders = false;
@@ -238,7 +238,7 @@ namespace DoAn_QLSV.report
 			// tableCell5
 			// 
 			this.tableCell5.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-						new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[HOCPHI]")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[HOCPHI]")});
 			this.tableCell5.Name = "tableCell5";
 			this.tableCell5.StyleName = "DetailData1";
 			this.tableCell5.StylePriority.UseTextAlignment = false;
@@ -248,7 +248,7 @@ namespace DoAn_QLSV.report
 			// tableCell6
 			// 
 			this.tableCell6.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-						new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[SOTIENDONG]")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[SOTIENDONG]")});
 			this.tableCell6.Name = "tableCell6";
 			this.tableCell6.StyleName = "DetailData1";
 			this.tableCell6.StylePriority.UseTextAlignment = false;
@@ -268,12 +268,12 @@ namespace DoAn_QLSV.report
 			queryParameter3.Type = typeof(int);
 			queryParameter3.ValueInfo = "0";
 			storedProcQuery1.Parameters.AddRange(new DevExpress.DataAccess.Sql.QueryParameter[] {
-						queryParameter1,
-						queryParameter2,
-						queryParameter3});
+            queryParameter1,
+            queryParameter2,
+            queryParameter3});
 			storedProcQuery1.StoredProcName = "sp_rp_ThongTinDongHocPhi";
 			this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-						storedProcQuery1});
+            storedProcQuery1});
 			this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
 			// 
 			// Title
@@ -332,16 +332,16 @@ namespace DoAn_QLSV.report
 			// ReportFooter
 			// 
 			this.ReportFooter.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
-						this.xrLabel3,
-						this.xrLabel2,
-						this.xrLabel13,
-						this.xrLabel1});
+            this.xrLabel3,
+            this.xrLabel2,
+            this.xrLabel13,
+            this.xrLabel1});
 			this.ReportFooter.Name = "ReportFooter";
 			// 
 			// xrLabel3
 			// 
 			this.xrLabel3.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-						new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sumSum([SOTIENDONG])")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sumSum([SOTIENDONG])")});
 			this.xrLabel3.LocationFloat = new DevExpress.Utils.PointFloat(142.9088F, 48.50006F);
 			this.xrLabel3.Multiline = true;
 			this.xrLabel3.Name = "xrLabel3";
@@ -374,7 +374,7 @@ namespace DoAn_QLSV.report
 			// xrLabel1
 			// 
 			this.xrLabel1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-						new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sumDCount([hovaten])")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sumDCount([hovaten])")});
 			this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(129.6802F, 20.49998F);
 			this.xrLabel1.Multiline = true;
 			this.xrLabel1.Name = "xrLabel1";
@@ -397,36 +397,81 @@ namespace DoAn_QLSV.report
 			queryParameter6.Type = typeof(int);
 			queryParameter6.ValueInfo = "0";
 			storedProcQuery2.Parameters.AddRange(new DevExpress.DataAccess.Sql.QueryParameter[] {
-						queryParameter4,
-						queryParameter5,
-						queryParameter6});
+            queryParameter4,
+            queryParameter5,
+            queryParameter6});
 			storedProcQuery2.StoredProcName = "sp_rp_ThongTinDongHocPhi";
 			this.sqlDataSource2.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-						storedProcQuery2});
+            storedProcQuery2});
 			this.sqlDataSource2.ResultSchemaSerializable = resources.GetString("sqlDataSource2.ResultSchemaSerializable");
+			// 
+			// lbMaLop
+			// 
+			this.lbMaLop.LocationFloat = new DevExpress.Utils.PointFloat(225.2614F, 74.49998F);
+			this.lbMaLop.Multiline = true;
+			this.lbMaLop.Name = "lbMaLop";
+			this.lbMaLop.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+			this.lbMaLop.SizeF = new System.Drawing.SizeF(238.178F, 28.00001F);
+			this.lbMaLop.Text = "xrLabel2";
+			// 
+			// xrLabel5
+			// 
+			this.xrLabel5.LocationFloat = new DevExpress.Utils.PointFloat(76.66666F, 74.49999F);
+			this.xrLabel5.Multiline = true;
+			this.xrLabel5.Name = "xrLabel5";
+			this.xrLabel5.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+			this.xrLabel5.SizeF = new System.Drawing.SizeF(117.3447F, 28.00001F);
+			this.xrLabel5.Text = "MÃ LỚP: ";
+			// 
+			// xrLabel4
+			// 
+			this.xrLabel4.LocationFloat = new DevExpress.Utils.PointFloat(118.1688F, 37.5F);
+			this.xrLabel4.Multiline = true;
+			this.xrLabel4.Name = "xrLabel4";
+			this.xrLabel4.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+			this.xrLabel4.SizeF = new System.Drawing.SizeF(58.17805F, 26.33334F);
+			this.xrLabel4.Text = "KHOA";
+			// 
+			// xrLabel6
+			// 
+			this.xrLabel6.LocationFloat = new DevExpress.Utils.PointFloat(118.1688F, 0F);
+			this.xrLabel6.Multiline = true;
+			this.xrLabel6.Name = "xrLabel6";
+			this.xrLabel6.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+			this.xrLabel6.SizeF = new System.Drawing.SizeF(451.6667F, 23F);
+			this.xrLabel6.Text = "DANH SÁCH SINH VIÊN ĐÓNG HỌC PHÍ";
+			// 
+			// lbKhoa
+			// 
+			this.lbKhoa.LocationFloat = new DevExpress.Utils.PointFloat(225.2614F, 35.83333F);
+			this.lbKhoa.Multiline = true;
+			this.lbKhoa.Name = "lbKhoa";
+			this.lbKhoa.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+			this.lbKhoa.SizeF = new System.Drawing.SizeF(238.178F, 28.00001F);
+			this.lbKhoa.Text = "lbKhoa";
 			// 
 			// Xtr_Hoc_Phi
 			// 
 			this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
-						this.TopMargin,
-						this.BottomMargin,
-						this.ReportHeader,
-						this.GroupHeader1,
-						this.Detail,
-						this.ReportFooter});
+            this.TopMargin,
+            this.BottomMargin,
+            this.ReportHeader,
+            this.GroupHeader1,
+            this.Detail,
+            this.ReportFooter});
 			this.ComponentStorage.AddRange(new System.ComponentModel.IComponent[] {
-						this.sqlDataSource1,
-						this.sqlDataSource2});
+            this.sqlDataSource1,
+            this.sqlDataSource2});
 			this.DataMember = "sp_rp_ThongTinDongHocPhi";
 			this.DataSource = this.sqlDataSource2;
 			this.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F);
 			this.Margins = new DevExpress.Drawing.DXMargins(100F, 100F, 100F, 122.8333F);
 			this.StyleSheet.AddRange(new DevExpress.XtraReports.UI.XRControlStyle[] {
-						this.Title,
-						this.DetailCaption1,
-						this.DetailData1,
-						this.DetailData3_Odd,
-						this.PageInfo});
+            this.Title,
+            this.DetailCaption1,
+            this.DetailData1,
+            this.DetailData3_Odd,
+            this.PageInfo});
 			this.Version = "22.2";
 			((System.ComponentModel.ISupportInitialize)(this.table1)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.table2)).EndInit();
@@ -441,7 +486,6 @@ namespace DoAn_QLSV.report
 		private DevExpress.XtraReports.UI.XRPageInfo pageInfo1;
 		private DevExpress.XtraReports.UI.XRPageInfo pageInfo2;
 		private DevExpress.XtraReports.UI.ReportHeaderBand ReportHeader;
-		private DevExpress.XtraReports.UI.XRLabel label1;
 		private DevExpress.XtraReports.UI.GroupHeaderBand GroupHeader1;
 		private DevExpress.XtraReports.UI.XRTable table1;
 		private DevExpress.XtraReports.UI.XRTableRow tableRow1;
@@ -468,5 +512,10 @@ namespace DoAn_QLSV.report
 		private DevExpress.XtraReports.UI.XRLabel xrLabel2;
 		private DevExpress.XtraReports.UI.XRLabel xrLabel13;
 		private DevExpress.DataAccess.Sql.SqlDataSource sqlDataSource2;
+		public DevExpress.XtraReports.UI.XRLabel lbMaLop;
+		private DevExpress.XtraReports.UI.XRLabel xrLabel5;
+		private DevExpress.XtraReports.UI.XRLabel xrLabel4;
+		private DevExpress.XtraReports.UI.XRLabel xrLabel6;
+		public DevExpress.XtraReports.UI.XRLabel lbKhoa;
 	}
 }
